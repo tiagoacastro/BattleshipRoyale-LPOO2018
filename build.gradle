@@ -13,11 +13,6 @@ buildscript {
         
 
     }
-    tasks.withType(JavaCompile) {
-        targetCompatibility = '1.6'
-        sourceCompatibility = '1.6'
-        options.setBootClasspath("C:\\Program Files\\Java\\jre1.8.0_161/lib/rt.jar")
-    }
 }
 
 allprojects {
@@ -26,7 +21,7 @@ allprojects {
 
     version = '1.0'
     ext {
-        appName = "Battleship-Royale"
+        appName = "BattleShip"
         gdxVersion = '1.9.8'
         roboVMVersion = '2.3.3'
         box2DLightsVersion = '1.4'
@@ -51,6 +46,7 @@ project(":desktop") {
         compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
         compile "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"
+        compile "com.badlogicgames.gdx:gdx-tools:$gdxVersion"
         compile "de.tomgrill.gdxfacebook:gdx-facebook-desktop:1.4.1"
         
     }
@@ -76,7 +72,22 @@ project(":android") {
         natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-x86"
         natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-x86_64"
         compile "com.badlogicgames.gdx:gdx-ai:$aiVersion"
+        compile "com.badlogicgames.box2dlights:box2dlights:$box2DLightsVersion"
         compile "de.tomgrill.gdxfacebook:gdx-facebook-android:1.4.1"
+        
+    }
+}
+
+project(":core") {
+    apply plugin: "java"
+
+
+    dependencies {
+        compile "com.badlogicgames.gdx:gdx:$gdxVersion"
+        compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
+        compile "com.badlogicgames.gdx:gdx-ai:$aiVersion"
+        compile "com.badlogicgames.box2dlights:box2dlights:$box2DLightsVersion"
+        compile "de.tomgrill.gdxfacebook:gdx-facebook-core:1.4.1"
         
     }
 }
@@ -94,21 +105,9 @@ project(":html") {
         compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion:sources"
         compile "com.badlogicgames.gdx:gdx-box2d-gwt:$gdxVersion:sources"
         compile "com.badlogicgames.gdx:gdx-ai:$aiVersion:sources"
+        compile "com.badlogicgames.box2dlights:box2dlights:$box2DLightsVersion:sources"
         compile "de.tomgrill.gdxfacebook:gdx-facebook-core:1.4.1:sources"
         compile "de.tomgrill.gdxfacebook:gdx-facebook-html:1.4.1:sources"
-        
-    }
-}
-
-project(":core") {
-    apply plugin: "java"
-
-
-    dependencies {
-        compile "com.badlogicgames.gdx:gdx:$gdxVersion"
-        compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
-        compile "com.badlogicgames.gdx:gdx-ai:$aiVersion"
-        compile "de.tomgrill.gdxfacebook:gdx-facebook-core:1.4.1"
         
     }
 }
