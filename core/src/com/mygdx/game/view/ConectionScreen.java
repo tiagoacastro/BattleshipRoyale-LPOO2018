@@ -1,4 +1,6 @@
 package com.mygdx.game.view;
 
-public class ConectionScreen {
+import com.badlogic.gdx.ScreenAdapter;
+
+public class ConectionScreen extends ScreenAdapter {
 }
