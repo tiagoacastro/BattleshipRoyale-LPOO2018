@@ -50,8 +50,13 @@ Finalmente, é mostrado neste mockup o jogo em si onde o jogador pode jogar, pau
 **Test Design**
 
 **-** Testar bom funcionamento e comportamento de todos os botões presentes nos menus (play, settings, etc);
+
 **-** Testar se quando todos os pontos de um navio são alvo de um tiro do adversário ele “afunda”;
+
 **-** Testar que não é possível sobrepor navios ao dar setup ao tabuleiro de jogo;
+
 **-** Testar se os toques no ecrã por parte do utilizador são lidos corretamente (em termos de coordenadas) no jogo;
+
 **-** Testar se o jogo termina quando todos os navios de um jogador tiverem sido destruidos;
+
 **-** Testar a ligação entre os dois telemóveis através do servidor
