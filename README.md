@@ -4,17 +4,17 @@
 ### Architecture Design
 
 
-**Package and Class diagram**
+### Package and Class diagram
 
 ![Screenshot](https://i.imgur.com/ttIhpAw.jpg)
 
 
-**Behavioural Diagram**
+### Behavioural Diagram
 
 ![Screenshot](https://i.imgur.com/rHYrxG8.jpg)
 
 
-**Design Patterns**
+### Design Patterns
 
   **Singleton** - este design pattern servirá para a classe jogo apenas ser instanciada uma vez já que irá ser acedida inúmeras vezes ao longo da execução do programa.
 
@@ -25,8 +25,7 @@
   **MVC (Model View Controller)** - usado para facilitar a modularidade e as dependências do jogo.
 
 
-
-**GUI Design**
+### GUI Design
 
 Este é o menu principal do jogo. A partir deste menu, é possível tanto ir para o submenu com as definições como carregar em “Play” com vista a iniciar o jogo.
 
@@ -48,7 +47,7 @@ Finalmente, é mostrado neste mockup o jogo em si onde o jogador pode jogar, pau
 
 ![Screenshot](https://i.imgur.com/zBIA56i.png)
 
-**Test Design**
+### Test Design
 
   **-** Testar bom funcionamento e comportamento de todos os botões presentes nos menus (play, settings, etc);
 
