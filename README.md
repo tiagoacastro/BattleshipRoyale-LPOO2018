@@ -25,6 +25,7 @@
 **MVC (Model View Controller)** - usado para facilitar a modularidade e as dependências do jogo.
 
 
+
 **GUI Design**
 
 Este é o menu principal do jogo. A partir deste menu, é possível tanto ir para o submenu com as definições como carregar em “Play” com vista a iniciar o jogo.
