@@ -16,13 +16,13 @@
 
 **Design Patterns**
 
-**Singleton** - este design pattern servirá para a classe jogo apenas ser instanciada uma vez já que irá ser acedida inúmeras vezes ao longo da execução do programa.
+  **Singleton** - este design pattern servirá para a classe jogo apenas ser instanciada uma vez já que irá ser acedida inúmeras vezes ao longo da execução do programa.
 
-**Builder** - este design pattern servirá para dividir os barcos nas suas secções quadradas permitindo uma separação mais fácil do código.
+  **Builder** - este design pattern servirá para dividir os barcos nas suas secções quadradas permitindo uma separação mais fácil do código.
 
-**Template** - este design pattern servirá para a criação dos vários tipos de barcos, podendo-se implementar novos barcos com as suas caraterísticas individuais sem alterar o algoritmo responsável pelo jogo.
+  **Template** - este design pattern servirá para a criação dos vários tipos de barcos, podendo-se implementar novos barcos com as suas caraterísticas individuais sem alterar o algoritmo responsável pelo jogo.
 
-**MVC (Model View Controller)** - usado para facilitar a modularidade e as dependências do jogo.
+  **MVC (Model View Controller)** - usado para facilitar a modularidade e as dependências do jogo.
 
 
 
@@ -50,14 +50,14 @@ Finalmente, é mostrado neste mockup o jogo em si onde o jogador pode jogar, pau
 
 **Test Design**
 
-**-** Testar bom funcionamento e comportamento de todos os botões presentes nos menus (play, settings, etc);
+  **-** Testar bom funcionamento e comportamento de todos os botões presentes nos menus (play, settings, etc);
 
-**-** Testar se quando todos os pontos de um navio são alvo de um tiro do adversário ele “afunda”;
+  **-** Testar se quando todos os pontos de um navio são alvo de um tiro do adversário ele “afunda”;
 
-**-** Testar que não é possível sobrepor navios ao dar setup ao tabuleiro de jogo;
+  **-** Testar que não é possível sobrepor navios ao dar setup ao tabuleiro de jogo;
 
-**-** Testar se os toques no ecrã por parte do utilizador são lidos corretamente (em termos de coordenadas) no jogo;
+  **-** Testar se os toques no ecrã por parte do utilizador são lidos corretamente (em termos de coordenadas) no jogo;
 
-**-** Testar se o jogo termina quando todos os navios de um jogador tiverem sido destruidos;
+  **-** Testar se o jogo termina quando todos os navios de um jogador tiverem sido destruidos;
 
-**-** Testar a ligação entre os dois telemóveis através do servidor
+  **-** Testar a ligação entre os dois telemóveis através do servidor
