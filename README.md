@@ -4,4 +4,4 @@
 
 **Package and Class diagram**
 
-![Screenshot](https://imgur.com/uhDW1bl)
+![Screenshot](https://i.imgur.com/ttIhpAw.jpg)
