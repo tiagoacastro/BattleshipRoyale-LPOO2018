@@ -1,4 +1,4 @@
-package com.mygdx.game.Ships;
+package com.mygdx.game.model.Ships;
 
 /**
  * Ship part that creates the boats

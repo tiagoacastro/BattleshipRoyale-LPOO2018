@@ -1,4 +1,4 @@
-package com.mygdx.game.Ships;
+package com.mygdx.game.model.Ships;
 
 /**
  * Patrol boat class - 1 cell (Builder)

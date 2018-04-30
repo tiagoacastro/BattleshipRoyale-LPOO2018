@@ -1,4 +1,4 @@
-package com.mygdx.game.Screens;
+package com.mygdx.game.view;
 
 /**
  * Screen for the creation of the player's board

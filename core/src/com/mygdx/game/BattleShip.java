@@ -2,7 +2,7 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.assets.AssetManager;
-import com.mygdx.game.Screens.GameScreen;
+import com.mygdx.game.view.Screens.GameScreen;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 /**
@@ -21,13 +21,6 @@ public class BattleShip extends Game {
 		assetManager = new AssetManager();
         batch = new SpriteBatch();
 		setScreen(new GameScreen());
-	}
-	/**
-	 * Render override
-	 */
-	@Override
-	public void render() {
-		super.render();
 	}
 	/**
 	 * Dispose Override

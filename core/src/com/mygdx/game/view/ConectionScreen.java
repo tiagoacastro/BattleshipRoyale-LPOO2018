@@ -1,4 +1,4 @@
-package com.mygdx.game.Screens;
+package com.mygdx.game.view;
 
 public class ConectionScreen {
 }
