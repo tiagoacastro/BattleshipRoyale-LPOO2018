@@ -1,32 +1,27 @@
 package com.mygdx.game;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.net.ServerSocket;
-import java.nio.ByteBuffer;
-import java.nio.channels.Selector;
+import java.net.Socket;
 
 /**
  * Server class
- */
-/*
-public class Server {
+ *//*
+public class Server implements Runnable{
+    private String ip = "localhost";
     private int port;
-    private boolean running = false;
-    private Selector selector;
+    private Socket socket;
+    private DataOutputStream dos;
+    private DataInputStream dis;
     private ServerSocket serverSocket;
-    private ByteBuffer buffer;
 
     public Server(int port, int bufferSize){
         this.port = port;
-        this.buffer = ByteBuffer.allocate(bufferSize);
-    }
-
-    public void start(){
-        /new Thread(this).start();
     }
 
     @Override
     public void run() {
-        running = true;
+
     }
-}
-*/
+}*/

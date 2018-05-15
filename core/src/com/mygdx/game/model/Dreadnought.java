@@ -1,4 +1,4 @@
-package com.mygdx.game.model.Ships;
+package com.mygdx.game.model;
 
 /**
  * Dreadnought class - 4 consecutive cells (Builder)
