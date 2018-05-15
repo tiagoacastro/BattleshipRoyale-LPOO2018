@@ -2,7 +2,7 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.assets.AssetManager;
-import com.mygdx.game.view.Screens.GameScreen;
+import com.mygdx.game.view.GameScreen;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 /**

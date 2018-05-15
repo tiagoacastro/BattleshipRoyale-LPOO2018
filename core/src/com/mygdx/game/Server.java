@@ -7,7 +7,8 @@ import java.nio.channels.Selector;
 /**
  * Server class
  */
-public class Server implements Runnable{
+/*
+public class Server {
     private int port;
     private boolean running = false;
     private Selector selector;
@@ -20,7 +21,7 @@ public class Server implements Runnable{
     }
 
     public void start(){
-        new Thread(this).start();
+        /new Thread(this).start();
     }
 
     @Override
@@ -28,3 +29,4 @@ public class Server implements Runnable{
         running = true;
     }
 }
+*/
