@@ -4,56 +4,71 @@ package com.mygdx.game.model;
  * Ship super class (Template)
  */
 public abstract class Ship{
-    protected int x;
-    protected int y;
-    protected Way way = Way.W;
-    protected boolean destroyed = false;
-    protected ShipCell cells[];
+    protected int x = -1;
+    protected int y = -1;
+    Way way = Way.W;
+    private boolean destroyed = false;
+    Cell cells[];
 
-    enum Way{W, S, E, N}
+    public enum Way{W, S, E, N}
 
-    public Ship(int x, int y){
-        this.x = x;
-        this.y = y;
-    }
+    Ship(){}
 
-    public void update(int x, int y){
-        this.x = x;
-        this.y = y;
-    }
-
-    public void rotate(){
+    public void updateCell(Board board, int index){
         switch(way){
             case W:
-                way = Way.S;
+                board.getBoard()[x + index][y].occupy(this);
+                cells[index] = board.getBoard()[x + index][y];
                 break;
             case S:
-                way = Way.E;
+                board.getBoard()[x][y - index].occupy(this);
+                cells[index] = board.getBoard()[x][y - index];
                 break;
             case E:
-                way = Way.N;
-            case N:
-                way = Way.W;
-        }
-    }
-
-    public void revert(){
-        switch(way){
-            case W:
-                way = Way.N;
+                board.getBoard()[x - index][y].occupy(this);
+                cells[index] = board.getBoard()[x - index][y];
                 break;
-            case S:
-                way = Way.W;
-                break;
-            case E:
-                way = Way.S;
             case N:
-                way = Way.E;
+                board.getBoard()[x][y + index].occupy(this);
+                cells[index] = board.getBoard()[x][y + index];
+                break;
         }
     }
 
     public void destroy(){
         destroyed = true;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public Way getWay() {
+        return way;
+    }
+
+    public void setWay(Way way) {
+        this.way = way;
+    }
+
+    public Cell[] getCells() {
+        return cells;
+    }
+
+    public void setCells(Cell[] cells) {
+        this.cells = cells;
     }
 
     public boolean check(){

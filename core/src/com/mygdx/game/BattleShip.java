@@ -2,7 +2,7 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.assets.AssetManager;
-import com.mygdx.game.view.GameScreen;
+import com.mygdx.game.view.CreatorScreen;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 /**
@@ -20,7 +20,7 @@ public class BattleShip extends Game {
 		battleship = this;
 		assetManager = new AssetManager();
         batch = new SpriteBatch();
-		setScreen(new GameScreen());
+		setScreen(new CreatorScreen());
 	}
 	/**
 	 * Dispose Override
@@ -44,5 +44,12 @@ public class BattleShip extends Game {
 	 */
 	AssetManager getAssetManager() {
 		return assetManager;
+	}
+	/**
+	 * Getter for the sprite batch
+	 * @return	sprite batch
+	 */
+	public SpriteBatch getBatch() {
+		return batch;
 	}
 }
