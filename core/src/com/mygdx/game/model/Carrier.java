@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Carrier class - 4 cells in an L (Builder)
  */
 public class Carrier extends Ship {
-    private final int size = 4;
+    private static final int size = 4;
 
     public Carrier() {
         super();

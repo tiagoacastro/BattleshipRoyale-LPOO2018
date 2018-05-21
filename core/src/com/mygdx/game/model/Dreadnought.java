@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Dreadnought class - 4 consecutive cells (Builder)
  */
 public class Dreadnought extends Ship {
-    private final int size = 4;
+    private static final int size = 4;
 
     public Dreadnought() {
         super();

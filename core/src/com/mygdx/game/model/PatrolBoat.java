@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Patrol boat class - 1 cell (Builder)
  */
 public class PatrolBoat extends Ship {
-    private final int size = 1;
+    private static final int size = 1;
 
     public PatrolBoat() {
         super();

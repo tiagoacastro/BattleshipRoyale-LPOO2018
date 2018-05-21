@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Submarine class - 3 consecutive cells (Builder)
  */
 public class Submarine extends Ship {
-    private final int size = 3;
+    private static final int size = 3;
 
     public Submarine() {
         super();
