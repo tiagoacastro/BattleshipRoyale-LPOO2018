@@ -28,9 +28,9 @@ public class GameScreen extends ScreenAdapter{
         super.render(delta);
         Gdx.gl.glClearColor(1,0,0,1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        game.batch.begin();
-        game.batch.draw(texture,0,0);
-        game.batch.end();
+        game.getBatch().begin();
+        game.getBatch().draw(texture,0,0);
+        game.getBatch().end();
     }
     /**
      * Resize override

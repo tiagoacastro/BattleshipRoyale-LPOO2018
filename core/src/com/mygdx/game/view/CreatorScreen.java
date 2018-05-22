@@ -27,7 +27,7 @@ public class CreatorScreen extends ScreenAdapter{
         this.viewport = new FitViewport(VIEWPORT_WIDTH, VIEWPORT_WIDTH * ratio);
         texture  = new Texture("badlogic.jpg");
         game = BattleShip.getInstance();
-        board = new BoardController(20);
+        board = new BoardController(10);
     }
     /**
      * Render override
@@ -45,9 +45,9 @@ public class CreatorScreen extends ScreenAdapter{
         else
             Gdx.gl.glClearColor(0,0,0,1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT);
-        game.batch.begin();
-        game.batch.draw(texture,0,0);
-        game.batch.end();
+        game.getBatch().begin();
+        game.getBatch().draw(texture,0,0);
+        game.getBatch().end();
     }
     /**
      * Resize override
