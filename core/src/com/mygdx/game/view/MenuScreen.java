@@ -58,7 +58,7 @@ public class MenuScreen extends ScreenAdapter {
     @Override
     public void resize(int width, int height) {
         super.resize(width, height);
-        game.getViewport().update(width, height, true);
+        menuStage.getViewport().update(width, height, true);
     }
     /**
      * Dispose Override

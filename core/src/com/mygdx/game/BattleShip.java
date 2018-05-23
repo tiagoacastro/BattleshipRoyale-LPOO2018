@@ -12,22 +12,16 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
  * BattleShip game class (singleton)
  */
 public class BattleShip extends Game {
-	public final float VIEWPORT_WIDTH = 30;
-	public final float PIXEL_TO_METER = 0.04f;
-	public float ratio;
 	private static BattleShip battleship;
 	private AssetManager assetManager;
 	private SpriteBatch batch;
 	private BattleShip game;
-	private Viewport viewport;
 	/**
 	 * Creates a new game and set the current screen
 	 */
 	@Override
 	public void create() {
 		battleship = this;
-		ratio = ((float) Gdx.graphics.getHeight() / (float) Gdx.graphics.getWidth());
-		this.viewport = new FitViewport(VIEWPORT_WIDTH, VIEWPORT_WIDTH * ratio);
 		assetManager = new AssetManager();
         batch = new SpriteBatch();
 		setScreen(new MenuScreen());
@@ -61,13 +55,5 @@ public class BattleShip extends Game {
 	 */
 	public SpriteBatch getBatch() {
 		return batch;
-	}
-
-	/**
-	 * Getter for the viewport
-	 * @return	viewport
-	 */
-	public Viewport getViewport() {
-		return viewport;
 	}
 }
