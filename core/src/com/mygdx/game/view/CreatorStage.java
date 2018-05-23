@@ -3,8 +3,10 @@ package com.mygdx.game.view;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Button;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
@@ -19,6 +21,7 @@ class CreatorStage extends Stage {
     private BattleShip game;
     private Viewport viewport;
     private BoardController board;
+    private Table table;
 
     CreatorStage() {
         game = BattleShip.getInstance();
@@ -28,6 +31,11 @@ class CreatorStage extends Stage {
         viewport.apply();
         this.setViewport(this.viewport);
 
+        table = new Table();
+        table.setFillParent(true);
+        table.setDebug(true);                           //remove later
+        this.addActor(table);
+
         board = new BoardController(BOARD_SIZE);
         this.drawBoard();
 
@@ -35,13 +43,15 @@ class CreatorStage extends Stage {
     }
 
     private void drawBoard(){
-        /*for(int y = 0; y < BOARD_SIZE; y++){
+        TextButton.TextButtonStyle style = new TextButton.TextButtonStyle();
+        style.font = new BitmapFont();
+        for(int y = 0; y < BOARD_SIZE; y++){
             for(int x = 0; x < BOARD_SIZE; x++){
-                Button button = new Button();
-                button.setColor(Color.BLACK);
-                this.addActor(button);
+                TextButton button = new TextButton(" ", style);
+                table.add(button);
             }
-        }*/
+            table.row();
+        }
     }
 
     @Override

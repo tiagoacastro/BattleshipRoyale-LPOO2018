@@ -49,7 +49,7 @@ class MenuStage extends Stage {
         style.font = new BitmapFont();
 
         playButton = new TextButton("play", style);
-        table.add(playButton).width(VIEWPORT_WIDTH/4).height(VIEWPORT_WIDTH*ratio/4).expand();
+        table.add(playButton).width(VIEWPORT_WIDTH/5).height(VIEWPORT_WIDTH*ratio/5).expand();
         playButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 game.setScreen(new CreatorScreen());
@@ -57,12 +57,14 @@ class MenuStage extends Stage {
         });
 
         settingsButton = new TextButton("settings", style);
-        table.add(settingsButton).width(VIEWPORT_WIDTH/4).height(VIEWPORT_WIDTH*ratio/4).expand();
+        table.add(settingsButton).width(VIEWPORT_WIDTH/5).height(VIEWPORT_WIDTH*ratio/5).expand();
         settingsButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 //depois mete-se
             }
         });
+
+        table.row();
     }
 
     @Override
