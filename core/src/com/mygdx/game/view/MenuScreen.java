@@ -10,26 +10,23 @@ import com.mygdx.game.BattleShip;
  * Menu Screen
  */
 public class MenuScreen extends ScreenAdapter {
-    private MenuStage menuStage;
-
     private BattleShip game;
+    private MenuStage menuStage;
     /**
      * GameScreen Default Constructor
      */
     public MenuScreen(){
         game = BattleShip.getInstance();
 
-        loadAssets();
+        this.loadAssets();
 
         menuStage = new MenuStage();
-        Gdx.input.setInputProcessor(menuStage);
     }
     /**
      * Loads the assets needed by this screen.
      */
     private void loadAssets() {
-        this.game.getAssetManager().load( "black.jpg" , Texture.class);
-        this.game.getAssetManager().finishLoading();
+
     }
     /**
      * Render override
@@ -41,12 +38,7 @@ public class MenuScreen extends ScreenAdapter {
 
         Gdx.gl.glClearColor(255,255,255,1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT);
-        /*
-        Texture badlogic = game.getAssetManager().get("badlogic.jpg");
-        game.getBatch().begin();
-        game.getBatch().draw(badlogic,0,0);
-        game.getBatch().end();
-        */
+
         menuStage.act();
         menuStage.draw();
     }
