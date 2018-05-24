@@ -31,6 +31,8 @@ class CreatorStage extends Stage {
         viewport.apply();
         this.setViewport(this.viewport);
 
+        Gdx.input.setInputProcessor(this);
+
         table = new Table();
         table.setFillParent(true);
         table.setDebug(true);                           //remove later
@@ -38,17 +40,16 @@ class CreatorStage extends Stage {
 
         board = new BoardController(BOARD_SIZE);
         this.drawBoard();
-
-        Gdx.input.setInputProcessor(this);
     }
 
     private void drawBoard(){
         TextButton.TextButtonStyle style = new TextButton.TextButtonStyle();
         style.font = new BitmapFont();
         for(int y = 0; y < BOARD_SIZE; y++){
+            table.add().width(VIEWPORT_WIDTH/2);
             for(int x = 0; x < BOARD_SIZE; x++){
                 TextButton button = new TextButton(" ", style);
-                table.add(button);
+                table.add(button).width(VIEWPORT_WIDTH/20).height(VIEWPORT_WIDTH*ratio/10);
             }
             table.row();
         }
