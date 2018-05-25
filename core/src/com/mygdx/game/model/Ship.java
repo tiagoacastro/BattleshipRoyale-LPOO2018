@@ -17,22 +17,48 @@ public abstract class Ship{
     public void updateCell(Board board, int index){
         switch(way){
             case W:
-                board.getMatrix()[x + index][y].occupy(this);
-                cells[index] = board.getMatrix()[x + index][y];
-                break;
-            case S:
-                board.getMatrix()[x][y - index].occupy(this);
-                cells[index] = board.getMatrix()[x][y - index];
-                break;
-            case E:
-                board.getMatrix()[x - index][y].occupy(this);
-                cells[index] = board.getMatrix()[x - index][y];
-                break;
-            case N:
                 board.getMatrix()[x][y + index].occupy(this);
                 cells[index] = board.getMatrix()[x][y + index];
                 break;
+            case S:
+                board.getMatrix()[x - index][y].occupy(this);
+                cells[index] = board.getMatrix()[x - index][y];
+                break;
+            case E:
+                board.getMatrix()[x][y - index].occupy(this);
+                cells[index] = board.getMatrix()[x][y - index];
+                break;
+            case N:
+                board.getMatrix()[x + index][y].occupy(this);
+                cells[index] = board.getMatrix()[x + index][y];
+                break;
         }
+    }
+
+    public boolean check(Board board, int x, int y, int index){
+        try{
+            switch (way) {
+                case W:
+                    if (board.getMatrix()[x][y + index].occupied(this))
+                        return false;
+                    break;
+                case S:
+                    if (board.getMatrix()[x - index][y].occupied(this))
+                        return false;
+                    break;
+                case E:
+                    if (board.getMatrix()[x][y - index].occupied(this))
+                        return false;
+                    break;
+                case N:
+                    if (board.getMatrix()[x + index][y].occupied(this))
+                        return false;
+                    break;
+            }
+        } catch(ArrayIndexOutOfBoundsException e){
+            return false;
+        }
+        return true;
     }
 
     public void destroy(){

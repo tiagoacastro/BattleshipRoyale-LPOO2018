@@ -22,29 +22,31 @@ public class BoardController {
     public enum Ships{carrier, cruiser, dreadnought, submarine, patrolBoat}
 
     public BoardController(int dimension) {
-        this.board = new Board(dimension);
+        this.board = new Board(dimension, this);
     }
 
     public void setChosen(Ships choice) {
-        if(this.chosen == null)
-            switch(choice){
-                case carrier:
-                    this.chosen = this.carrier;
-                    break;
-                case cruiser:
-                    this.chosen = this.cruiser;
-                    break;
-                case dreadnought:
+        switch(choice){
+            case carrier:
+                this.chosen = this.carrier;
+                break;
+            case cruiser:
+                this.chosen = this.cruiser;
+                break;
+            case dreadnought:
+                this.chosen = this.dreadnought;
+                break;
+            case submarine:
+                this.chosen = this.submarine;
+                break;
+            case patrolBoat:
+                this.chosen = this.patrolBoat;
+                break;
+        }
+    }
 
-                    this.chosen = this.dreadnought;
-                    break;
-                case submarine:
-                    this.chosen = this.submarine;
-                    break;
-                case patrolBoat:
-                    this.chosen = this.patrolBoat;
-                    break;
-            }
+    public ShipController getChosen() {
+        return chosen;
     }
 
     public Board getBoard() {

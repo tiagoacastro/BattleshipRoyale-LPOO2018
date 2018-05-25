@@ -14,6 +14,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.BattleShip;
 import com.mygdx.game.controller.BoardController;
+import com.mygdx.game.controller.ShipController;
 
 class CreatorStage extends Stage {
     private final float VIEWPORT_WIDTH = 800;
@@ -58,7 +59,7 @@ class CreatorStage extends Stage {
             for(int x = 0; x < BOARD_SIZE; x++){
                 TextButton button = new TextButton("c", style);
                 boardTable.add(button).width(VIEWPORT_WIDTH/24).height(VIEWPORT_WIDTH*ratio/12);
-                board.getBoard().getMatrix()[y][x].setButton(button);                                   //listener na classe cell
+                board.getBoard().getMatrix()[y][x].setButton(button);;
             }
             boardTable.add().width(VIEWPORT_WIDTH/24);
             boardTable.row();
