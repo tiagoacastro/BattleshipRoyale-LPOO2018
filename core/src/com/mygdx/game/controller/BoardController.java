@@ -35,6 +35,7 @@ public class BoardController {
                     this.chosen = this.cruiser;
                     break;
                 case dreadnought:
+
                     this.chosen = this.dreadnought;
                     break;
                 case submarine:
@@ -46,5 +47,7 @@ public class BoardController {
             }
     }
 
-
+    public Board getBoard() {
+        return board;
+    }
 }

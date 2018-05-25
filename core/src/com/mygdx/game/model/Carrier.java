@@ -21,20 +21,20 @@ public class Carrier extends Ship {
         else
             switch (way) {
                 case W:
-                    board.getBoard()[x + (index - 1)][y + 1].occupy(this);
-                    cells[index] = board.getBoard()[x + (index - 1)][y + 1];
+                    board.getMatrix()[x + (index - 1)][y + 1].occupy(this);
+                    cells[index] = board.getMatrix()[x + (index - 1)][y + 1];
                     break;
                 case S:
-                    board.getBoard()[x + 1][y - (index - 1)].occupy(this);
-                    cells[index] = board.getBoard()[x + 1][y - (index - 1)];
+                    board.getMatrix()[x + 1][y - (index - 1)].occupy(this);
+                    cells[index] = board.getMatrix()[x + 1][y - (index - 1)];
                     break;
                 case E:
-                    board.getBoard()[x - (index - 1)][y - 1].occupy(this);
-                    cells[index] = board.getBoard()[x - (index - 1)][y - 1];
+                    board.getMatrix()[x - (index - 1)][y - 1].occupy(this);
+                    cells[index] = board.getMatrix()[x - (index - 1)][y - 1];
                     break;
                 case N:
-                    board.getBoard()[x - 1][y + (index - 1)].occupy(this);
-                    cells[index] = board.getBoard()[x - 1][y + (index - 1)];
+                    board.getMatrix()[x - 1][y + (index - 1)].occupy(this);
+                    cells[index] = board.getMatrix()[x - 1][y + (index - 1)];
                     break;
             }
     }

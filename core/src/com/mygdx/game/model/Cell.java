@@ -1,6 +1,8 @@
 package com.mygdx.game.model;
 
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
 /**
  * Ship part that creates the boats
@@ -10,7 +12,7 @@ public class Cell {
     private int x;
     private int y;
     private boolean destroyed = false;
-    private TextButton button;
+    private TextButton creatorButton;
 
     Cell(int x, int y){
         this.x = x;
@@ -54,11 +56,15 @@ public class Cell {
     }
 
     public TextButton getButton() {
-        return button;
+        return creatorButton;
     }
 
     public void setButton(TextButton button) {
-        this.button = button;
+        this.creatorButton = button;
+        this.creatorButton.addListener(new ClickListener() {
+            public void clicked(InputEvent event, float x, float y){
 
+            }
+        });
     }
 }

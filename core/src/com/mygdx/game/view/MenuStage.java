@@ -21,7 +21,6 @@ class MenuStage extends Stage {
     private BattleShip game;
     private TextButton playButton;
     private TextButton settingsButton;
-    private Label title;
     private Viewport viewport;
     private Table table;
 
@@ -39,9 +38,9 @@ class MenuStage extends Stage {
         table.setFillParent(true);
         this.addActor(table);
 
-        title = new Label("Battleship Royale", new Label.LabelStyle(new BitmapFont(), null));
-        table.add(title).height(VIEWPORT_WIDTH*ratio/4).colspan(3).center();
+        Label title = new Label("Battleship Royale", new Label.LabelStyle(new BitmapFont(), null));
         title.setColor(Color.BLACK);
+        table.add(title).height(VIEWPORT_WIDTH*ratio/3).colspan(2).center();
 
         table.row();
 
@@ -65,6 +64,8 @@ class MenuStage extends Stage {
         });
 
         table.row();
+
+        table.add().height(VIEWPORT_WIDTH*ratio/3).colspan(2);
     }
 
     @Override

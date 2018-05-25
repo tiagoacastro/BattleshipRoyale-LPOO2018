@@ -17,20 +17,20 @@ public abstract class Ship{
     public void updateCell(Board board, int index){
         switch(way){
             case W:
-                board.getBoard()[x + index][y].occupy(this);
-                cells[index] = board.getBoard()[x + index][y];
+                board.getMatrix()[x + index][y].occupy(this);
+                cells[index] = board.getMatrix()[x + index][y];
                 break;
             case S:
-                board.getBoard()[x][y - index].occupy(this);
-                cells[index] = board.getBoard()[x][y - index];
+                board.getMatrix()[x][y - index].occupy(this);
+                cells[index] = board.getMatrix()[x][y - index];
                 break;
             case E:
-                board.getBoard()[x - index][y].occupy(this);
-                cells[index] = board.getBoard()[x - index][y];
+                board.getMatrix()[x - index][y].occupy(this);
+                cells[index] = board.getMatrix()[x - index][y];
                 break;
             case N:
-                board.getBoard()[x][y + index].occupy(this);
-                cells[index] = board.getBoard()[x][y + index];
+                board.getMatrix()[x][y + index].occupy(this);
+                cells[index] = board.getMatrix()[x][y + index];
                 break;
         }
     }

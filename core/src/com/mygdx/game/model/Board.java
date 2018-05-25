@@ -14,7 +14,7 @@ public class Board {
             }
     }
 
-    public Cell[][] getBoard() {
+    public Cell[][] getMatrix() {
         return matrix;
     }
 }
