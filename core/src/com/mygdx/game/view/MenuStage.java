@@ -1,6 +1,7 @@
 package com.mygdx.game.view;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -66,6 +67,9 @@ class MenuStage extends Stage {
         table.row();
 
         table.add().height(VIEWPORT_WIDTH*ratio/3).colspan(2);
+
+        Music thunder = game.getAssetManager().get("thunder.mp3");
+        thunder.play();
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.mygdx.game.view;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.mygdx.game.BattleShip;
@@ -26,7 +27,8 @@ public class MenuScreen extends ScreenAdapter {
      * Loads the assets needed by this screen.
      */
     private void loadAssets() {
-
+        game.getAssetManager().load("thunder.mp3", Music.class);
+        game.getAssetManager().finishLoading();
     }
     /**
      * Render override
