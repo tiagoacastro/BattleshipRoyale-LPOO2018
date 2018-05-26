@@ -93,7 +93,7 @@ class CreatorStage extends Stage {
     private ImageButton createShipButton(int i,ImageButton shipButton) {
         switch(i){
             case 0:
-                Texture myCarrier = game.getAssetManager().get("ship_small_b_body.png");
+                Texture myCarrier = game.getAssetManager().get("carrier.png");
                 TextureRegion myCarrierRegion = new TextureRegion(myCarrier);
                 TextureRegionDrawable myCarrierRegionDrawable = new TextureRegionDrawable(myCarrierRegion);
                 shipButton = new ImageButton(myCarrierRegionDrawable); //Set the button up
@@ -115,7 +115,7 @@ class CreatorStage extends Stage {
                 });
                 break;
             case 2:
-                Texture mySubmarine = game.getAssetManager().get("ship_small_b_body.png");
+                Texture mySubmarine = game.getAssetManager().get("submarine.png");
                 TextureRegion mySubmarineRegion = new TextureRegion(mySubmarine);
                 TextureRegionDrawable mySubmarineRegionDrawable = new TextureRegionDrawable(mySubmarineRegion);
                 shipButton = new ImageButton(mySubmarineRegionDrawable); //Set the button up
@@ -126,7 +126,7 @@ class CreatorStage extends Stage {
                 });
                 break;
             case 3:
-                Texture myCruiser = game.getAssetManager().get("ship_small_b_body.png");
+                Texture myCruiser = game.getAssetManager().get("cruiser.png");
                 TextureRegion myCruiserRegion = new TextureRegion(myCruiser);
                 TextureRegionDrawable myCruiserRegionDrawable = new TextureRegionDrawable(myCruiserRegion);
                 shipButton = new ImageButton(myCruiserRegionDrawable); //Set the button up
@@ -137,7 +137,7 @@ class CreatorStage extends Stage {
                 });
                 break;
             case 4:
-                Texture myPatrolBoat = game.getAssetManager().get("ship_small_b_body.png");
+                Texture myPatrolBoat = game.getAssetManager().get("patrolBoat.png");
                 TextureRegion myPatrolBoatRegion = new TextureRegion(myPatrolBoat);
                 TextureRegionDrawable myPatrolBoatRegionDrawable = new TextureRegionDrawable(myPatrolBoatRegion);
                 shipButton = new ImageButton(myPatrolBoatRegionDrawable); //Set the button up
