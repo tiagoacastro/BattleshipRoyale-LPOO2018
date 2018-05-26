@@ -21,7 +21,7 @@ class MenuStage extends Stage {
     private float ratio;
     private BattleShip game;
     private TextButton playButton;
-    private TextButton settingsButton;
+    private TextButton toggleButton;
     private Viewport viewport;
     private Table table;
     private Music music;
@@ -42,7 +42,7 @@ class MenuStage extends Stage {
 
         Label title = new Label("Battleship Royale", new Label.LabelStyle(new BitmapFont(), null));
         title.setColor(Color.BLACK);
-        table.add(title).height(VIEWPORT_WIDTH*ratio/3).colspan(2).center();
+        table.add(title).height(VIEWPORT_WIDTH*ratio/3).center().colspan(2);
 
         table.row();
 
@@ -50,27 +50,34 @@ class MenuStage extends Stage {
         style.font = new BitmapFont();
 
         playButton = new TextButton("Play", style);
-        table.add(playButton).width(VIEWPORT_WIDTH/5).height(VIEWPORT_WIDTH*ratio/5).expand();
+        table.add(playButton).width(VIEWPORT_WIDTH/5).height(VIEWPORT_WIDTH*ratio/5).expand().center().bottom().colspan(2);
         playButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 game.setScreen(new CreatorScreen());
             }
         });
 
-        settingsButton = new TextButton("Settings", style);
-        table.add(settingsButton).width(VIEWPORT_WIDTH/5).height(VIEWPORT_WIDTH*ratio/5).expand();
-        settingsButton.addListener(new ClickListener() {
-            public void clicked(InputEvent event, float x, float y){
-                game.setScreen(new SettingsScreen(music));
-            }
-        });
-
         table.row();
-
-        table.add().height(VIEWPORT_WIDTH*ratio/3).colspan(2);
 
         music = game.getAssetManager().get("thunder.mp3");
         music.play();
+
+        toggleButton = new TextButton("Toggle Music", style);
+        table.add(toggleButton).width(VIEWPORT_WIDTH/6).height(VIEWPORT_WIDTH*ratio/6).expand().right().bottom();
+        toggleButton.addListener(new ClickListener() {
+            public void clicked(InputEvent event, float x, float y){
+                if(music.isPlaying()) {
+                    music.stop();
+                }else{
+                    music.play();
+                }
+            }
+        });
+        table.add().width(VIEWPORT_WIDTH/20).height(VIEWPORT_WIDTH*ratio*4/15);
+
+        table.row();
+
+        table.add().height(VIEWPORT_WIDTH*ratio/15).colspan(2);
     }
 
     @Override
