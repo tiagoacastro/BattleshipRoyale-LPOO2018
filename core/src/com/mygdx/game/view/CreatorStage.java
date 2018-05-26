@@ -4,12 +4,15 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.BattleShip;
@@ -68,15 +71,14 @@ class CreatorStage extends Stage {
     }
 
     private void drawGui(){
-        TextButton.TextButtonStyle style = new TextButton.TextButtonStyle();
-        style.font = new BitmapFont();
         Label title = new Label("Board Creator", new Label.LabelStyle(new BitmapFont(), null));
         title.setColor(Color.BLACK);
         guiTable.add(title).center().height(VIEWPORT_WIDTH*ratio/12).colspan(2);
         guiTable.row();
         for (int i = 0; i < 5; i++) {
-            TextButton shipButton = new TextButton("ship", style);;
-            shipButton = createShipButton(style, i, shipButton);
+            ImageButton.ImageButtonStyle style = new ImageButton.ImageButtonStyle();
+            ImageButton shipButton = new ImageButton(style);
+            shipButton = createShipButton(i, shipButton);
             guiTable.add(shipButton).width(VIEWPORT_WIDTH / 4).height(10*VIEWPORT_WIDTH * ratio / 108).center().expand();
             guiTable.add().width(VIEWPORT_WIDTH / 2).height(10*VIEWPORT_WIDTH * ratio / 108);
             guiTable.row();
@@ -88,10 +90,13 @@ class CreatorStage extends Stage {
         guiTable.add().height(VIEWPORT_WIDTH*ratio/12).colspan(2);
     }
 
-    private TextButton createShipButton(TextButton.TextButtonStyle style, int i, TextButton shipButton) {
+    private ImageButton createShipButton(int i,ImageButton shipButton) {
         switch(i){
             case 0:
-                shipButton = new TextButton("Carrier", style);
+                Texture myCarrier = game.getAssetManager().get("ship_small_b_body.png");
+                TextureRegion myCarrierRegion = new TextureRegion(myCarrier);
+                TextureRegionDrawable myCarrierRegionDrawable = new TextureRegionDrawable(myCarrierRegion);
+                shipButton = new ImageButton(myCarrierRegionDrawable); //Set the button up
                 shipButton.addListener(new ClickListener() {
                     public void clicked(InputEvent event, float x, float y){
                         board.setChosen(BoardController.Ships.carrier);
@@ -99,7 +104,10 @@ class CreatorStage extends Stage {
                 });
                 break;
             case 1:
-                shipButton = new TextButton("Dreadnought", style);
+                Texture myDreadnought = game.getAssetManager().get("ship_small_b_body.png");
+                TextureRegion myDreadnoughtRegion = new TextureRegion(myDreadnought);
+                TextureRegionDrawable myDreadnoughtRegionDrawable = new TextureRegionDrawable(myDreadnoughtRegion);
+                shipButton = new ImageButton(myDreadnoughtRegionDrawable); //Set the button up
                 shipButton.addListener(new ClickListener() {
                     public void clicked(InputEvent event, float x, float y){
                         board.setChosen(BoardController.Ships.dreadnought);
@@ -107,7 +115,10 @@ class CreatorStage extends Stage {
                 });
                 break;
             case 2:
-                shipButton = new TextButton("Submarine", style);
+                Texture mySubmarine = game.getAssetManager().get("ship_small_b_body.png");
+                TextureRegion mySubmarineRegion = new TextureRegion(mySubmarine);
+                TextureRegionDrawable mySubmarineRegionDrawable = new TextureRegionDrawable(mySubmarineRegion);
+                shipButton = new ImageButton(mySubmarineRegionDrawable); //Set the button up
                 shipButton.addListener(new ClickListener() {
                     public void clicked(InputEvent event, float x, float y){
                         board.setChosen(BoardController.Ships.submarine);
@@ -115,7 +126,10 @@ class CreatorStage extends Stage {
                 });
                 break;
             case 3:
-                shipButton = new TextButton("Cruiser", style);
+                Texture myCruiser = game.getAssetManager().get("ship_small_b_body.png");
+                TextureRegion myCruiserRegion = new TextureRegion(myCruiser);
+                TextureRegionDrawable myCruiserRegionDrawable = new TextureRegionDrawable(myCruiserRegion);
+                shipButton = new ImageButton(myCruiserRegionDrawable); //Set the button up
                 shipButton.addListener(new ClickListener() {
                     public void clicked(InputEvent event, float x, float y){
                         board.setChosen(BoardController.Ships.cruiser);
@@ -123,12 +137,16 @@ class CreatorStage extends Stage {
                 });
                 break;
             case 4:
-                shipButton = new TextButton("Patrol Boat", style);
+                Texture myPatrolBoat = game.getAssetManager().get("ship_small_b_body.png");
+                TextureRegion myPatrolBoatRegion = new TextureRegion(myPatrolBoat);
+                TextureRegionDrawable myPatrolBoatRegionDrawable = new TextureRegionDrawable(myPatrolBoatRegion);
+                shipButton = new ImageButton(myPatrolBoatRegionDrawable); //Set the button up
                 shipButton.addListener(new ClickListener() {
                     public void clicked(InputEvent event, float x, float y){
-                        board.setChosen(BoardController.Ships.patrolBoat);
+                        board.setChosen(BoardController.Ships.cruiser);
                     }
                 });
+
                 break;
         }
         return shipButton;
@@ -149,4 +167,5 @@ class CreatorStage extends Stage {
         return viewport;
     }
 }
+
 

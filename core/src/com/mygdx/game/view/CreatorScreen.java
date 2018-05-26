@@ -2,9 +2,12 @@ package com.mygdx.game.view;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
+import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.mygdx.game.BattleShip;
+
+import org.omg.CORBA.BAD_CONTEXT;
 
 /**
  * Screen when it's your turn
@@ -25,8 +28,9 @@ public class CreatorScreen extends ScreenAdapter{
     /**
      * Loads the assets needed by this screen.
      */
-    private void loadAssets() {
-
+    public void loadAssets() {
+    game.getAssetManager().load("ship_small_b_body.png", Texture.class);
+    game.getAssetManager().finishLoading();
     }
     /**
      * Render override
