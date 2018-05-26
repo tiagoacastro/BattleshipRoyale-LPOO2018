@@ -20,7 +20,7 @@ public abstract class Ship{
                 board.getMatrix()[x][y + index].occupy(this);
                 cells[index] = board.getMatrix()[x][y + index];
                 break;
-            case S:
+            case N:
                 board.getMatrix()[x - index][y].occupy(this);
                 cells[index] = board.getMatrix()[x - index][y];
                 break;
@@ -28,7 +28,7 @@ public abstract class Ship{
                 board.getMatrix()[x][y - index].occupy(this);
                 cells[index] = board.getMatrix()[x][y - index];
                 break;
-            case N:
+            case S:
                 board.getMatrix()[x + index][y].occupy(this);
                 cells[index] = board.getMatrix()[x + index][y];
                 break;
@@ -42,7 +42,7 @@ public abstract class Ship{
                     if (board.getMatrix()[x][y + index].occupied(this))
                         return false;
                     break;
-                case S:
+                case N:
                     if (board.getMatrix()[x - index][y].occupied(this))
                         return false;
                     break;
@@ -50,7 +50,7 @@ public abstract class Ship{
                     if (board.getMatrix()[x][y - index].occupied(this))
                         return false;
                     break;
-                case N:
+                case S:
                     if (board.getMatrix()[x + index][y].occupied(this))
                         return false;
                     break;

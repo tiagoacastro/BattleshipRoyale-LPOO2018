@@ -24,7 +24,7 @@ public class Carrier extends Ship {
                     board.getMatrix()[x + 1][y + (index - 1)].occupy(this);
                     cells[index] = board.getMatrix()[x + 1][y + (index - 1)];
                     break;
-                case S:
+                case N:
                     board.getMatrix()[x - (index - 1)][y + 1].occupy(this);
                     cells[index] = board.getMatrix()[x - (index - 1)][y + 1];
                     break;
@@ -32,7 +32,7 @@ public class Carrier extends Ship {
                     board.getMatrix()[x - 1][y - (index - 1)].occupy(this);
                     cells[index] = board.getMatrix()[y - 1][x - (index - 1)];
                     break;
-                case N:
+                case S:
                     board.getMatrix()[x + (index - 1)][y - 1].occupy(this);
                     cells[index] = board.getMatrix()[y + (index - 1)][x - 1];
                     break;
@@ -50,7 +50,7 @@ public class Carrier extends Ship {
                         if(board.getMatrix()[x + 1][y + (index - 1)].occupied(this))
                             return false;
                         break;
-                    case S:
+                    case N:
                         if(board.getMatrix()[x - (index - 1)][y + 1].occupied(this))
                             return false;
                         break;
@@ -58,7 +58,7 @@ public class Carrier extends Ship {
                         if(board.getMatrix()[x - 1][y - (index - 1)].occupied(this))
                             return false;
                         break;
-                    case N:
+                    case S:
                         if(board.getMatrix()[x + (index - 1)][y - 1].occupied(this))
                             return false;
                         break;

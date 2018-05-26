@@ -42,7 +42,11 @@ class MenuStage extends Stage {
 
         Label title = new Label("Battleship Royale", new Label.LabelStyle(new BitmapFont(), null));
         title.setColor(Color.BLACK);
-        table.add(title).height(VIEWPORT_WIDTH*ratio/3).center().colspan(2);
+        table.add(title).height(VIEWPORT_WIDTH*ratio*2/9).center().colspan(2);
+
+        table.row();
+
+        table.add().height(VIEWPORT_WIDTH*ratio/9).colspan(2);
 
         table.row();
 
