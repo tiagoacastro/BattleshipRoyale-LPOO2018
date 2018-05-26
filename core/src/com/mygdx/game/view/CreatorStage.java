@@ -89,7 +89,7 @@ class CreatorStage extends Stage {
         }
         TextButton.TextButtonStyle textStyle = new TextButton.TextButtonStyle();
         textStyle.font = new BitmapFont();
-        TextButton rotateButton = new TextButton("rotate", textStyle);
+        TextButton rotateButton = new TextButton("Rotate", textStyle);
         rotateButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 if(board.getChosen() != null)
@@ -159,16 +159,6 @@ class CreatorStage extends Stage {
                 break;
         }
         return shipButton;
-    }
-
-    @Override
-    public void act(float delta) {
-        super.act(delta);
-    }
-
-    @Override
-    public void draw() {
-        super.draw();
     }
 
     @Override

@@ -4,7 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
 import com.mygdx.game.BattleShip;
 
 /**
@@ -53,14 +52,6 @@ public class MenuScreen extends ScreenAdapter {
     public void resize(int width, int height) {
         super.resize(width, height);
         menuStage.getViewport().update(width, height, true);
-    }
-    /**
-     * Dispose Override
-     */
-    @Override
-    public void dispose() {
-        super.dispose();
-        game.dispose();
     }
 }
 

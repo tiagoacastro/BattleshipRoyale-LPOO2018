@@ -2,12 +2,9 @@ package com.mygdx.game.view;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
-import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.mygdx.game.BattleShip;
-
-import org.omg.CORBA.BAD_CONTEXT;
 
 /**
  * Screen when it's your turn
@@ -18,7 +15,7 @@ public class CreatorScreen extends ScreenAdapter{
     /**
      * GameScreen Default Constructor
      */
-    public CreatorScreen(){
+    CreatorScreen(){
         game = BattleShip.getInstance();
 
         this.loadAssets();
@@ -28,13 +25,13 @@ public class CreatorScreen extends ScreenAdapter{
     /**
      * Loads the assets needed by this screen.
      */
-    public void loadAssets() {
-    game.getAssetManager().load("ship_small_b_body.png", Texture.class);
-    game.getAssetManager().load("carrier.png", Texture.class);
-    game.getAssetManager().load("cruiser.png", Texture.class);
-    game.getAssetManager().load("patrolBoat.png", Texture.class);
-    game.getAssetManager().load("submarine.png", Texture.class);
-    game.getAssetManager().finishLoading();
+    private void loadAssets() {
+        game.getAssetManager().load("ship_small_b_body.png", Texture.class);
+        game.getAssetManager().load("carrier.png", Texture.class);
+        game.getAssetManager().load("cruiser.png", Texture.class);
+        game.getAssetManager().load("patrolBoat.png", Texture.class);
+        game.getAssetManager().load("submarine.png", Texture.class);
+        game.getAssetManager().finishLoading();
     }
     /**
      * Render override
@@ -59,13 +56,5 @@ public class CreatorScreen extends ScreenAdapter{
     public void resize(int width, int height) {
         super.resize(width, height);
         creatorStage.getViewport().update(width, height, true);
-    }
-    /**
-     * Dispose Override
-     */
-    @Override
-    public void dispose() {
-        super.dispose();
-        game.dispose();
     }
 }
