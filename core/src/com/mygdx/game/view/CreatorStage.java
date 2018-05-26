@@ -87,7 +87,16 @@ class CreatorStage extends Stage {
                 guiTable.row();
             }
         }
-        guiTable.add().height(VIEWPORT_WIDTH*ratio/12).colspan(2);
+        TextButton.TextButtonStyle textStyle = new TextButton.TextButtonStyle();
+        textStyle.font = new BitmapFont();
+        TextButton rotateButton = new TextButton("rotate", textStyle);
+        rotateButton.addListener(new ClickListener() {
+            public void clicked(InputEvent event, float x, float y){
+                if(board.getChosen() != null)
+                    board.getChosen().rotate();
+            }
+        });
+        guiTable.add(rotateButton).width(VIEWPORT_WIDTH / 4).height(VIEWPORT_WIDTH*ratio/12).colspan(2).expand();
     }
 
     private ImageButton createShipButton(int i,ImageButton shipButton) {
@@ -143,7 +152,7 @@ class CreatorStage extends Stage {
                 shipButton = new ImageButton(myPatrolBoatRegionDrawable); //Set the button up
                 shipButton.addListener(new ClickListener() {
                     public void clicked(InputEvent event, float x, float y){
-                        board.setChosen(BoardController.Ships.cruiser);
+                        board.setChosen(BoardController.Ships.patrolBoat);
                     }
                 });
 
