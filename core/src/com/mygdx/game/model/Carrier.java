@@ -30,11 +30,11 @@ public class Carrier extends Ship {
                     break;
                 case E:
                     board.getMatrix()[x - 1][y - (index - 1)].occupy(this);
-                    cells[index] = board.getMatrix()[y - 1][x - (index - 1)];
+                    cells[index] = board.getMatrix()[x - 1][y - (index - 1)];
                     break;
                 case S:
                     board.getMatrix()[x + (index - 1)][y - 1].occupy(this);
-                    cells[index] = board.getMatrix()[y + (index - 1)][x - 1];
+                    cells[index] = board.getMatrix()[x + (index - 1)][y - 1];
                     break;
             }
     }
