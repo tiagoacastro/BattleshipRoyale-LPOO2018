@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.0.0_e2c65867e9f7fe217229f9ffb0cc8de28c97f9fa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tiago/.gradle/caches/modules-2/files-2.1/de.tomgrill.gdxfacebook/gdx-facebook-core/1.4.1/1b5d4948b033a4b9a8f360d0fa76c49e6e17baec/gdx-facebook-core-1.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="1b5d4948b033a4b9a8f360d0fa76c49e6e17baec">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/gdx-facebook-core-1.4.1_f2aa584e7527f9f96d1421e9c73bf2937a5c6c1c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tiago/Desktop/Battleship-Royale/App/core/build/libs/core-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="cfcf30c6ca2b28775872a3e73adffba31edd0e9e">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/core-1.0_a56855e21217076b6410c39d5adf9c408475016b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tiago/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="a35a0076fbce873f9c2d5a1a1c8066244231bb3c">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/gdx-1.9.8_3fe7f5ce6628b22e7bd91c188fcf3edb7fbec04a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tiago/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="6f0497b7958216464101adfb7bdc3a0f7b88d6d3">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/gdx-box2d-1.9.8_cbeb1c271f6a00d55e3b21bee9fbe36b098a70b8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tiago/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-android/1.9.8/84024cd60ad6f26370891fbcd17de9f0167e662/gdx-backend-android-1.9.8.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="084024cd60ad6f26370891fbcd17de9f0167e662">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/gdx-backend-android-1.9.8_bf880c0fcc3fe4e96bd678d0f7ad14f097bd6286.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_3d470cb12fd01d59c6a98bc6b1c513cad6c61c5a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.0.0_4224843c35960f77d6306d55a4d53ac19c05d1b5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tiago/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-ai/1.8.0/ec30677d8ab1a8b8aa4b853c5f4e4b1361f50bf5/gdx-ai-1.8.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="ec30677d8ab1a8b8aa4b853c5f4e4b1361f50bf5">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/gdx-ai-1.8.0_226c77775fb3c41ac1987b22131174c58cf9977e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.0.0_f9b1bed40c1178aff16c2704c061aac10b6dd7fc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_c27e92568ab8ae79b1df86fd04063dfc73a3919a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-25.0.0_7b327273823bee73a285b8ce7ac74b7179a931a4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tiago/.gradle/caches/modules-2/files-2.1/com.badlogicgames.box2dlights/box2dlights/1.4/3d77ad5b4164fb32fc67e2446e35911bb0aaf0bd/box2dlights-1.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="3d77ad5b4164fb32fc67e2446e35911bb0aaf0bd">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/box2dlights-1.4_ba642b51af59947eb2aca5d6941b2f47216e13cf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/de.tomgrill.gdxfacebook/gdx-facebook-android/1.4.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="96452ea1fe36fa54654e545b0263d6a979ee6083">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/de.tomgrill.gdxfacebook-gdx-facebook-android-1.4.1_bb65aaa6e8eeac670f0542ca71a4d3ad3da0e89a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-25.0.0_53b88be86554cda76a52d362c63367b2e254866b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="43a08f2cc1bc8e9678b5a1740f3b91b50ab50ac6">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/com.facebook.android-facebook-android-sdk-4.18.0_3ce96a3a18d79d076b19d087ebc46fe6d3def09a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tiago/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.0/support-annotations-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/support-annotations-25.0.0_a0e6bb806c765b1ebbc03c6d554fec75f3324fb2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/customtabs/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="94ba691efc31bf53264db0716d9c9ec03843ea31">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/com.android.support-customtabs-25.0.0_8b8f2b32dc2506c793b90266d140553c8ac2663f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_277e66d527b776f97d17d70c6c2616789c3dedd2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tiago/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_531b6b9a6c952bff655c453eda1dd0719e2ea6eb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.0.0_401a069e6aaffbebd70faa5a44e66c59de32f6de.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-25.0.0_149ba8411d7188d58198637f053f18d657ded180.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="26674000177e45447a0326a6ad84612761199a13">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.0.0_2c8833035aab58be8c2f52c0628836fd4555dca1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_58bdd22dfbc7ef0acf211938780dbc7c8ff4ff62.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.0.0_a8f5d6c8c8a4ac6032b10552b3303892ddf9dea5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/cardview-v7/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="8a372c4191f80489770a231f7be4820b204b886a">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-25.0.0_1a3b241d5e02825e65beff3a898f298304dcaa37.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tiago/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-applinks/1.4.0/8ad21bf21784dacce5f2043afb97218cc377e835/bolts-applinks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/bolts-applinks-1.4.0_21124b2ec9bc72fbda1e58f67fdb7629b0cb0ae0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
+        <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_23eebe35b113beb658130ff01477dc12f461c408.jar" />
+    </item>
+
+</items>

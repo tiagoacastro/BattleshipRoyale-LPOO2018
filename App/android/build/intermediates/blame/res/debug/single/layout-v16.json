@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/res/merged/debug/layout-v16/notification_template_custom_big.xml",
+        "source": "/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout-v16/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/home/tiago/Desktop/Battleship-Royale/android/build/intermediates/res/merged/debug/layout-v16/notification_template_custom_big.xml",
+        "source": "/home/tiago/Desktop/Battleship-Royale/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout-v16/notification_template_custom_big.xml"
+    }
+]

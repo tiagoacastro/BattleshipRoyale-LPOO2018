@@ -1,0 +1,101 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml:2:1-24:12
+	package
+		ADDED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml:3:5-29
+		INJECTED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml
+		INJECTED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml
+		INJECTED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml
+		INJECTED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml
+uses-sdk
+ADDED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml:5:5-73
+MERGED from [de.tomgrill.gdxfacebook:gdx-facebook-android:1.4.1] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/de.tomgrill.gdxfacebook/gdx-facebook-android/1.4.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.android:facebook-android-sdk:4.18.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/AndroidManifest.xml:24:5-26:41
+MERGED from [com.android.support:support-v4:25.0.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-compat:25.0.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-media-compat:25.0.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-utils:25.0.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-ui:25.0.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-fragment:25.0.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:appcompat-v7:25.0.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-vector-drawable:25.0.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:animated-vector-drawable:25.0.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:25.0.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/cardview-v7/25.0.0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:customtabs:25.0.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/customtabs/25.0.0/AndroidManifest.xml:20:5-44
+	tools:overrideLibrary
+		ADDED from [com.android.support:support-v4:25.0.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/AndroidManifest.xml:23:9-51
+	android:targetSdkVersion
+		ADDED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml:5:41-70
+		INJECTED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml
+		INJECTED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml:5:15-40
+		INJECTED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml
+		INJECTED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml
+application
+ADDED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml:7:5-22:19
+MERGED from [de.tomgrill.gdxfacebook:gdx-facebook-android:1.4.1] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/de.tomgrill.gdxfacebook/gdx-facebook-android/1.4.1/AndroidManifest.xml:9:5-20
+MERGED from [com.facebook.android:facebook-android-sdk:4.18.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/AndroidManifest.xml:28:5-38:19
+MERGED from [com.android.support:support-v4:25.0.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:25.0.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.0.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.0.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.0.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.0.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:25.0.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-vector-drawable:25.0.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.0.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:cardview-v7:25.0.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/cardview-v7/25.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:customtabs:25.0.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.android.support/customtabs/25.0.0/AndroidManifest.xml:22:5-20
+	android:label
+		ADDED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml:10:9-41
+	android:allowBackup
+		ADDED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml:8:9-35
+	android:icon
+		ADDED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml:9:9-45
+	android:theme
+		ADDED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml:11:9-40
+activity#com.mygdx.game.AndroidLauncher
+ADDED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml:12:9-21:20
+	android:screenOrientation
+		ADDED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml:15:13-50
+	android:label
+		ADDED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml:14:13-45
+	android:configChanges
+		ADDED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml:16:13-94
+	android:name
+		ADDED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml:13:13-58
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml:17:13-20:29
+action#android.intent.action.MAIN
+ADDED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml:18:17-69
+	android:name
+		ADDED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml:18:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml:19:17-77
+	android:name
+		ADDED from /home/tiago/Desktop/Battleship-Royale/App/android/AndroidManifest.xml:19:27-74
+activity#com.facebook.FacebookActivity
+ADDED from [com.facebook.android:facebook-android-sdk:4.18.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/AndroidManifest.xml:29:9-32:66
+	android:configChanges
+		ADDED from [com.facebook.android:facebook-android-sdk:4.18.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/AndroidManifest.xml:31:13-96
+	android:theme
+		ADDED from [com.facebook.android:facebook-android-sdk:4.18.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/AndroidManifest.xml:32:13-63
+	android:name
+		ADDED from [com.facebook.android:facebook-android-sdk:4.18.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/AndroidManifest.xml:30:13-57
+activity#com.facebook.CustomTabActivity
+ADDED from [com.facebook.android:facebook-android-sdk:4.18.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/AndroidManifest.xml:33:9-36:20
+	android:exported
+		ADDED from [com.facebook.android:facebook-android-sdk:4.18.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/AndroidManifest.xml:35:13-36
+	android:name
+		ADDED from [com.facebook.android:facebook-android-sdk:4.18.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/AndroidManifest.xml:34:13-58
+activity#com.facebook.CustomTabMainActivity
+ADDED from [com.facebook.android:facebook-android-sdk:4.18.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/AndroidManifest.xml:37:9-71
+	android:name
+		ADDED from [com.facebook.android:facebook-android-sdk:4.18.0] /home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/AndroidManifest.xml:37:19-68

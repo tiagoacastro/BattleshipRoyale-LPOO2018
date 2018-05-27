@@ -1,0 +1,658 @@
+[
+    {
+        "outputFile": "/home/tiago/Desktop/Battleship-Royale/android/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ms/values-ms.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 116,
+                    "endOffset": 167
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 116,
+                        "endOffset": 167
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 172,
+                    "endColumn": 122,
+                    "endOffset": 290
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 172,
+                        "endColumn": 122,
+                        "endOffset": 290
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 295,
+                    "endColumn": 94,
+                    "endOffset": 385
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 295,
+                        "endColumn": 94,
+                        "endOffset": 385
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 390,
+                    "endColumn": 66,
+                    "endOffset": 452
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 390,
+                        "endColumn": 66,
+                        "endOffset": 452
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 457,
+                    "endColumn": 67,
+                    "endOffset": 520
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 457,
+                        "endColumn": 67,
+                        "endOffset": 520
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 525,
+                    "endColumn": 59,
+                    "endOffset": 580
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 525,
+                        "endColumn": 59,
+                        "endOffset": 580
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 585,
+                    "endColumn": 70,
+                    "endOffset": 651
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 585,
+                        "endColumn": 70,
+                        "endOffset": 651
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 656,
+                    "endColumn": 74,
+                    "endOffset": 726
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 656,
+                        "endColumn": 74,
+                        "endOffset": 726
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 731,
+                    "endColumn": 95,
+                    "endOffset": 822
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 731,
+                        "endColumn": 95,
+                        "endOffset": 822
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 827,
+                    "endColumn": 76,
+                    "endOffset": 899
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 827,
+                        "endColumn": 76,
+                        "endOffset": 899
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 904,
+                    "endColumn": 76,
+                    "endOffset": 976
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 904,
+                        "endColumn": 76,
+                        "endOffset": 976
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 981,
+                    "endColumn": 89,
+                    "endOffset": 1066
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 981,
+                        "endColumn": 89,
+                        "endOffset": 1066
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1071,
+                    "endColumn": 108,
+                    "endOffset": 1175
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1071,
+                        "endColumn": 108,
+                        "endOffset": 1175
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1180,
+                    "endColumn": 64,
+                    "endOffset": 1240
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1180,
+                        "endColumn": 64,
+                        "endOffset": 1240
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1245,
+                    "endColumn": 65,
+                    "endOffset": 1306
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1245,
+                        "endColumn": 65,
+                        "endOffset": 1306
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1311,
+                    "endColumn": 138,
+                    "endOffset": 1445
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1311,
+                        "endColumn": 138,
+                        "endOffset": 1445
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1450,
+                    "endColumn": 61,
+                    "endOffset": 1507
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1450,
+                        "endColumn": 61,
+                        "endOffset": 1507
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ms/values-ms.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 116,
+                    "endOffset": 167
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 116,
+                        "endOffset": 167
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 172,
+                    "endColumn": 122,
+                    "endOffset": 290
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 172,
+                        "endColumn": 122,
+                        "endOffset": 290
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 295,
+                    "endColumn": 94,
+                    "endOffset": 385
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 295,
+                        "endColumn": 94,
+                        "endOffset": 385
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 390,
+                    "endColumn": 66,
+                    "endOffset": 452
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 390,
+                        "endColumn": 66,
+                        "endOffset": 452
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 457,
+                    "endColumn": 67,
+                    "endOffset": 520
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 457,
+                        "endColumn": 67,
+                        "endOffset": 520
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 525,
+                    "endColumn": 59,
+                    "endOffset": 580
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 525,
+                        "endColumn": 59,
+                        "endOffset": 580
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 585,
+                    "endColumn": 70,
+                    "endOffset": 651
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 585,
+                        "endColumn": 70,
+                        "endOffset": 651
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 656,
+                    "endColumn": 74,
+                    "endOffset": 726
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 656,
+                        "endColumn": 74,
+                        "endOffset": 726
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 731,
+                    "endColumn": 95,
+                    "endOffset": 822
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 731,
+                        "endColumn": 95,
+                        "endOffset": 822
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 827,
+                    "endColumn": 76,
+                    "endOffset": 899
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 827,
+                        "endColumn": 76,
+                        "endOffset": 899
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 904,
+                    "endColumn": 76,
+                    "endOffset": 976
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 904,
+                        "endColumn": 76,
+                        "endOffset": 976
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 981,
+                    "endColumn": 89,
+                    "endOffset": 1066
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 981,
+                        "endColumn": 89,
+                        "endOffset": 1066
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1071,
+                    "endColumn": 108,
+                    "endOffset": 1175
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1071,
+                        "endColumn": 108,
+                        "endOffset": 1175
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1180,
+                    "endColumn": 64,
+                    "endOffset": 1240
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1180,
+                        "endColumn": 64,
+                        "endOffset": 1240
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1245,
+                    "endColumn": 65,
+                    "endOffset": 1306
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1245,
+                        "endColumn": 65,
+                        "endOffset": 1306
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1311,
+                    "endColumn": 138,
+                    "endOffset": 1445
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1311,
+                        "endColumn": 138,
+                        "endOffset": 1445
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1450,
+                    "endColumn": 61,
+                    "endOffset": 1507
+                },
+                "from": {
+                    "file": "/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.18.0/res/values-ms/values-ms.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1450,
+                        "endColumn": 61,
+                        "endOffset": 1507
+                    }
+                }
+            }
+        ]
+    }
+]

@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/tiago/Desktop/Battleship-Royale/android/build/intermediates/res/merged/debug/drawable-xhdpi/ic_launcher.png",
+        "source": "/home/tiago/Desktop/Battleship-Royale/android/res/drawable-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/res/merged/debug/drawable-xhdpi/ic_launcher.png",
+        "source": "/home/tiago/Desktop/Battleship-Royale/App/android/res/drawable-xhdpi/ic_launcher.png"
+    }
+]
