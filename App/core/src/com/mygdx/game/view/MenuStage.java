@@ -16,12 +16,9 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.BattleShip;
 
 class MenuStage extends Stage {
-    private final float VIEWPORT_WIDTH = 800;
-    private final float PIXEL_TO_METER = 0.04f;
+    private static final float VIEWPORT_WIDTH = 800;
     private float ratio;
     private BattleShip game;
-    private TextButton playButton;
-    private TextButton toggleButton;
     private Viewport viewport;
     private Table table;
     private Music music;
@@ -53,7 +50,7 @@ class MenuStage extends Stage {
         TextButton.TextButtonStyle style = new TextButton.TextButtonStyle();
         style.font = new BitmapFont();
 
-        playButton = new TextButton("Play", style);
+        TextButton playButton = new TextButton("Play", style);
         table.add(playButton).width(VIEWPORT_WIDTH/5).height(VIEWPORT_WIDTH*ratio/5).expand().center().bottom().colspan(2);
         playButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
@@ -66,7 +63,7 @@ class MenuStage extends Stage {
         music = game.getAssetManager().get("thunder.mp3");
         music.play();
 
-        toggleButton = new TextButton("Toggle Music", style);
+        TextButton toggleButton = new TextButton("Toggle Music", style);
         table.add(toggleButton).width(VIEWPORT_WIDTH/6).height(VIEWPORT_WIDTH*ratio/6).expand().right().bottom();
         toggleButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){

@@ -16,6 +16,7 @@ public class Cell {
     private boolean destroyed = false;
     private TextButton creatorButton;
     private BoardController board;
+    private ClickListener createListener;
 
     Cell(int x, int y, BoardController board){
         this.column = x;
@@ -29,25 +30,27 @@ public class Cell {
 
     public void free(){
         this.ship = null;
-        creatorButton.setText("c");                 //for testing
+        creatorButton.setText("c");
     }
 
     public void occupy(Ship ship){
         this.ship = ship;
-        if(ship instanceof Carrier)                 //for testing
-            creatorButton.setText("5");
-        else if(ship instanceof Dreadnought)
-            creatorButton.setText("4");
-        else if(ship instanceof Submarine)
-            creatorButton.setText("3");
-        else if(ship instanceof Cruiser)
-            creatorButton.setText("2");
-        else if(ship instanceof PatrolBoat)
-            creatorButton.setText("1");
+        if(this.ship instanceof Carrier)
+            this.creatorButton.setText("5");
+        else if(this.ship instanceof Dreadnought)
+            this.creatorButton.setText("4");
+        else if(this.ship instanceof Submarine)
+            this.creatorButton.setText("3");
+        else if(this.ship instanceof Cruiser)
+            this.creatorButton.setText("2");
+        else if(this.ship instanceof PatrolBoat)
+            this.creatorButton.setText("1");
     }
 
     public void destroy(){
         this.destroyed = true;
+
+        this.ship.check();
     }
 
     public boolean check(){
@@ -70,13 +73,15 @@ public class Cell {
         return line;
     }
 
-    public TextButton getButton() {
+    public TextButton getCreatorButton() {
+        this.creatorButton.removeListener(createListener);
         return creatorButton;
     }
 
-    public void setButton(TextButton button) {
+    public void setCreatorButton(TextButton button) {
         this.creatorButton = button;
-        button.addListener(new ClickListener() {
+
+        this.creatorButton.addListener(createListener = new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 ShipController ship = board.getChosen();
                 if(ship != null){
@@ -85,4 +90,30 @@ public class Cell {
             }
         });
     }
+    /*
+    public TextButton getPlayButton() {
+        return creatorButton;
+    }
+
+    public void setPlayButton(TextButton button) {
+        this.playButton = button;
+
+        if(ship != null)
+            if(this.ship instanceof Carrier)
+                this.playButton.setText("5");
+            else if(this.ship instanceof Dreadnought)
+                this.playButton.setText("4");
+            else if(this.ship instanceof Submarine)
+                this.playButton.setText("3");
+            else if(this.ship instanceof Cruiser)
+                this.playButton.setText("2");
+            else if(this.ship instanceof PatrolBoat)
+                this.playButton.setText("1");
+
+        this.playButton.addListener(new ClickListener() {
+            public void clicked(InputEvent event, float x, float y){
+                destroy();
+            }
+        });
+    }*/
 }

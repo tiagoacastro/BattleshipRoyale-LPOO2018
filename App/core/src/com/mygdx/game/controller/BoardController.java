@@ -13,9 +13,9 @@ import com.mygdx.game.model.Submarine;
 public class BoardController {
     private Board board;
     private CarrierController carrier = new CarrierController(new Carrier());
-    private ShipController cruiser = new ShipController(new Cruiser());
     private ShipController dreadnought = new ShipController(new Dreadnought());
     private ShipController submarine = new ShipController(new Submarine());
+    private ShipController cruiser = new ShipController(new Cruiser());
     private ShipController patrolBoat = new ShipController(new PatrolBoat());
     private ShipController chosen = null;
 
@@ -51,5 +51,9 @@ public class BoardController {
 
     public Board getBoard() {
         return board;
+    }
+
+    public boolean allPlaced(){
+        return carrier.isPlaced() && dreadnought.isPlaced() && submarine.isPlaced() && cruiser.isPlaced() && patrolBoat.isPlaced();
     }
 }

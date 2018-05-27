@@ -20,15 +20,12 @@ import com.mygdx.game.controller.BoardController;
 import com.mygdx.game.controller.ShipController;
 
 class CreatorStage extends Stage {
-    private final float VIEWPORT_WIDTH = 800;
-    private final float PIXEL_TO_METER = 0.04f;
-    private final int BOARD_SIZE = 10;
+    private static final float VIEWPORT_WIDTH = 800;
+    private static final int BOARD_SIZE = 10;
     private float ratio;
     private BattleShip game;
     private Viewport viewport;
     private BoardController board;
-    private Table boardTable;
-    private Table guiTable;
 
     CreatorStage() {
         game = BattleShip.getInstance();
@@ -40,55 +37,75 @@ class CreatorStage extends Stage {
 
         Gdx.input.setInputProcessor(this);
 
-        boardTable = new Table();
-        boardTable.setFillParent(true);
-        this.addActor(boardTable);
-        board = new BoardController(BOARD_SIZE);
         this.drawBoard();
 
-        guiTable = new Table();
-        guiTable.setFillParent(true);
-        this.addActor(guiTable);
         this.drawGui();
     }
 
     private void drawBoard(){
+        Table boardTable = new Table();
+        boardTable.setFillParent(true);
+        this.addActor(boardTable);
+
+        board = new BoardController(BOARD_SIZE);
         TextButton.TextButtonStyle style = new TextButton.TextButtonStyle();
         style.font = new BitmapFont();
         boardTable.add().height(VIEWPORT_WIDTH*ratio/12).colspan(12);
         boardTable.row();
+
         for(int y = 0; y < BOARD_SIZE; y++){
             boardTable.add().width(13*VIEWPORT_WIDTH/24);
             for(int x = 0; x < BOARD_SIZE; x++){
                 TextButton button = new TextButton("c", style);
                 boardTable.add(button).width(VIEWPORT_WIDTH/24).height(VIEWPORT_WIDTH*ratio/12);
-                board.getBoard().getMatrix()[y][x].setButton(button);;
+                board.getBoard().getMatrix()[y][x].setCreatorButton(button);;
             }
             boardTable.add().width(VIEWPORT_WIDTH/24);
             boardTable.row();
         }
+
         boardTable.add().height(VIEWPORT_WIDTH*ratio/12).colspan(12);
     }
 
     private void drawGui(){
+        Table guiTable = new Table();
+        guiTable.setFillParent(true);
+        this.addActor(guiTable);
+
         Label title = new Label("Board Creator", new Label.LabelStyle(new BitmapFont(), null));
         title.setColor(Color.BLACK);
+
         guiTable.add(title).center().height(VIEWPORT_WIDTH*ratio/12).colspan(2);
+
         guiTable.row();
+
         for (int i = 0; i < 5; i++) {
             ImageButton.ImageButtonStyle style = new ImageButton.ImageButtonStyle();
             ImageButton shipButton = new ImageButton(style);
             shipButton = createShipButton(i, shipButton);
+
             guiTable.add(shipButton).width(VIEWPORT_WIDTH / 4).height(10*VIEWPORT_WIDTH * ratio / 108).center().expand();
+
             guiTable.add().width(VIEWPORT_WIDTH / 2).height(10*VIEWPORT_WIDTH * ratio / 108);
+
             guiTable.row();
+
             if(i != 4) {
                 guiTable.add().width(VIEWPORT_WIDTH).height(10 * VIEWPORT_WIDTH * ratio / 108).colspan(2);
+
                 guiTable.row();
             }
         }
+
+        guiTable.add().height(VIEWPORT_WIDTH*ratio/12).colspan(2);
+
+        Table auxTable = new Table();
+        auxTable.setFillParent(true);
+        this.addActor(auxTable);
+
         TextButton.TextButtonStyle textStyle = new TextButton.TextButtonStyle();
         textStyle.font = new BitmapFont();
+
         TextButton rotateButton = new TextButton("Rotate", textStyle);
         rotateButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
@@ -96,7 +113,18 @@ class CreatorStage extends Stage {
                     board.getChosen().rotate();
             }
         });
-        guiTable.add(rotateButton).width(VIEWPORT_WIDTH / 4).height(VIEWPORT_WIDTH*ratio/12).colspan(2).expand();
+
+        auxTable.add(rotateButton).width(VIEWPORT_WIDTH / 4).height(VIEWPORT_WIDTH*ratio/12).expand().center().bottom();
+
+        TextButton playButton = new TextButton("Play", textStyle);
+        playButton.addListener(new ClickListener() {
+            public void clicked(InputEvent event, float x, float y){
+                if(board.allPlaced())
+                    game.setScreen(new GameScreen(board));
+            }
+        });
+
+        auxTable.add(playButton).width(VIEWPORT_WIDTH / 4).height(VIEWPORT_WIDTH*ratio/12).expand().center().bottom();
     }
 
     private ImageButton createShipButton(int i,ImageButton shipButton) {
@@ -105,6 +133,7 @@ class CreatorStage extends Stage {
                 Texture myCarrier = game.getAssetManager().get("carrier.png");
                 TextureRegion myCarrierRegion = new TextureRegion(myCarrier);
                 TextureRegionDrawable myCarrierRegionDrawable = new TextureRegionDrawable(myCarrierRegion);
+
                 shipButton = new ImageButton(myCarrierRegionDrawable); //Set the button up
                 shipButton.addListener(new ClickListener() {
                     public void clicked(InputEvent event, float x, float y){
@@ -116,6 +145,7 @@ class CreatorStage extends Stage {
                 Texture myDreadnought = game.getAssetManager().get("ship_small_b_body.png");
                 TextureRegion myDreadnoughtRegion = new TextureRegion(myDreadnought);
                 TextureRegionDrawable myDreadnoughtRegionDrawable = new TextureRegionDrawable(myDreadnoughtRegion);
+
                 shipButton = new ImageButton(myDreadnoughtRegionDrawable); //Set the button up
                 shipButton.addListener(new ClickListener() {
                     public void clicked(InputEvent event, float x, float y){
@@ -127,6 +157,7 @@ class CreatorStage extends Stage {
                 Texture mySubmarine = game.getAssetManager().get("submarine.png");
                 TextureRegion mySubmarineRegion = new TextureRegion(mySubmarine);
                 TextureRegionDrawable mySubmarineRegionDrawable = new TextureRegionDrawable(mySubmarineRegion);
+
                 shipButton = new ImageButton(mySubmarineRegionDrawable); //Set the button up
                 shipButton.addListener(new ClickListener() {
                     public void clicked(InputEvent event, float x, float y){
@@ -138,6 +169,7 @@ class CreatorStage extends Stage {
                 Texture myCruiser = game.getAssetManager().get("cruiser.png");
                 TextureRegion myCruiserRegion = new TextureRegion(myCruiser);
                 TextureRegionDrawable myCruiserRegionDrawable = new TextureRegionDrawable(myCruiserRegion);
+
                 shipButton = new ImageButton(myCruiserRegionDrawable); //Set the button up
                 shipButton.addListener(new ClickListener() {
                     public void clicked(InputEvent event, float x, float y){
@@ -149,6 +181,7 @@ class CreatorStage extends Stage {
                 Texture myPatrolBoat = game.getAssetManager().get("patrolBoat.png");
                 TextureRegion myPatrolBoatRegion = new TextureRegion(myPatrolBoat);
                 TextureRegionDrawable myPatrolBoatRegionDrawable = new TextureRegionDrawable(myPatrolBoatRegion);
+
                 shipButton = new ImageButton(myPatrolBoatRegionDrawable); //Set the button up
                 shipButton.addListener(new ClickListener() {
                     public void clicked(InputEvent event, float x, float y){

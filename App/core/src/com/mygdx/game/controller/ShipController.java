@@ -12,6 +12,7 @@ import java.util.Arrays;
 public class ShipController {
 
     Ship shipModel;
+    private boolean placed = false;
 
     ShipController(Ship ship) {
         this.shipModel = ship;
@@ -42,6 +43,7 @@ public class ShipController {
             for (int i = 0; i < this.shipModel.getCells().length; i++) {
                 this.updateCell(board, i);                        //pode nao estar a usar o overriden method do carrier
             }
+            placed = true;
         }
     }
 
@@ -124,5 +126,21 @@ public class ShipController {
                 this.shipModel.setWay(Ship.Way.E);
                 break;
         }
+    }
+
+    public void check(){
+        boolean destroy = true;
+        for (Cell c : this.shipModel.getCells()){
+            if(!c.check()){
+                destroy = false;
+                break;
+            }
+        }
+        if(destroy)
+            this.shipModel.destroy();
+    }
+
+    public boolean isPlaced(){
+        return placed;
     }
 }

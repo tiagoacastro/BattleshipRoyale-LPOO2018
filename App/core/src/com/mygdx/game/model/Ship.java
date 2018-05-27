@@ -14,9 +14,9 @@ public abstract class Ship{
 
     Ship(){}
 
-    /*public void destroy(){
+    public void destroy(){
         destroyed = true;
-    }*/
+    }
 
     public int getX() {
         return x;
@@ -46,7 +46,7 @@ public abstract class Ship{
         return cells;
     }
 
-    /*public boolean check(){
+    public boolean check(){
         return destroyed;
-    }*/
+    }
 }
