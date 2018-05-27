@@ -14,56 +14,9 @@ public abstract class Ship{
 
     Ship(){}
 
-    public void updateCell(Board board, int index){
-        switch(way){
-            case W:
-                board.getMatrix()[x][y + index].occupy(this);
-                cells[index] = board.getMatrix()[x][y + index];
-                break;
-            case N:
-                board.getMatrix()[x - index][y].occupy(this);
-                cells[index] = board.getMatrix()[x - index][y];
-                break;
-            case E:
-                board.getMatrix()[x][y - index].occupy(this);
-                cells[index] = board.getMatrix()[x][y - index];
-                break;
-            case S:
-                board.getMatrix()[x + index][y].occupy(this);
-                cells[index] = board.getMatrix()[x + index][y];
-                break;
-        }
-    }
-
-    public boolean check(Board board, int x, int y, int index){
-        try{
-            switch (way) {
-                case W:
-                    if (board.getMatrix()[x][y + index].occupied(this))
-                        return false;
-                    break;
-                case N:
-                    if (board.getMatrix()[x - index][y].occupied(this))
-                        return false;
-                    break;
-                case E:
-                    if (board.getMatrix()[x][y - index].occupied(this))
-                        return false;
-                    break;
-                case S:
-                    if (board.getMatrix()[x + index][y].occupied(this))
-                        return false;
-                    break;
-            }
-        } catch(ArrayIndexOutOfBoundsException e){
-            return false;
-        }
-        return true;
-    }
-
-    public void destroy(){
+    /*public void destroy(){
         destroyed = true;
-    }
+    }*/
 
     public int getX() {
         return x;
@@ -93,11 +46,7 @@ public abstract class Ship{
         return cells;
     }
 
-    public void setCells(Cell[] cells) {
-        this.cells = cells;
-    }
-
-    public boolean check(){
+    /*public boolean check(){
         return destroyed;
-    }
+    }*/
 }

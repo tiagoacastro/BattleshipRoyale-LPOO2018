@@ -11,7 +11,7 @@ import java.util.Arrays;
  */
 public class ShipController {
 
-    private Ship shipModel;
+    Ship shipModel;
 
     ShipController(Ship ship) {
         this.shipModel = ship;
@@ -28,7 +28,7 @@ public class ShipController {
 
     private boolean check(Board board, int x, int y){
         for (int i = 0; i < this.shipModel.getCells().length; i++) {
-            if(!this.shipModel.check(board, x, y, i))                            //pode nao estar a usar o overriden method do carrier
+            if(this.checkCell(board, x, y, i))                            //pode nao estar a usar o overriden method do carrier
                 return false;
         }
         return true;
@@ -40,9 +40,56 @@ public class ShipController {
             this.shipModel.setX(x);
             this.shipModel.setY(y);
             for (int i = 0; i < this.shipModel.getCells().length; i++) {
-                this.shipModel.updateCell(board, i);                        //pode nao estar a usar o overriden method do carrier
+                this.updateCell(board, i);                        //pode nao estar a usar o overriden method do carrier
             }
         }
+    }
+
+    void updateCell(Board board, int index){
+        switch(this.shipModel.getWay()){
+            case W:
+                board.getMatrix()[this.shipModel.getX()][this.shipModel.getY() + index].occupy(this.shipModel);
+                this.shipModel.getCells()[index] = board.getMatrix()[this.shipModel.getX()][this.shipModel.getY() + index];
+                break;
+            case N:
+                board.getMatrix()[this.shipModel.getX() - index][this.shipModel.getY()].occupy(this.shipModel);
+                this.shipModel.getCells()[index] = board.getMatrix()[this.shipModel.getX() - index][this.shipModel.getY()];
+                break;
+            case E:
+                board.getMatrix()[this.shipModel.getX()][this.shipModel.getY() - index].occupy(this.shipModel);
+                this.shipModel.getCells()[index] = board.getMatrix()[this.shipModel.getX()][this.shipModel.getY() - index];
+                break;
+            case S:
+                board.getMatrix()[this.shipModel.getX() + index][this.shipModel.getY()].occupy(this.shipModel);
+                this.shipModel.getCells()[index] = board.getMatrix()[this.shipModel.getX() + index][this.shipModel.getY()];
+                break;
+        }
+    }
+
+    boolean checkCell(Board board, int x, int y, int index){
+        try{
+            switch (this.shipModel.getWay()) {
+                case W:
+                    if (board.getMatrix()[x][y + index].occupied(this.shipModel))
+                        return true;
+                    break;
+                case N:
+                    if (board.getMatrix()[x - index][y].occupied(this.shipModel))
+                        return true;
+                    break;
+                case E:
+                    if (board.getMatrix()[x][y - index].occupied(this.shipModel))
+                        return true;
+                    break;
+                case S:
+                    if (board.getMatrix()[x + index][y].occupied(this.shipModel))
+                        return true;
+                    break;
+            }
+        } catch(ArrayIndexOutOfBoundsException e){
+            return true;
+        }
+        return false;
     }
 
     public void rotate(){

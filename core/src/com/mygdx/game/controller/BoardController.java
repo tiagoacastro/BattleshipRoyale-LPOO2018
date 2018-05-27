@@ -12,7 +12,7 @@ import com.mygdx.game.model.Submarine;
  */
 public class BoardController {
     private Board board;
-    private ShipController carrier = new ShipController(new Carrier());
+    private CarrierController carrier = new CarrierController(new Carrier());
     private ShipController cruiser = new ShipController(new Cruiser());
     private ShipController dreadnought = new ShipController(new Dreadnought());
     private ShipController submarine = new ShipController(new Submarine());
