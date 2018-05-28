@@ -5,12 +5,16 @@ import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.BattleShip;
@@ -50,7 +54,11 @@ class MenuStage extends Stage {
         TextButton.TextButtonStyle style = new TextButton.TextButtonStyle();
         style.font = new BitmapFont();
 
-        TextButton playButton = new TextButton("Play", style);
+        Texture playTexture = game.getAssetManager().get("playButton.png");
+        TextureRegion playTextureRegion = new TextureRegion(playTexture);
+        TextureRegionDrawable playTextureRegionDrawable = new TextureRegionDrawable(playTextureRegion);
+
+        ImageButton playButton = new ImageButton(playTextureRegionDrawable); //Set the button up
         table.add(playButton).width(VIEWPORT_WIDTH/5).height(VIEWPORT_WIDTH*ratio/5).expand().center().bottom().colspan(2);
         playButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){

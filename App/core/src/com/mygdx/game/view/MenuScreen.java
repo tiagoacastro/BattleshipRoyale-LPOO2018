@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Texture;
 import com.mygdx.game.BattleShip;
 
 /**
@@ -27,6 +28,7 @@ public class MenuScreen extends ScreenAdapter {
      */
     private void loadAssets() {
         game.getAssetManager().load("thunder.mp3", Music.class);
+        game.getAssetManager().load("playButton.png", Texture.class);
         game.getAssetManager().finishLoading();
     }
     /**
@@ -52,6 +54,11 @@ public class MenuScreen extends ScreenAdapter {
     public void resize(int width, int height) {
         super.resize(width, height);
         menuStage.getViewport().update(width, height, true);
+    }
+
+    private void drawBackground() {
+        Texture background = game.getAssetManager().get("background.png", Texture.class);
+        game.getBatch().draw(background,0,0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
     }
 }
 
