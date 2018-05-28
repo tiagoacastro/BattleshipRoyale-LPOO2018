@@ -1,6 +1,8 @@
 package com.mygdx.game.model;
 
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.mygdx.game.controller.BoardController;
@@ -16,6 +18,7 @@ public class Cell {
     private int line;
     private boolean destroyed = false;
     private TextButton button;
+    private ImageButton button2;
     private BoardController board;
     private ClickListener createListener;
     private GameController controller;
@@ -94,6 +97,19 @@ public class Cell {
         this.button = button;
 
         this.button.addListener(createListener = new ClickListener() {
+            public void clicked(InputEvent event, float x, float y){
+                ShipController ship = board.getChosen();
+                if(ship != null){
+                    ship.update(board.getBoard(), column, line);
+                }
+            }
+        });
+    }
+
+    public void setButton(ImageButton button) {
+        this.button2 = button;
+
+        this.button2.addListener(createListener = new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 ShipController ship = board.getChosen();
                 if(ship != null){

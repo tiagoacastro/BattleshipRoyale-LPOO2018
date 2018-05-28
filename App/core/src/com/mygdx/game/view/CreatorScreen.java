@@ -26,6 +26,7 @@ public class CreatorScreen extends ScreenAdapter{
      * Loads the assets needed by this screen.
      */
     private void loadAssets() {
+        game.getAssetManager().load("square.png", Texture.class);
         game.getAssetManager().load("ship_small_b_body.png", Texture.class);
         game.getAssetManager().load("carrier.png", Texture.class);
         game.getAssetManager().load("cruiser.png", Texture.class);

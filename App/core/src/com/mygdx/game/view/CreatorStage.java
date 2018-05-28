@@ -55,9 +55,17 @@ class CreatorStage extends Stage {
         for(int y = 0; y < BOARD_SIZE; y++){
             boardTable.add().width(13*VIEWPORT_WIDTH/24);
             for(int x = 0; x < BOARD_SIZE; x++){
+
+                Texture cellTexture = game.getAssetManager().get("square.png");
+                TextureRegion cellTextureRegion = new TextureRegion(cellTexture);
+                TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
+
+                ImageButton cellButton = new ImageButton(cellTextureRegionDrawable); //Set the button up
                 TextButton button = new TextButton("c", style);
                 boardTable.add(button).width(VIEWPORT_WIDTH/24).height(VIEWPORT_WIDTH*ratio/12);
-                board.getBoard().getMatrix()[y][x].setButton(button);;
+                boardTable.add(cellButton).width(VIEWPORT_WIDTH/24).height(VIEWPORT_WIDTH*ratio/12);
+                board.getBoard().getMatrix()[y][x].setButton(button);
+                board.getBoard().getMatrix()[y][x].setButton(cellButton);
             }
             boardTable.add().width(VIEWPORT_WIDTH/24);
             boardTable.row();
