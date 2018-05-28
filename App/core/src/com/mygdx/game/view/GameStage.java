@@ -1,18 +1,12 @@
 package com.mygdx.game.view;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
-import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.BattleShip;
@@ -30,6 +24,7 @@ class GameStage extends Stage {
     private Table botBoardTable;
     private Table guiTable;
     private boolean toggleBoard = false;
+    private int auxX, auxY;
 
     GameStage(BoardController board) {
         game = BattleShip.getInstance();
@@ -64,7 +59,7 @@ class GameStage extends Stage {
             userBoardTable.add().width(VIEWPORT_WIDTH/24);
 
             for(int x = 0; x < BOARD_SIZE; x++){
-                userBoardTable.add(controller.getUserBoard().getBoard().getMatrix()[y][x].getButton()).width(VIEWPORT_WIDTH/24).height(VIEWPORT_WIDTH*ratio/12);
+                userBoardTable.add(controller.getUserBoard().getBoard().getMatrix()[y][x].getButtonRm()).width(VIEWPORT_WIDTH/24).height(VIEWPORT_WIDTH*ratio/12);
             }
 
             userBoardTable.add().width(13*VIEWPORT_WIDTH/24);
@@ -101,13 +96,11 @@ class GameStage extends Stage {
             botBoardTable.add().width(13*VIEWPORT_WIDTH/24);
 
             for(int x = 0; x < BOARD_SIZE; x++){
-                botBoardTable.add(this.controller.getBotBoard().getBoard().getMatrix()[y][x].getButton()).width(VIEWPORT_WIDTH/24).height(VIEWPORT_WIDTH*ratio/12);
-                this.controller.getBotBoard().getBoard().getMatrix()[y][x].initPlay();
-                /*this.controller.getBotBoard().getBoard().getMatrix()[y][x].getButton().addListener(new ClickListener() {
-                    public void clicked(InputEvent event, float x, float y){
-                        controller.setMyTurn(false);
-                    }
-                });*/
+                botBoardTable.add(this.controller.getBotBoard().getBoard().getMatrix()[y][x].getButtonRm()).width(VIEWPORT_WIDTH/24).height(VIEWPORT_WIDTH*ratio/12);
+                //this.controller.getBotBoard().getBoard().getMatrix()[y][x].initPlay();
+                auxX = x;
+                auxY = y;
+                this.controller.getBotBoard().getBoard().getMatrix()[y][x].setShoot(controller);
             }
 
             botBoardTable.add().width(VIEWPORT_WIDTH/24);
@@ -152,13 +145,10 @@ class GameStage extends Stage {
     public void act() {
         super.act();
 
-        /*if(controller.isMyTurn()){
-            botBoardTable.setVisible(true);
-            userBoardTable.setVisible(false);
-        } else {
-            botBoardTable.setVisible(false);
-            userBoardTable.setVisible(true);
-        }*/
+        float gyroY = Gdx.input.getGyroscopeY();
+        if(gyroY <= -5){
+            controller.shoot();
+        }
     }
 
     @Override

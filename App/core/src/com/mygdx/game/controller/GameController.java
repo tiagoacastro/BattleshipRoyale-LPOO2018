@@ -1,10 +1,12 @@
 package com.mygdx.game.controller;
 
+import com.mygdx.game.model.Cell;
+
 public class GameController {
     private static final int BOARD_SIZE = 10;
     private BoardController userBoard;
     private BoardController botBoard;
-    //private boolean myTurn = true;
+    private Cell chosen = null;
 
     public GameController(BoardController board) {
         this.userBoard = board;
@@ -20,11 +22,14 @@ public class GameController {
         return userBoard;
     }
 
-    /*public boolean isMyTurn() {
-        return myTurn;
+    public void setChosen(Cell chosen) {
+        this.chosen = chosen;
     }
 
-    public void setMyTurn(boolean myTurn) {
-        this.myTurn = myTurn;
-    }*/
+    public void shoot() {
+        if(this.chosen != null) {
+            chosen.destroy();
+            this.chosen = null;
+        }
+    }
 }

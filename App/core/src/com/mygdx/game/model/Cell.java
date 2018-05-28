@@ -4,6 +4,7 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.mygdx.game.controller.BoardController;
+import com.mygdx.game.controller.GameController;
 import com.mygdx.game.controller.ShipController;
 
 /**
@@ -17,6 +18,8 @@ public class Cell {
     private TextButton button;
     private BoardController board;
     private ClickListener createListener;
+    private GameController controller;
+    private Cell me;
 
     Cell(int x, int y, BoardController board){
         this.column = x;
@@ -48,7 +51,7 @@ public class Cell {
             this.button.setText("1");
     }
 
-    private void destroy(){
+    public void destroy(){
         if(ship != null) {
             this.destroyed = true;
 
@@ -78,8 +81,12 @@ public class Cell {
         return line;
     }
 
-    public TextButton getButton() {
+    public TextButton getButtonRm() {
         this.button.removeListener(createListener);
+        return button;
+    }
+
+    public TextButton getButton() {
         return button;
     }
 
@@ -96,11 +103,22 @@ public class Cell {
         });
     }
 
+    public void setShoot(GameController gController){
+        this.controller = gController;
+        me = this;
+
+        button.addListener(new ClickListener() {
+            public void clicked(InputEvent event, float x, float y){
+                controller.setChosen(me);
+            }
+        });
+    }
+    /*
     public void initPlay(){
         this.button.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 destroy();
             }
         });
-    }
+    }*/
 }

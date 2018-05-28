@@ -17,7 +17,6 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.BattleShip;
 import com.mygdx.game.controller.BoardController;
-import com.mygdx.game.controller.ShipController;
 
 class CreatorStage extends Stage {
     private static final float VIEWPORT_WIDTH = 800;
