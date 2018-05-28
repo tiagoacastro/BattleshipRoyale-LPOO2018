@@ -15,7 +15,7 @@ public class GameScreen extends ScreenAdapter {
     /**
      * GameScreen Default Constructor
      */
-    public GameScreen(BoardController board){
+    GameScreen(BoardController board){
         game = BattleShip.getInstance();
 
         this.loadAssets();

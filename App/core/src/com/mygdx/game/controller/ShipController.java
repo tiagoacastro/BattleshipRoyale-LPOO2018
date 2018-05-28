@@ -29,22 +29,24 @@ public class ShipController {
 
     private boolean check(Board board, int x, int y){
         for (int i = 0; i < this.shipModel.getCells().length; i++) {
-            if(this.checkCell(board, x, y, i))                            //pode nao estar a usar o overriden method do carrier
+            if(this.checkCell(board, x, y, i))
                 return false;
         }
         return true;
     }
 
-    public void update(Board board, int x, int y){
+    public boolean update(Board board, int x, int y){
         if(this.check(board, x, y)) {
             freeCells();
             this.shipModel.setX(x);
             this.shipModel.setY(y);
             for (int i = 0; i < this.shipModel.getCells().length; i++) {
-                this.updateCell(board, i);                        //pode nao estar a usar o overriden method do carrier
+                this.updateCell(board, i);
             }
             placed = true;
+            return true;
         }
+        return false;
     }
 
     void updateCell(Board board, int index){

@@ -1,5 +1,13 @@
 d:assets:0:application/unknown
 i:badlogic.jpg:68465:image/jpeg
+i:black.jpg:539:image/jpeg
+i:cruiser.png:1132:image/png
+i:play.jpg:28398:image/jpeg
+i:patrolBoat.png:382:image/png
+i:submarine.png:958:image/png
+i:ship_small_b_body.png:13165:image/png
+i:carrier.png:59207:image/png
+a:thunder.mp3:7021852:application/unknown
 t:com/badlogic/gdx/graphics/g3d/particles/particles.fragment.glsl:859:application/unknown
 t:com/badlogic/gdx/graphics/g3d/particles/particles.vertex.glsl:2996:application/unknown
 t:com/badlogic/gdx/graphics/g3d/shaders/default.fragment.glsl:5350:application/unknown

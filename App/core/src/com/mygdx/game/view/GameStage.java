@@ -17,6 +17,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.BattleShip;
 import com.mygdx.game.controller.BoardController;
+import com.mygdx.game.controller.GameController;
 
 class GameStage extends Stage {
     private static final float VIEWPORT_WIDTH = 800;
@@ -24,11 +25,15 @@ class GameStage extends Stage {
     private float ratio;
     private BattleShip game;
     private Viewport viewport;
-    private BoardController userBoard;
+    private GameController controller;
+    private Table userBoardTable;
+    private Table botBoardTable;
+    private Table guiTable;
+    private boolean toggleBoard = false;
 
     GameStage(BoardController board) {
         game = BattleShip.getInstance();
-        this.userBoard = board;
+        this.controller = new GameController(board);
 
         ratio = ((float) Gdx.graphics.getHeight() / (float) Gdx.graphics.getWidth());
         this.viewport = new FitViewport(VIEWPORT_WIDTH, VIEWPORT_WIDTH * ratio);
@@ -37,37 +42,123 @@ class GameStage extends Stage {
 
         Gdx.input.setInputProcessor(this);
 
-        this.drawBoard();
+        this.drawUserBoard();
+
+        this.drawBotBoard();
 
         this.drawGui();
     }
 
-    private void drawBoard(){
-        Table boardTable = new Table();
-        boardTable.setFillParent(true);
-        this.addActor(boardTable);
+    private void drawUserBoard(){
+        userBoardTable = new Table();
+        userBoardTable.setFillParent(true);
+        this.addActor(userBoardTable);
+        userBoardTable.setVisible(false);
 
-        boardTable.add().height(VIEWPORT_WIDTH*ratio/12).colspan(12);
+        userBoardTable.add().height(VIEWPORT_WIDTH*ratio/12).colspan(12);
 
-        boardTable.row();
+        userBoardTable.row();
 
         for(int y = 0; y < BOARD_SIZE; y++){
-            boardTable.add().width(13*VIEWPORT_WIDTH/24);
+
+            userBoardTable.add().width(VIEWPORT_WIDTH/24);
 
             for(int x = 0; x < BOARD_SIZE; x++){
-                boardTable.add(userBoard.getBoard().getMatrix()[y][x].getCreatorButton()).width(VIEWPORT_WIDTH/24).height(VIEWPORT_WIDTH*ratio/12);
+                userBoardTable.add(controller.getUserBoard().getBoard().getMatrix()[y][x].getButton()).width(VIEWPORT_WIDTH/24).height(VIEWPORT_WIDTH*ratio/12);
             }
 
-            boardTable.add().width(VIEWPORT_WIDTH/24);
+            userBoardTable.add().width(13*VIEWPORT_WIDTH/24);
 
-            boardTable.row();
+            userBoardTable.row();
         }
 
-        boardTable.add().height(VIEWPORT_WIDTH*ratio/12).colspan(12);
+        userBoardTable.add().height(VIEWPORT_WIDTH*ratio/12).colspan(12);
+    }
+
+    private void drawBotBoard(){
+        botBoardTable = new Table();
+        botBoardTable.setFillParent(true);
+        this.addActor(botBoardTable);
+
+        botBoardTable.add().height(VIEWPORT_WIDTH*ratio/12).colspan(12);
+
+        botBoardTable.row();
+
+        TextButton.TextButtonStyle style = new TextButton.TextButtonStyle();
+        style.font = new BitmapFont();
+
+        for(int y = 0; y < BOARD_SIZE; y++){
+            for(int x = 0; x < BOARD_SIZE; x++){
+                TextButton button = new TextButton("c", style);
+                this.controller.getBotBoard().getBoard().getMatrix()[y][x].setButton(button);;
+            }
+        }
+
+        this.controller.getBotBoard().populate();
+
+        for(int y = 0; y < BOARD_SIZE; y++){
+
+            botBoardTable.add().width(13*VIEWPORT_WIDTH/24);
+
+            for(int x = 0; x < BOARD_SIZE; x++){
+                botBoardTable.add(this.controller.getBotBoard().getBoard().getMatrix()[y][x].getButton()).width(VIEWPORT_WIDTH/24).height(VIEWPORT_WIDTH*ratio/12);
+                this.controller.getBotBoard().getBoard().getMatrix()[y][x].initPlay();
+                /*this.controller.getBotBoard().getBoard().getMatrix()[y][x].getButton().addListener(new ClickListener() {
+                    public void clicked(InputEvent event, float x, float y){
+                        controller.setMyTurn(false);
+                    }
+                });*/
+            }
+
+            botBoardTable.add().width(VIEWPORT_WIDTH/24);
+
+            botBoardTable.row();
+        }
+
+        botBoardTable.add().height(VIEWPORT_WIDTH*ratio/12).colspan(12);
     }
 
     private void drawGui(){
+        guiTable = new Table();
+        guiTable.setFillParent(true);
+        this.addActor(guiTable);
 
+        TextButton.TextButtonStyle style = new TextButton.TextButtonStyle();
+        style.font = new BitmapFont();
+
+        guiTable.add().height(11*VIEWPORT_WIDTH*ratio/12).colspan(2);
+
+        guiTable.row();
+
+        guiTable.add().width(VIEWPORT_WIDTH/2);
+
+        TextButton button = new TextButton("Toggle my board", style);
+        button.addListener(new ClickListener() {
+            public void clicked(InputEvent event, float x, float y){
+                if(toggleBoard) {
+                    userBoardTable.setVisible(false);
+                    toggleBoard = false;
+                }else {
+                    userBoardTable.setVisible(true);
+                    toggleBoard = true;
+                }
+            }
+        });
+
+        guiTable.add(button).width(VIEWPORT_WIDTH/4).expand().center();
+    }
+
+    @Override
+    public void act() {
+        super.act();
+
+        /*if(controller.isMyTurn()){
+            botBoardTable.setVisible(true);
+            userBoardTable.setVisible(false);
+        } else {
+            botBoardTable.setVisible(false);
+            userBoardTable.setVisible(true);
+        }*/
     }
 
     @Override
