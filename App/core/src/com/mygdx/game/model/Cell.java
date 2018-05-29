@@ -164,6 +164,11 @@ public class Cell {
         return button;
     }
 
+    public Button getButton2Rm() {
+        this.button.removeListener(createListener);
+        return button2;
+    }
+
     public TextButton getButton() {
         return button;
     }

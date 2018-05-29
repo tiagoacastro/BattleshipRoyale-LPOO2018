@@ -1,12 +1,16 @@
 package com.mygdx.game.view;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.BattleShip;
@@ -84,8 +88,17 @@ class GameStage extends Stage {
 
         for(int y = 0; y < BOARD_SIZE; y++){
             for(int x = 0; x < BOARD_SIZE; x++){
+
+                Texture cellTexture = game.getAssetManager().get("square.png");
+                TextureRegion cellTextureRegion = new TextureRegion(cellTexture);
+                TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
+                Button.ButtonStyle style2 = new Button.ButtonStyle(cellTextureRegionDrawable,cellTextureRegionDrawable,cellTextureRegionDrawable);
+                Button cellButton = new Button(); //Set the button up
+                cellButton.setStyle(style2);
+
                 TextButton button = new TextButton("c", style);
-                this.controller.getBotBoard().getBoard().getMatrix()[y][x].setButton(button);;
+                this.controller.getBotBoard().getBoard().getMatrix()[y][x].setButton(button);
+                this.controller.getBotBoard().getBoard().getMatrix()[y][x].setButton(cellButton);
             }
         }
 
@@ -96,6 +109,7 @@ class GameStage extends Stage {
             botBoardTable.add().width(13*VIEWPORT_WIDTH/24);
 
             for(int x = 0; x < BOARD_SIZE; x++){
+                botBoardTable.add(this.controller.getBotBoard().getBoard().getMatrix()[y][x].getButton2Rm()).width(VIEWPORT_WIDTH/24).height(VIEWPORT_WIDTH*ratio/12);
                 botBoardTable.add(this.controller.getBotBoard().getBoard().getMatrix()[y][x].getButtonRm()).width(VIEWPORT_WIDTH/24).height(VIEWPORT_WIDTH*ratio/12);
                 //this.controller.getBotBoard().getBoard().getMatrix()[y][x].initPlay();
                 auxX = x;
