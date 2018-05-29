@@ -2,7 +2,6 @@ package com.mygdx.game.controller;
 
 import com.mygdx.game.model.Board;
 import com.mygdx.game.model.Carrier;
-import com.mygdx.game.model.Ship;
 
 /**
  * CarrierController class created because of the differences needed in the methods related to the Carrier ship relating to the other ships

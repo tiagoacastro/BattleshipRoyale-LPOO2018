@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue May 29 19:46:53 WEST 2018
+#Tue May 29 20:25:23 WEST 2018
 210.set=ANDROID_RESOURCE
 282.file=/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/res/resources-debug.ap_/res/layout/notification_template_icon_group.xml
 14.set=ANDROID_RESOURCE

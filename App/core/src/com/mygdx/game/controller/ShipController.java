@@ -3,7 +3,6 @@ package com.mygdx.game.controller;
 import com.mygdx.game.model.Board;
 import com.mygdx.game.model.Ship;
 import com.mygdx.game.model.Cell;
-
 import java.util.Arrays;
 
 /**
@@ -101,19 +100,19 @@ public class ShipController {
         try{
             switch (this.shipModel.getWay()) {
                 case W:
-                    if (board.getMatrix()[x][y + index].occupied(this))
+                    if (board.getMatrix()[x][y + index].occupied(this) || checkSurroundingCells(board, x, y + index))
                         return true;
                     break;
                 case N:
-                    if (board.getMatrix()[x - index][y].occupied(this))
+                    if (board.getMatrix()[x - index][y].occupied(this) || checkSurroundingCells(board, x - index, y))
                         return true;
                     break;
                 case E:
-                    if (board.getMatrix()[x][y - index].occupied(this))
+                    if (board.getMatrix()[x][y - index].occupied(this) || checkSurroundingCells(board, x, y - index))
                         return true;
                     break;
                 case S:
-                    if (board.getMatrix()[x + index][y].occupied(this))
+                    if (board.getMatrix()[x + index][y].occupied(this) || checkSurroundingCells(board, x + index, y))
                         return true;
                     break;
             }
@@ -169,5 +168,20 @@ public class ShipController {
      */
     public Ship getShipModel() {
         return shipModel;
+    }
+    /**
+     * check if the surrounding cells are free
+     * @param board board
+     * @param x     cell X
+     * @param y     cell Y
+     * @return if the surrounding cells are free
+     */
+    private boolean checkSurroundingCells(Board board, int x, int y){
+        try{
+            return board.getMatrix()[x+1][y].occupied(this) || board.getMatrix()[x-1][y].occupied(this) ||
+                    board.getMatrix()[x][y+1].occupied(this) || board.getMatrix()[x][y-1].occupied(this);
+        } catch(ArrayIndexOutOfBoundsException e){
+            return false;
+        }
     }
 }

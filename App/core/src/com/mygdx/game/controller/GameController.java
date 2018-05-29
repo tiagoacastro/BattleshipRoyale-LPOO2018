@@ -51,6 +51,14 @@ public class GameController {
             this.chosen.destroy();
             this.behaviour.shoot(this.userBoard);
             this.chosen = null;
+            this.checkEnd();
         }
+    }
+    /**
+     * Checks if the game is over
+     */
+    private void checkEnd(){
+        if(userBoard.check() || botBoard.check())
+            System.exit(0);
     }
 }

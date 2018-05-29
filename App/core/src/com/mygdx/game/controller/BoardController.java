@@ -109,4 +109,13 @@ public class BoardController {
     public int getDimension() {
         return dimension;
     }
+    /**
+     * Check if board is destroyed
+     * @return  if board is destroyed
+     */
+    public boolean check(){
+        return carrier.getShipModel().check() && dreadnought.getShipModel().check() &&
+                submarine.getShipModel().check() && carrier.getShipModel().check() &&
+                patrolBoat.getShipModel().check();
+    }
 }

@@ -2,7 +2,6 @@ package com.mygdx.game.controller;
 
 import com.mygdx.game.model.Cell;
 import java.util.ArrayList;
-import java.util.Random;
 
 /**
  * bot behaviours implementing the BotBehaviour interface (Strategy design Pattern)
