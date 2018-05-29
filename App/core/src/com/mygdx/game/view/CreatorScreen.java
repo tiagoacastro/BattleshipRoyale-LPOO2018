@@ -38,6 +38,15 @@ public class CreatorScreen extends ScreenAdapter{
         game.getAssetManager().load("blueSubmarine1.png", Texture.class);
         game.getAssetManager().load("blueSubmarine2.png", Texture.class);
         game.getAssetManager().load("blueSubmarine3.png", Texture.class);
+        game.getAssetManager().load("blueDreadnought1.png", Texture.class);
+        game.getAssetManager().load("blueDreadnought2.png", Texture.class);
+        game.getAssetManager().load("blueDreadnought3.png", Texture.class);
+        game.getAssetManager().load("blueDreadnought4.png", Texture.class);
+        game.getAssetManager().load("blueCarrier1.png", Texture.class);
+        game.getAssetManager().load("blueCarrier2.png", Texture.class);
+        game.getAssetManager().load("blueCarrier3.png", Texture.class);
+        game.getAssetManager().load("blueCarrier4.png", Texture.class);
+        game.getAssetManager().load("blueCarrier5.png", Texture.class);
         game.getAssetManager().finishLoading();
     }
     /**

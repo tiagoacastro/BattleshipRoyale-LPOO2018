@@ -1,6 +1,7 @@
 package com.mygdx.game.model;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
@@ -53,17 +54,51 @@ public class Cell {
     public void occupy(Ship ship, int index){
         this.ship = ship;
 
+        int rotateAngle = 0;
+
+        switch(this.ship.getWay()) {
+            case W: rotateAngle = 0;
+                break;
+            case N: rotateAngle = 90;
+            break;
+            case E: rotateAngle = 180;
+            break;
+            case S: rotateAngle = -90;
+            break;
+        }
+
         if(this.ship instanceof Carrier) {
             this.button.setText("5");
+
+            String file = "blueCarrier" + Integer.toString(index+1) + ".png";
+            Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
+            Sprite sprite = new Sprite(cellTexture);
+            sprite.rotate90(true);
+            TextureRegion cellTextureRegion = new TextureRegion(sprite);
+            TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
+            ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable,cellTextureRegionDrawable, cellTextureRegionDrawable);
+            this.button2.setStyle(style);
         }
-        else if(this.ship instanceof Dreadnought)
+        else if(this.ship instanceof Dreadnought) {
             this.button.setText("4");
+
+            String file = "blueDreadnought" + Integer.toString(index+1) + ".png";
+            Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
+            Sprite sprite = new Sprite(cellTexture);
+            sprite.setRotation(rotateAngle);
+            TextureRegion cellTextureRegion = new TextureRegion(sprite);
+            TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
+            ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable,cellTextureRegionDrawable, cellTextureRegionDrawable);
+            this.button2.setStyle(style);
+        }
         else if(this.ship instanceof Submarine) {
             this.button.setText("3");
 
             String file = "blueSubmarine" + Integer.toString(index+1) + ".png";
             Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
-            TextureRegion cellTextureRegion = new TextureRegion(cellTexture);
+            Sprite sprite = new Sprite(cellTexture);
+            sprite.setRotation(rotateAngle);
+            TextureRegion cellTextureRegion = new TextureRegion(sprite);
             TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
             ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable,cellTextureRegionDrawable, cellTextureRegionDrawable);
             this.button2.setStyle(style);
@@ -73,7 +108,9 @@ public class Cell {
 
             String file = "blueCruiser" + Integer.toString(index+1) + ".png";
             Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
-            TextureRegion cellTextureRegion = new TextureRegion(cellTexture);
+            Sprite sprite = new Sprite(cellTexture);
+            sprite.setRotation(rotateAngle);
+            TextureRegion cellTextureRegion = new TextureRegion(sprite);
             TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
             ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable,cellTextureRegionDrawable, cellTextureRegionDrawable);
             this.button2.setStyle(style);
@@ -83,7 +120,9 @@ public class Cell {
 
             String file = "bluePatrolBoat" + Integer.toString(index+1) + ".png";
             Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
-            TextureRegion cellTextureRegion = new TextureRegion(cellTexture);
+            Sprite sprite = new Sprite(cellTexture);
+            sprite.setRotation(rotateAngle);
+            TextureRegion cellTextureRegion = new TextureRegion(sprite);
             TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
             ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable,cellTextureRegionDrawable, cellTextureRegionDrawable);
             this.button2.setStyle(style);
