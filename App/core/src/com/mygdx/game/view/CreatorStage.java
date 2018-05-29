@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
@@ -59,8 +60,11 @@ class CreatorStage extends Stage {
                 Texture cellTexture = game.getAssetManager().get("square.png");
                 TextureRegion cellTextureRegion = new TextureRegion(cellTexture);
                 TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
+                Button.ButtonStyle style2 = new Button.ButtonStyle(cellTextureRegionDrawable,cellTextureRegionDrawable,cellTextureRegionDrawable);
+                Button cellButton = new Button(); //Set the button up
+                cellButton.setStyle(style2);
 
-                ImageButton cellButton = new ImageButton(cellTextureRegionDrawable); //Set the button up
+
                 TextButton button = new TextButton("c", style);
                 boardTable.add(button).width(VIEWPORT_WIDTH/24).height(VIEWPORT_WIDTH*ratio/12);
                 boardTable.add(cellButton).width(VIEWPORT_WIDTH/24).height(VIEWPORT_WIDTH*ratio/12);
@@ -152,7 +156,6 @@ class CreatorStage extends Stage {
                 Texture myDreadnought = game.getAssetManager().get("ship_small_b_body.png");
                 TextureRegion myDreadnoughtRegion = new TextureRegion(myDreadnought);
                 TextureRegionDrawable myDreadnoughtRegionDrawable = new TextureRegionDrawable(myDreadnoughtRegion);
-
                 shipButton = new ImageButton(myDreadnoughtRegionDrawable); //Set the button up
                 shipButton.addListener(new ClickListener() {
                     public void clicked(InputEvent event, float x, float y){
@@ -164,7 +167,6 @@ class CreatorStage extends Stage {
                 Texture mySubmarine = game.getAssetManager().get("submarine.png");
                 TextureRegion mySubmarineRegion = new TextureRegion(mySubmarine);
                 TextureRegionDrawable mySubmarineRegionDrawable = new TextureRegionDrawable(mySubmarineRegion);
-
                 shipButton = new ImageButton(mySubmarineRegionDrawable); //Set the button up
                 shipButton.addListener(new ClickListener() {
                     public void clicked(InputEvent event, float x, float y){
@@ -176,7 +178,6 @@ class CreatorStage extends Stage {
                 Texture myCruiser = game.getAssetManager().get("cruiser.png");
                 TextureRegion myCruiserRegion = new TextureRegion(myCruiser);
                 TextureRegionDrawable myCruiserRegionDrawable = new TextureRegionDrawable(myCruiserRegion);
-
                 shipButton = new ImageButton(myCruiserRegionDrawable); //Set the button up
                 shipButton.addListener(new ClickListener() {
                     public void clicked(InputEvent event, float x, float y){

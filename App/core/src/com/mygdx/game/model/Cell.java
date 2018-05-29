@@ -1,10 +1,15 @@
 package com.mygdx.game.model;
 
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
+import com.mygdx.game.BattleShip;
 import com.mygdx.game.controller.BoardController;
 import com.mygdx.game.controller.GameController;
 import com.mygdx.game.controller.ShipController;
@@ -18,7 +23,7 @@ public class Cell {
     private int line;
     private boolean destroyed = false;
     private TextButton button;
-    private ImageButton button2;
+    private Button button2;
     private BoardController board;
     private ClickListener createListener;
     private GameController controller;
@@ -39,19 +44,44 @@ public class Cell {
         button.setText("c");
     }
 
-    public void occupy(Ship ship){
+    public void occupy(Ship ship, int index){
         this.ship = ship;
 
-        if(this.ship instanceof Carrier)
+        if(this.ship instanceof Carrier) {
             this.button.setText("5");
+        }
         else if(this.ship instanceof Dreadnought)
             this.button.setText("4");
-        else if(this.ship instanceof Submarine)
+        else if(this.ship instanceof Submarine) {
             this.button.setText("3");
-        else if(this.ship instanceof Cruiser)
+
+            String file = "blueSubmarine" + Integer.toString(index+1) + ".png";
+            Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
+            TextureRegion cellTextureRegion = new TextureRegion(cellTexture);
+            TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
+            ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable,cellTextureRegionDrawable, cellTextureRegionDrawable);
+            this.button2.setStyle(style);
+        }
+        else if(this.ship instanceof Cruiser) {
             this.button.setText("2");
-        else if(this.ship instanceof PatrolBoat)
+
+            String file = "blueCruiser" + Integer.toString(index+1) + ".png";
+            Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
+            TextureRegion cellTextureRegion = new TextureRegion(cellTexture);
+            TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
+            ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable,cellTextureRegionDrawable, cellTextureRegionDrawable);
+            this.button2.setStyle(style);
+        }
+        else if(this.ship instanceof PatrolBoat) {
             this.button.setText("1");
+
+            String file = "bluePatrolBoat" + Integer.toString(index+1) + ".png";
+            Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
+            TextureRegion cellTextureRegion = new TextureRegion(cellTexture);
+            TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
+            ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable,cellTextureRegionDrawable, cellTextureRegionDrawable);
+            this.button2.setStyle(style);
+        }
     }
 
     public void destroy(){
@@ -106,7 +136,7 @@ public class Cell {
         });
     }
 
-    public void setButton(ImageButton button) {
+    public void setButton(Button button) {
         this.button2 = button;
 
         this.button2.addListener(createListener = new ClickListener() {

@@ -52,19 +52,19 @@ public class ShipController {
     void updateCell(Board board, int index){
         switch(this.shipModel.getWay()){
             case W:
-                board.getMatrix()[this.shipModel.getX()][this.shipModel.getY() + index].occupy(this.shipModel);
+                board.getMatrix()[this.shipModel.getX()][this.shipModel.getY() + index].occupy(this.shipModel,index);
                 this.shipModel.getCells()[index] = board.getMatrix()[this.shipModel.getX()][this.shipModel.getY() + index];
                 break;
             case N:
-                board.getMatrix()[this.shipModel.getX() - index][this.shipModel.getY()].occupy(this.shipModel);
+                board.getMatrix()[this.shipModel.getX() - index][this.shipModel.getY()].occupy(this.shipModel,index);
                 this.shipModel.getCells()[index] = board.getMatrix()[this.shipModel.getX() - index][this.shipModel.getY()];
                 break;
             case E:
-                board.getMatrix()[this.shipModel.getX()][this.shipModel.getY() - index].occupy(this.shipModel);
+                board.getMatrix()[this.shipModel.getX()][this.shipModel.getY() - index].occupy(this.shipModel,index);
                 this.shipModel.getCells()[index] = board.getMatrix()[this.shipModel.getX()][this.shipModel.getY() - index];
                 break;
             case S:
-                board.getMatrix()[this.shipModel.getX() + index][this.shipModel.getY()].occupy(this.shipModel);
+                board.getMatrix()[this.shipModel.getX() + index][this.shipModel.getY()].occupy(this.shipModel,index);
                 this.shipModel.getCells()[index] = board.getMatrix()[this.shipModel.getX() + index][this.shipModel.getY()];
                 break;
         }
