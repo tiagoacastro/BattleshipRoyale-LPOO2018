@@ -109,6 +109,7 @@ class GameStage extends Stage {
             botBoardTable.add().width(13*VIEWPORT_WIDTH/24);
 
             for(int x = 0; x < BOARD_SIZE; x++){
+                botBoardTable.add(this.controller.getBotBoard().getBoard().getMatrix()[y][x].getButton2Rm()).width(VIEWPORT_WIDTH/24).height(VIEWPORT_WIDTH*ratio/12);
                 botBoardTable.add(this.controller.getBotBoard().getBoard().getMatrix()[y][x].getButtonRm()).width(VIEWPORT_WIDTH/24).height(VIEWPORT_WIDTH*ratio/12);
                 //this.controller.getBotBoard().getBoard().getMatrix()[y][x].initPlay();
                 auxX = x;
