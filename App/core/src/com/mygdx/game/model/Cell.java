@@ -42,6 +42,12 @@ public class Cell {
     public void free(){
         this.ship = null;
         button.setText("c");
+
+        Texture cellTexture = BattleShip.getInstance().getAssetManager().get("square.png");
+        TextureRegion cellTextureRegion = new TextureRegion(cellTexture);
+        TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
+        Button.ButtonStyle style2 = new Button.ButtonStyle(cellTextureRegionDrawable,cellTextureRegionDrawable,cellTextureRegionDrawable);
+        this.button2.setStyle(style2);
     }
 
     public void occupy(Ship ship, int index){
