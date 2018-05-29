@@ -15,6 +15,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.BattleShip;
 import com.mygdx.game.controller.BoardController;
+import com.mygdx.game.controller.EasyBehaviour;
 import com.mygdx.game.controller.GameController;
 
 class GameStage extends Stage {
@@ -32,7 +33,7 @@ class GameStage extends Stage {
 
     GameStage(BoardController board) {
         game = BattleShip.getInstance();
-        this.controller = new GameController(board);
+        this.controller = new GameController(board, new EasyBehaviour());
 
         ratio = ((float) Gdx.graphics.getHeight() / (float) Gdx.graphics.getWidth());
         this.viewport = new FitViewport(VIEWPORT_WIDTH, VIEWPORT_WIDTH * ratio);
@@ -109,9 +110,8 @@ class GameStage extends Stage {
             botBoardTable.add().width(13*VIEWPORT_WIDTH/24);
 
             for(int x = 0; x < BOARD_SIZE; x++){
-                botBoardTable.add(this.controller.getBotBoard().getBoard().getMatrix()[y][x].getButton2Rm()).width(VIEWPORT_WIDTH/24).height(VIEWPORT_WIDTH*ratio/12);
+                botBoardTable.add(this.controller.getBotBoard().getBoard().getMatrix()[y][x].getButton2()).width(VIEWPORT_WIDTH/24).height(VIEWPORT_WIDTH*ratio/12);
                 botBoardTable.add(this.controller.getBotBoard().getBoard().getMatrix()[y][x].getButtonRm()).width(VIEWPORT_WIDTH/24).height(VIEWPORT_WIDTH*ratio/12);
-                //this.controller.getBotBoard().getBoard().getMatrix()[y][x].initPlay();
                 auxX = x;
                 auxY = y;
                 this.controller.getBotBoard().getBoard().getMatrix()[y][x].setShoot(controller);

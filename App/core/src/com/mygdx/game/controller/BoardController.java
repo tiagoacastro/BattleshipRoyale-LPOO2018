@@ -102,4 +102,11 @@ public class BoardController {
                 notPlaced = false;
         }
     }
+    /**
+     * Getter for the dimension of the board
+     * @return  board dimension
+     */
+    public int getDimension() {
+        return dimension;
+    }
 }

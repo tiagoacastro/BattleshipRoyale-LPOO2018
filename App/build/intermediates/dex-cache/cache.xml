@@ -88,7 +88,7 @@
         jumboMode="false"
         optimize="true"
         revision="27.0.3"
-        sha1="98f95783013fc9d24ec849fd26d63e7186c56f42">
+        sha1="9d9bd37a5bfad9d8c3f409dcd95fc2b68f9277d0">
         <dex dex="/home/tiago/Desktop/Battleship-Royale/App/android/build/intermediates/pre-dexed/debug/core-1.0_a56855e21217076b6410c39d5adf9c408475016b.jar" />
     </item>
     <item

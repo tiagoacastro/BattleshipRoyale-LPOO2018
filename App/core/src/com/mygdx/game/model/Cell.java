@@ -15,11 +15,13 @@ import com.mygdx.game.controller.BoardController;
 import com.mygdx.game.controller.GameController;
 import com.mygdx.game.controller.ShipController;
 
+import java.util.Objects;
+
 /**
  * Ship part that creates the boats
  */
 public class Cell {
-    private Ship ship = null;
+    private ShipController ship = null;
     private int column;
     private int line;
     private boolean destroyed = false;
@@ -27,6 +29,7 @@ public class Cell {
     private Button button2;
     private BoardController board;
     private ClickListener createListener;
+    private ClickListener shootListener = null;
     private GameController controller;
     private Cell me;
 
@@ -36,7 +39,7 @@ public class Cell {
         this.board = board;
     }
 
-    public boolean occupied(Ship s){
+    public boolean occupied(ShipController s){
         return s != ship && ship != null;
     }
 
@@ -51,12 +54,12 @@ public class Cell {
         this.button2.setStyle(style2);
     }
 
-    public void occupy(Ship ship, int index){
+    public void occupy(ShipController ship, int index){
         this.ship = ship;
 
         int rotateAngle = 0;
 
-        switch(this.ship.getWay()) {
+        switch(this.ship.getShipModel().getWay()) {
             case W: rotateAngle = 0;
                 break;
             case N: rotateAngle = 90;
@@ -67,7 +70,7 @@ public class Cell {
             break;
         }
 
-        if(this.ship instanceof Carrier) {
+        if(this.ship.getShipModel() instanceof Carrier) {
             this.button.setText("5");
 
             String file = "blueCarrier" + Integer.toString(index+1) + ".png";
@@ -79,7 +82,7 @@ public class Cell {
             ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable,cellTextureRegionDrawable, cellTextureRegionDrawable);
             this.button2.setStyle(style);
         }
-        else if(this.ship instanceof Dreadnought) {
+        else if(this.ship.getShipModel() instanceof Dreadnought) {
             this.button.setText("4");
 
             String file = "blueDreadnought" + Integer.toString(index+1) + ".png";
@@ -91,7 +94,7 @@ public class Cell {
             ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable,cellTextureRegionDrawable, cellTextureRegionDrawable);
             this.button2.setStyle(style);
         }
-        else if(this.ship instanceof Submarine) {
+        else if(this.ship.getShipModel() instanceof Submarine) {
             this.button.setText("3");
 
             String file = "blueSubmarine" + Integer.toString(index+1) + ".png";
@@ -103,7 +106,7 @@ public class Cell {
             ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable,cellTextureRegionDrawable, cellTextureRegionDrawable);
             this.button2.setStyle(style);
         }
-        else if(this.ship instanceof Cruiser) {
+        else if(this.ship.getShipModel() instanceof Cruiser) {
             this.button.setText("2");
 
             String file = "blueCruiser" + Integer.toString(index+1) + ".png";
@@ -115,7 +118,7 @@ public class Cell {
             ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable,cellTextureRegionDrawable, cellTextureRegionDrawable);
             this.button2.setStyle(style);
         }
-        else if(this.ship instanceof PatrolBoat) {
+        else if(this.ship.getShipModel() instanceof PatrolBoat) {
             this.button.setText("1");
 
             String file = "bluePatrolBoat" + Integer.toString(index+1) + ".png";
@@ -129,14 +132,23 @@ public class Cell {
         }
     }
 
-    public void destroy(){
+    public boolean destroy(){
+        if(shootListener != null)
+            this.button.removeListener(shootListener);
+
         if(ship != null) {
             this.destroyed = true;
 
             this.button.setText("*");
 
             this.ship.check();
+
+            return true;
         }
+
+        this.button.setText("X");
+
+        return false;
     }
 
     public boolean check(){
@@ -164,13 +176,13 @@ public class Cell {
         return button;
     }
 
-    public Button getButton2Rm() {
-        this.button.removeListener(createListener);
-        return button2;
-    }
-
     public TextButton getButton() {
         return button;
+    }
+
+    public Button getButton2() {
+        this.button.removeListener(createListener);
+        return button2;
     }
 
     public void setButton(TextButton button) {
@@ -203,18 +215,10 @@ public class Cell {
         this.controller = gController;
         me = this;
 
-        button.addListener(new ClickListener() {
+        button.addListener(shootListener = new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 controller.setChosen(me);
             }
         });
     }
-    /*
-    public void initPlay(){
-        this.button.addListener(new ClickListener() {
-            public void clicked(InputEvent event, float x, float y){
-                destroy();
-            }
-        });
-    }*/
 }

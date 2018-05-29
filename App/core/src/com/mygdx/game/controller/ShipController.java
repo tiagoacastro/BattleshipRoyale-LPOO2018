@@ -72,19 +72,19 @@ public class ShipController {
     void updateCell(Board board, int index){
         switch(this.shipModel.getWay()){
             case W:
-                board.getMatrix()[this.shipModel.getX()][this.shipModel.getY() + index].occupy(this.shipModel,index);
+                board.getMatrix()[this.shipModel.getX()][this.shipModel.getY() + index].occupy(this,index);
                 this.shipModel.getCells()[index] = board.getMatrix()[this.shipModel.getX()][this.shipModel.getY() + index];
                 break;
             case N:
-                board.getMatrix()[this.shipModel.getX() - index][this.shipModel.getY()].occupy(this.shipModel,index);
+                board.getMatrix()[this.shipModel.getX() - index][this.shipModel.getY()].occupy(this,index);
                 this.shipModel.getCells()[index] = board.getMatrix()[this.shipModel.getX() - index][this.shipModel.getY()];
                 break;
             case E:
-                board.getMatrix()[this.shipModel.getX()][this.shipModel.getY() - index].occupy(this.shipModel,index);
+                board.getMatrix()[this.shipModel.getX()][this.shipModel.getY() - index].occupy(this,index);
                 this.shipModel.getCells()[index] = board.getMatrix()[this.shipModel.getX()][this.shipModel.getY() - index];
                 break;
             case S:
-                board.getMatrix()[this.shipModel.getX() + index][this.shipModel.getY()].occupy(this.shipModel,index);
+                board.getMatrix()[this.shipModel.getX() + index][this.shipModel.getY()].occupy(this,index);
                 this.shipModel.getCells()[index] = board.getMatrix()[this.shipModel.getX() + index][this.shipModel.getY()];
                 break;
         }
@@ -101,19 +101,19 @@ public class ShipController {
         try{
             switch (this.shipModel.getWay()) {
                 case W:
-                    if (board.getMatrix()[x][y + index].occupied(this.shipModel))
+                    if (board.getMatrix()[x][y + index].occupied(this))
                         return true;
                     break;
                 case N:
-                    if (board.getMatrix()[x - index][y].occupied(this.shipModel))
+                    if (board.getMatrix()[x - index][y].occupied(this))
                         return true;
                     break;
                 case E:
-                    if (board.getMatrix()[x][y - index].occupied(this.shipModel))
+                    if (board.getMatrix()[x][y - index].occupied(this))
                         return true;
                     break;
                 case S:
-                    if (board.getMatrix()[x + index][y].occupied(this.shipModel))
+                    if (board.getMatrix()[x + index][y].occupied(this))
                         return true;
                     break;
             }
@@ -158,8 +158,16 @@ public class ShipController {
     /**
      * Function to check if the boat was placed or not
      * @return  if it is placed
+
      */
     public boolean isPlaced(){
         return placed;
+    }
+    /**
+     * Getter for the Ship model
+     * @return  Ship model
+     */
+    public Ship getShipModel() {
+        return shipModel;
     }
 }

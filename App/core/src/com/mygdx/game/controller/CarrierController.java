@@ -27,19 +27,19 @@ public class CarrierController extends ShipController {
         else
             switch (this.shipModel.getWay()) {
                 case W:
-                    board.getMatrix()[this.shipModel.getX() + 1][this.shipModel.getY() + (index - 1)].occupy(this.shipModel,index);
+                    board.getMatrix()[this.shipModel.getX() + 1][this.shipModel.getY() + (index - 1)].occupy(this,index);
                     this.shipModel.getCells()[index] = board.getMatrix()[this.shipModel.getX() + 1][this.shipModel.getY() + (index - 1)];
                     break;
                 case N:
-                    board.getMatrix()[this.shipModel.getX() - (index - 1)][this.shipModel.getY() + 1].occupy(this.shipModel,index);
+                    board.getMatrix()[this.shipModel.getX() - (index - 1)][this.shipModel.getY() + 1].occupy(this,index);
                     this.shipModel.getCells()[index] = board.getMatrix()[this.shipModel.getX() - (index - 1)][this.shipModel.getY() + 1];
                     break;
                 case E:
-                    board.getMatrix()[this.shipModel.getX() - 1][this.shipModel.getY() - (index - 1)].occupy(this.shipModel,index);
+                    board.getMatrix()[this.shipModel.getX() - 1][this.shipModel.getY() - (index - 1)].occupy(this,index);
                     this.shipModel.getCells()[index] = board.getMatrix()[this.shipModel.getX() - 1][this.shipModel.getY() - (index - 1)];
                     break;
                 case S:
-                    board.getMatrix()[this.shipModel.getX() + (index - 1)][this.shipModel.getY() - 1].occupy(this.shipModel,index);
+                    board.getMatrix()[this.shipModel.getX() + (index - 1)][this.shipModel.getY() - 1].occupy(this,index);
                     this.shipModel.getCells()[index] = board.getMatrix()[this.shipModel.getX() + (index - 1)][this.shipModel.getY() - 1];
                     break;
             }
@@ -60,19 +60,19 @@ public class CarrierController extends ShipController {
             else
                 switch(this.shipModel.getWay()){
                     case W:
-                        if(board.getMatrix()[x + 1][y + (index - 1)].occupied(this.shipModel))
+                        if(board.getMatrix()[x + 1][y + (index - 1)].occupied(this))
                             return true;
                         break;
                     case N:
-                        if(board.getMatrix()[x - (index - 1)][y + 1].occupied(this.shipModel))
+                        if(board.getMatrix()[x - (index - 1)][y + 1].occupied(this))
                             return true;
                         break;
                     case E:
-                        if(board.getMatrix()[x - 1][y - (index - 1)].occupied(this.shipModel))
+                        if(board.getMatrix()[x - 1][y - (index - 1)].occupied(this))
                             return true;
                         break;
                     case S:
-                        if(board.getMatrix()[x + (index - 1)][y - 1].occupied(this.shipModel))
+                        if(board.getMatrix()[x + (index - 1)][y - 1].occupied(this))
                             return true;
                         break;
                 }

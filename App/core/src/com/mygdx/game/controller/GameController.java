@@ -10,12 +10,15 @@ public class GameController {
     private BoardController userBoard;
     private BoardController botBoard;
     private Cell chosen = null;
+    private BotBehaviour behaviour;
     /**
      * GameController constructor that receives the user board created on the creatorScreen and creates the bot's
      * @param board     user's board
      */
-    public GameController(BoardController board) {
+    public GameController(BoardController board, BotBehaviour behaviour) {
         this.userBoard = board;
+
+        this.behaviour = behaviour;
 
         this.botBoard = new BoardController(BOARD_SIZE);
     }
@@ -45,7 +48,8 @@ public class GameController {
      */
     public void shoot() {
         if(this.chosen != null) {
-            chosen.destroy();
+            this.chosen.destroy();
+            this.behaviour.shoot(this.userBoard);
             this.chosen = null;
         }
     }
