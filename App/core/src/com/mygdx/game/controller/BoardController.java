@@ -9,7 +9,7 @@ import com.mygdx.game.model.Submarine;
 import java.util.Random;
 
 /**
- * Class containing the player's board
+ * Class containing the player's board in charge of every operation on it
  */
 public class BoardController {
     private Board board;
@@ -20,14 +20,22 @@ public class BoardController {
     private ShipController cruiser = new ShipController(new Cruiser());
     private ShipController patrolBoat = new ShipController(new PatrolBoat());
     private ShipController chosen = null;
-
+    /**
+     * Enum with the ship types
+     */
     public enum Ships{carrier, cruiser, dreadnought, submarine, patrolBoat}
-
+    /**
+     * BoardController constructor that receives the board's dimension and creates it
+     * @param dimension     dimension of the board
+     */
     public BoardController(int dimension) {
         this.board = new Board(dimension, this);
         this.dimension = dimension;
     }
-
+    /**
+     * Setter for the chosen ship to place
+     * @param choice        ship name
+     */
     public void setChosen(Ships choice) {
         switch(choice){
             case carrier:
@@ -47,19 +55,30 @@ public class BoardController {
                 break;
         }
     }
-
+    /**
+     * Getter for the chosen ship to place
+     * @return chosen ship
+     */
     public ShipController getChosen() {
         return chosen;
     }
-
+    /**
+     * Getter for the Board model
+     * @return board
+     */
     public Board getBoard() {
         return board;
     }
-
+    /**
+     * Function to check if all the boats have been placed
+     * @return if all the boats have been placed
+     */
     public boolean allPlaced(){
         return carrier.isPlaced() && dreadnought.isPlaced() && submarine.isPlaced() && cruiser.isPlaced() && patrolBoat.isPlaced();
     }
-
+    /**
+     * Function that randomly places all boats
+     */
     public void populate(){
         place(carrier);
         place(dreadnought);
@@ -67,7 +86,10 @@ public class BoardController {
         place(cruiser);
         place(patrolBoat);
     }
-
+    /**
+     * Function to randomly place a single boat
+     * @param ship  boat to be placed
+     */
     private void place(ShipController ship){
         Random rand = new Random();
 

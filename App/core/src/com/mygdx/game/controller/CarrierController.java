@@ -1,14 +1,25 @@
 package com.mygdx.game.controller;
 
 import com.mygdx.game.model.Board;
+import com.mygdx.game.model.Carrier;
 import com.mygdx.game.model.Ship;
 
+/**
+ * CarrierController class created because of the differences needed in the methods related to the Carrier ship relating to the other ships
+ */
 public class CarrierController extends ShipController {
-
-    CarrierController(Ship ship) {
+    /**
+     * CarrierController construct that only calls the ShipController super constructor
+     * @param ship  carrier model
+     */
+    CarrierController(Carrier ship) {
         super(ship);
     }
-
+    /**
+     * Function to check a cell of a board as occupied and assign it to the ship (Override for the Carrier ship)
+     * @param board board
+     * @param index cell index on the ship
+     */
     @Override
     public void updateCell(Board board, int index){
         if(index != this.shipModel.getCells().length-1)
@@ -33,7 +44,14 @@ public class CarrierController extends ShipController {
                     break;
             }
     }
-
+    /**
+     * Function to check if a cell of a board is free and can be occupied (Override for the Carrier ship)
+     * @param board board
+     * @param x     cell X
+     * @param y     cell Y
+     * @param index cell index on the ship
+     * @return  if the cell can be occupied or not
+     */
     @Override
     public boolean checkCell(Board board, int x, int y, int index){
         try{

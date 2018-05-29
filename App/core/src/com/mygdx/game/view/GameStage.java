@@ -146,7 +146,7 @@ class GameStage extends Stage {
         super.act();
 
         float gyroY = Gdx.input.getGyroscopeY();
-        if(gyroY <= -5){
+        if(gyroY >= 5){
             controller.shoot();
         }
     }
