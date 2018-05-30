@@ -1,6 +1,7 @@
 package com.mygdx.game.view;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -153,7 +154,7 @@ class CreatorStage extends Stage {
                 });
                 break;
             case 1:
-                Texture myDreadnought = game.getAssetManager().get("ship_small_b_body.png");
+                Texture myDreadnought = game.getAssetManager().get("dreadnought.png");
                 TextureRegion myDreadnoughtRegion = new TextureRegion(myDreadnought);
                 TextureRegionDrawable myDreadnoughtRegionDrawable = new TextureRegionDrawable(myDreadnoughtRegion);
                 shipButton = new ImageButton(myDreadnoughtRegionDrawable); //Set the button up

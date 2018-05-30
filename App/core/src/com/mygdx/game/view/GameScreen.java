@@ -2,6 +2,7 @@ package com.mygdx.game.view;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.mygdx.game.BattleShip;
@@ -29,26 +30,72 @@ public class GameScreen extends ScreenAdapter {
     private void loadAssets() {
 
         game.getAssetManager().load("square.png", Texture.class);
-        game.getAssetManager().load("ship_small_b_body.png", Texture.class);
-        game.getAssetManager().load("carrier.png", Texture.class);
-        game.getAssetManager().load("cruiser.png", Texture.class);
-        game.getAssetManager().load("patrolBoat.png", Texture.class);
-        game.getAssetManager().load("submarine.png", Texture.class);
-        game.getAssetManager().load("bluePatrolBoat1.png", Texture.class);
-        game.getAssetManager().load("blueCruiser1.png", Texture.class);
-        game.getAssetManager().load("blueCruiser2.png", Texture.class);
-        game.getAssetManager().load("blueSubmarine1.png", Texture.class);
-        game.getAssetManager().load("blueSubmarine2.png", Texture.class);
-        game.getAssetManager().load("blueSubmarine3.png", Texture.class);
-        game.getAssetManager().load("blueDreadnought1.png", Texture.class);
-        game.getAssetManager().load("blueDreadnought2.png", Texture.class);
-        game.getAssetManager().load("blueDreadnought3.png", Texture.class);
-        game.getAssetManager().load("blueDreadnought4.png", Texture.class);
-        game.getAssetManager().load("blueCarrier1.png", Texture.class);
-        game.getAssetManager().load("blueCarrier2.png", Texture.class);
-        game.getAssetManager().load("blueCarrier3.png", Texture.class);
-        game.getAssetManager().load("blueCarrier4.png", Texture.class);
-        game.getAssetManager().load("blueCarrier5.png", Texture.class);
+        game.getAssetManager().load("bluePatrolBoat1-0.png", Texture.class);
+        game.getAssetManager().load("bluePatrolBoat1-90.png", Texture.class);
+        game.getAssetManager().load("bluePatrolBoat1-180.png", Texture.class);
+        game.getAssetManager().load("bluePatrolBoat1-270.png", Texture.class);
+
+        game.getAssetManager().load("blueCruiser1-0.png", Texture.class);
+        game.getAssetManager().load("blueCruiser1-90.png", Texture.class);
+        game.getAssetManager().load("blueCruiser1-180.png", Texture.class);
+        game.getAssetManager().load("blueCruiser1-270.png", Texture.class);
+        game.getAssetManager().load("blueCruiser2-0.png", Texture.class);
+        game.getAssetManager().load("blueCruiser2-90.png", Texture.class);
+        game.getAssetManager().load("blueCruiser2-180.png", Texture.class);
+        game.getAssetManager().load("blueCruiser2-270.png", Texture.class);
+
+        game.getAssetManager().load("blueSubmarine1-0.png", Texture.class);
+        game.getAssetManager().load("blueSubmarine1-90.png", Texture.class);
+        game.getAssetManager().load("blueSubmarine1-180.png", Texture.class);
+        game.getAssetManager().load("blueSubmarine1-270.png", Texture.class);
+        game.getAssetManager().load("blueSubmarine2-0.png", Texture.class);
+        game.getAssetManager().load("blueSubmarine2-90.png", Texture.class);
+        game.getAssetManager().load("blueSubmarine2-180.png", Texture.class);
+        game.getAssetManager().load("blueSubmarine2-270.png", Texture.class);
+        game.getAssetManager().load("blueSubmarine3-0.png", Texture.class);
+        game.getAssetManager().load("blueSubmarine3-90.png", Texture.class);
+        game.getAssetManager().load("blueSubmarine3-180.png", Texture.class);
+        game.getAssetManager().load("blueSubmarine3-270.png", Texture.class);
+
+        game.getAssetManager().load("blueDreadnought1-0.png", Texture.class);
+        game.getAssetManager().load("blueDreadnought1-90.png", Texture.class);
+        game.getAssetManager().load("blueDreadnought1-180.png", Texture.class);
+        game.getAssetManager().load("blueDreadnought1-270.png", Texture.class);
+        game.getAssetManager().load("blueDreadnought2-0.png", Texture.class);
+        game.getAssetManager().load("blueDreadnought2-90.png", Texture.class);
+        game.getAssetManager().load("blueDreadnought2-180.png", Texture.class);
+        game.getAssetManager().load("blueDreadnought2-270.png", Texture.class);
+        game.getAssetManager().load("blueDreadnought3-0.png", Texture.class);
+        game.getAssetManager().load("blueDreadnought3-90.png", Texture.class);
+        game.getAssetManager().load("blueDreadnought3-180.png", Texture.class);
+        game.getAssetManager().load("blueDreadnought3-270.png", Texture.class);
+        game.getAssetManager().load("blueDreadnought4-0.png", Texture.class);
+        game.getAssetManager().load("blueDreadnought4-90.png", Texture.class);
+        game.getAssetManager().load("blueDreadnought4-180.png", Texture.class);
+        game.getAssetManager().load("blueDreadnought4-270.png", Texture.class);
+
+        game.getAssetManager().load("blueCarrier1-0.png", Texture.class);
+        game.getAssetManager().load("blueCarrier1-90.png", Texture.class);
+        game.getAssetManager().load("blueCarrier1-180.png", Texture.class);
+        game.getAssetManager().load("blueCarrier1-270.png", Texture.class);
+        game.getAssetManager().load("blueCarrier2-0.png", Texture.class);
+        game.getAssetManager().load("blueCarrier2-90.png", Texture.class);
+        game.getAssetManager().load("blueCarrier2-180.png", Texture.class);
+        game.getAssetManager().load("blueCarrier2-270.png", Texture.class);
+        game.getAssetManager().load("blueCarrier3-0.png", Texture.class);
+        game.getAssetManager().load("blueCarrier3-90.png", Texture.class);
+        game.getAssetManager().load("blueCarrier3-180.png", Texture.class);
+        game.getAssetManager().load("blueCarrier3-270.png", Texture.class);
+        game.getAssetManager().load("blueCarrier4-0.png", Texture.class);
+        game.getAssetManager().load("blueCarrier4-90.png", Texture.class);
+        game.getAssetManager().load("blueCarrier4-180.png", Texture.class);
+        game.getAssetManager().load("blueCarrier4-270.png", Texture.class);
+        game.getAssetManager().load("blueCarrier5-0.png", Texture.class);
+        game.getAssetManager().load("blueCarrier5-90.png", Texture.class);
+        game.getAssetManager().load("blueCarrier5-180.png", Texture.class);
+        game.getAssetManager().load("blueCarrier5-270.png", Texture.class);
+
+        game.getAssetManager().load("cannonSound.mp3", Sound.class);
         game.getAssetManager().finishLoading();
     }
     /**

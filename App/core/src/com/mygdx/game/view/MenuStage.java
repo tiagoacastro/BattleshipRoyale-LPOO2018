@@ -57,6 +57,7 @@ class MenuStage extends Stage {
         playButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 game.setScreen(new CreatorScreen());
+                music.stop();
             }
         });
 
