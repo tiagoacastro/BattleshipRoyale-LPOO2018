@@ -1,5 +1,6 @@
 package com.mygdx.game.view;
 
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Color;
@@ -30,6 +31,14 @@ class MenuStage extends Stage {
     MenuStage() {
         game = BattleShip.getInstance();
 
+        FreeTypeFontGenerator generator;
+        generator = new FreeTypeFontGenerator(Gdx.files.internal("font.ttf"));
+        FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
+        parameter.size = 24;
+        parameter.color = Color.RED;
+        BitmapFont font = generator.generateFont(parameter); // font size 12 pixels
+
+
         ratio = ((float) Gdx.graphics.getHeight() / (float) Gdx.graphics.getWidth());
         this.viewport = new FitViewport(VIEWPORT_WIDTH, VIEWPORT_WIDTH * ratio);
         viewport.apply();
@@ -46,13 +55,15 @@ class MenuStage extends Stage {
         table.row();
 
         TextButton.TextButtonStyle style = new TextButton.TextButtonStyle();
-        style.font = new BitmapFont();
+        style.font = font;
 
-        Texture playTexture = game.getAssetManager().get("playButton.png");
+        TextButton playButton = new TextButton("PLAY NEW GAME", style);
+        /*Texture playTexture = game.getAssetManager().get("playButton.png");
         TextureRegion playTextureRegion = new TextureRegion(playTexture);
-        TextureRegionDrawable playTextureRegionDrawable = new TextureRegionDrawable(playTextureRegion);
+        TextureRegionDrawable playTextureRegionDrawable = new TextureRegionDrawable(playTextureRegion);*/
 
-        ImageButton playButton = new ImageButton(playTextureRegionDrawable); //Set the button up
+
+        //ImageButton playButton = new ImageButton(playTextureRegionDrawable); //Set the button up
         table.add(playButton).width(VIEWPORT_WIDTH/5).height(VIEWPORT_WIDTH*ratio/5).expand().center().bottom().colspan(2);
         playButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
