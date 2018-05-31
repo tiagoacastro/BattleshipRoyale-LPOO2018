@@ -1,15 +1,14 @@
 package com.mygdx.game.controller;
 
-import com.mygdx.game.model.Cell;
 import java.util.ArrayList;
 
 /**
  * bot behaviours implementing the BotBehaviour interface (Strategy design Pattern)
  */
 public class HardBehaviour extends EasyBehaviour{
-    private ArrayList<Cell> discoverer = new ArrayList<Cell>();
+    private ArrayList<CellController> discoverer = new ArrayList<CellController>();
     private int way = 0;
-    private Cell edgeCell = null;
+    private CellController edgeCell = null;
     private boolean trySide = true;
     private boolean switchSide = true;
     private boolean tailStart = false;
@@ -25,9 +24,9 @@ public class HardBehaviour extends EasyBehaviour{
      * @return not used in this implementation, only on the easy mode
      */
     @Override
-    public Cell shoot(BoardController board) {
+    public CellController shoot(BoardController board) {
         boatDestroyed = false;
-        Cell chosen;
+        CellController chosen;
 
         switch(discoverer.size()){
             case 0:
@@ -62,18 +61,19 @@ public class HardBehaviour extends EasyBehaviour{
     /**
      * Try to shoot cells around the first one to get the axis on wich the boat is positioned
      * @param board board
+     * @param c     cell
      * @return  the cell on which it hit or null if it missed a boat
      */
-    private Cell tryAround(BoardController board, Cell c){
+    private CellController tryAround(BoardController board, CellController c){
         switch(way){
             case 0:
-                return shootSpecificAround(board, c.getX(),c.getY()+1, c);
+                return shootSpecificAround(board, c.getCellModel().getX(),c.getCellModel().getY()+1, c);
             case 1:
-                return shootSpecificAround(board, c.getX()-1,c.getY(), c);
+                return shootSpecificAround(board, c.getCellModel().getX()-1,c.getCellModel().getY(), c);
             case 2:
-                return shootSpecificAround(board, c.getX(),c.getY()-1, c);
+                return shootSpecificAround(board, c.getCellModel().getX(),c.getCellModel().getY()-1, c);
             case 3:
-                return shootSpecificAround(board, c.getX()+1,c.getY(), c);
+                return shootSpecificAround(board, c.getCellModel().getX()+1,c.getCellModel().getY(), c);
         }
 
         return null;
@@ -86,7 +86,7 @@ public class HardBehaviour extends EasyBehaviour{
      * @param cell  original cell for wich the surrounding cells are being checked
      * @return the cell on which it hit or null if it missed a boat
      */
-    private Cell shootSpecificAround(BoardController board, int x, int y, Cell cell){
+    private CellController shootSpecificAround(BoardController board, int x, int y, CellController cell){
         try {
             if (tracker[x][y]) {
                 way++;
@@ -94,10 +94,10 @@ public class HardBehaviour extends EasyBehaviour{
             }
             tracker[x][y] = true;
 
-            Cell c = board.getBoard().getMatrix()[x][y];
+            CellController c = board.getBoard().getMatrix()[x][y];
 
             if (c.destroy()) {
-                if (c.getShip().getShipModel().check())
+                if (c.getCellModel().getShip().getShipModel().check())
                     boatDestroyed = true;
                 return c;
             }
@@ -110,32 +110,35 @@ public class HardBehaviour extends EasyBehaviour{
     }
     /**
      * Try to shoot cells in the same direction as the last one
-     * @param board board
+     * @param board         board
+     * @param c             cell
+     * @param notCarrier    if its on the carrier gun or not
      * @return the cell on which it hit or null if it missed a boat
      */
-    private Cell tryFollow(BoardController board, Cell c, boolean notCarrier){
+    private CellController tryFollow(BoardController board, CellController c, boolean notCarrier){
         switch(way){
             case 0:
-                return shootSpecificFollow(board, c.getX(),c.getY()+1, c, notCarrier);
+                return shootSpecificFollow(board, c.getCellModel().getX(),c.getCellModel().getY()+1, c, notCarrier);
             case 1:
-                return shootSpecificFollow(board, c.getX()-1,c.getY(), c, notCarrier);
+                return shootSpecificFollow(board, c.getCellModel().getX()-1,c.getCellModel().getY(), c, notCarrier);
             case 2:
-                return shootSpecificFollow(board, c.getX(),c.getY()-1, c, notCarrier);
+                return shootSpecificFollow(board, c.getCellModel().getX(),c.getCellModel().getY()-1, c, notCarrier);
             case 3:
-                return shootSpecificFollow(board, c.getX()+1,c.getY(), c, notCarrier);
+                return shootSpecificFollow(board, c.getCellModel().getX()+1,c.getCellModel().getY(), c, notCarrier);
         }
 
         return null;
     }
     /**
      * Try to shoot a certain cell (follow mode)
-     * @param board board
-     * @param x     cell x
-     * @param y     cell y
-     * @param cell  original cell for wich the next cell is being checked
+     * @param board         board
+     * @param x             cell x
+     * @param y             cell y
+     * @param cell          original cell for wich the next cell is being checked
+     * @param notCarrier    if the shot is on the carrier gun
      * @return the cell on which it hit or null if it missed a boat
      */
-    private Cell shootSpecificFollow(BoardController board, int x, int y, Cell cell, boolean notCarrier){
+    private CellController shootSpecificFollow(BoardController board, int x, int y, CellController cell, boolean notCarrier){
         try {
             if (tracker[x][y]) {
                 if(notCarrier) {
@@ -155,10 +158,10 @@ public class HardBehaviour extends EasyBehaviour{
             }
             tracker[x][y] = true;
 
-            Cell c = board.getBoard().getMatrix()[x][y];
+            CellController c = board.getBoard().getMatrix()[x][y];
 
             if (c.destroy()) {
-                if (c.getShip().getShipModel().check())
+                if (c.getCellModel().getShip().getShipModel().check())
                     boatDestroyed = true;
                 return c;
             }
@@ -181,13 +184,12 @@ public class HardBehaviour extends EasyBehaviour{
             }
         }
     }
-
     /**
      * Try to take down the carrier (only gets called when 4 cells have been destroyed and the ship hasn't gone down)
      * @param board board
      * @return  the cell on which it hit or null if it missed a boat
      */
-    private Cell tryCarrier(BoardController board){
+    private CellController tryCarrier(BoardController board){
         if (trySide) {
             way += 1;
             if(!tailStart)

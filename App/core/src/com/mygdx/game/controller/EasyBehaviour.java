@@ -1,7 +1,5 @@
 package com.mygdx.game.controller;
 
-import com.mygdx.game.model.Cell;
-
 import java.util.Arrays;
 import java.util.Random;
 
@@ -24,9 +22,9 @@ public class EasyBehaviour implements BotBehaviour{
      * @return the cell on which it hit or null if it missed a boat
      */
     @Override
-    public Cell shoot(BoardController board) {
+    public CellController shoot(BoardController board) {
         Random rand = new Random();
-        Cell chosen = null;
+        CellController chosen = null;
         boolean notChosen = true;
 
         while(notChosen) {
@@ -42,7 +40,7 @@ public class EasyBehaviour implements BotBehaviour{
         }
 
         if(chosen.destroy()) {
-            if(chosen.getShip().getShipModel().check())
+            if(chosen.getCellModel().getShip().getShipModel().check())
                 boatDestroyed = true;
             return chosen;
         }

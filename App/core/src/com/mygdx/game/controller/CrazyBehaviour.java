@@ -15,7 +15,7 @@ public class CrazyBehaviour extends HardBehaviour{
      * @return not used in this implementation, only on the easy mode
      */
     @Override
-    public Cell shoot(BoardController board) {
+    public CellController shoot(BoardController board) {
         super.shoot(board);
         super.shoot(board);
         return null;

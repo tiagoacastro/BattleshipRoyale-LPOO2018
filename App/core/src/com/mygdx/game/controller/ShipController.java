@@ -23,7 +23,7 @@ public class ShipController {
      */
     private void freeCells(){
         if(this.shipModel.getCells()[0] != null) {
-            for (Cell cell : this.shipModel.getCells()) {
+            for (CellController cell : this.shipModel.getCells()) {
                 cell.free();
             }
             Arrays.fill(this.shipModel.getCells(), null);
@@ -145,8 +145,8 @@ public class ShipController {
      */
     public void check(){
         boolean destroy = true;
-        for (Cell c : this.shipModel.getCells()){
-            if(!c.check()){
+        for (CellController c : this.shipModel.getCells()){
+            if(!c.getCellModel().check()){
                 destroy = false;
                 break;
             }
