@@ -97,8 +97,6 @@ class GameStage extends Stage {
                 Button cellButton = new Button(); //Set the button up
                 cellButton.setStyle(style2);
 
-                TextButton button = new TextButton("c", style);
-                this.controller.getBotBoard().getBoard().getMatrix()[y][x].setButton(button);
                 this.controller.getBotBoard().getBoard().getMatrix()[y][x].setButton(cellButton);
             }
         }
@@ -110,7 +108,6 @@ class GameStage extends Stage {
             botBoardTable.add().width(13*VIEWPORT_WIDTH/24);
 
             for(int x = 0; x < BOARD_SIZE; x++){
-                botBoardTable.add(this.controller.getBotBoard().getBoard().getMatrix()[y][x].getButton2()).width(VIEWPORT_WIDTH/24).height(VIEWPORT_WIDTH*ratio/12);
                 botBoardTable.add(this.controller.getBotBoard().getBoard().getMatrix()[y][x].getButtonRm()).width(VIEWPORT_WIDTH/24).height(VIEWPORT_WIDTH*ratio/12);
                 auxX = x;
                 auxY = y;

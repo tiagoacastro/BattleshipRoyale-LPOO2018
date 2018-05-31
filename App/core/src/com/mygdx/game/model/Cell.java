@@ -27,8 +27,7 @@ public class Cell {
     private int column;
     private int line;
     private boolean destroyed = false;
-    private TextButton button;
-    private Button button2;
+    private Button button;
     private BoardController board;
     private ClickListener createListener;
     private ClickListener shootListener = null;
@@ -47,13 +46,12 @@ public class Cell {
 
     public void free(){
         this.ship = null;
-        button.setText("c");
 
         Texture cellTexture = BattleShip.getInstance().getAssetManager().get("square.png");
         TextureRegion cellTextureRegion = new TextureRegion(cellTexture);
         TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
         Button.ButtonStyle style2 = new Button.ButtonStyle(cellTextureRegionDrawable,cellTextureRegionDrawable,cellTextureRegionDrawable);
-        this.button2.setStyle(style2);
+        this.button.setStyle(style2);
     }
 
     public void occupy(ShipController ship, int index) {
@@ -77,7 +75,6 @@ public class Cell {
         }
 
         if (this.ship.getShipModel() instanceof Carrier) {
-            this.button.setText("5");
 
             String file = "blueCarrier" + Integer.toString(index + 1) + "-" + Integer.toString(rotateAngle) + ".png";
             Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
@@ -85,10 +82,9 @@ public class Cell {
             TextureRegion cellTextureRegion = new TextureRegion(sprite);
             TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
             ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable, cellTextureRegionDrawable, cellTextureRegionDrawable);
-            this.button2.setStyle(style);
+            this.button.setStyle(style);
 
         } else if (this.ship.getShipModel() instanceof Dreadnought) {
-            this.button.setText("4");
 
             String file = "blueDreadnought" + Integer.toString(index + 1) + "-" + Integer.toString(rotateAngle) + ".png";
             Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
@@ -96,9 +92,9 @@ public class Cell {
             TextureRegion cellTextureRegion = new TextureRegion(sprite);
             TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
             ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable, cellTextureRegionDrawable, cellTextureRegionDrawable);
-            this.button2.setStyle(style);
+            this.button.setStyle(style);
+
         } else if (this.ship.getShipModel() instanceof Submarine) {
-            this.button.setText("3");
 
             String file = "blueSubmarine" + Integer.toString(index + 1) + "-" + Integer.toString(rotateAngle) + ".png";;
             Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
@@ -106,9 +102,9 @@ public class Cell {
             TextureRegion cellTextureRegion = new TextureRegion(sprite);
             TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
             ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable, cellTextureRegionDrawable, cellTextureRegionDrawable);
-            this.button2.setStyle(style);
+            this.button.setStyle(style);
+
         } else if (this.ship.getShipModel() instanceof Cruiser) {
-            this.button.setText("2");
 
             String file = "blueCruiser" + Integer.toString(index + 1) + "-" + Integer.toString(rotateAngle) + ".png";;
             Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
@@ -116,9 +112,9 @@ public class Cell {
             TextureRegion cellTextureRegion = new TextureRegion(sprite);
             TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
             ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable, cellTextureRegionDrawable, cellTextureRegionDrawable);
-            this.button2.setStyle(style);
+            this.button.setStyle(style);
+
         } else if (this.ship.getShipModel() instanceof PatrolBoat) {
-            this.button.setText("1");
 
             String file = "bluePatrolBoat" + Integer.toString(index + 1) + "-" + Integer.toString(rotateAngle) + ".png";
             Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
@@ -126,7 +122,7 @@ public class Cell {
             TextureRegion cellTextureRegion = new TextureRegion(sprite);
             TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
             ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable, cellTextureRegionDrawable, cellTextureRegionDrawable);
-            this.button2.setStyle(style);
+            this.button.setStyle(style);
         }
     }
 
@@ -137,28 +133,25 @@ public class Cell {
         if(ship != null) {
             this.destroyed = true;
             playCannonSound();
-            this.button.setText("*");
 
             Texture hitCellTexture = BattleShip.getInstance().getAssetManager().get("redSquare.png");
             Sprite sprite = new Sprite(hitCellTexture);
             TextureRegion hitCellTextureRegion = new TextureRegion(sprite);
             TextureRegionDrawable hitCellTextureRegionDrawable = new TextureRegionDrawable(hitCellTextureRegion);
             ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(hitCellTextureRegionDrawable,hitCellTextureRegionDrawable,hitCellTextureRegionDrawable);
-            this.button2.setStyle(style);
+            this.button.setStyle(style);
 
             this.ship.check();
 
             return true;
         }
 
-        this.button.setText("X");
-
         Texture hitCellTexture = BattleShip.getInstance().getAssetManager().get("greenSquare.png");
         Sprite sprite = new Sprite(hitCellTexture);
         TextureRegion hitCellTextureRegion = new TextureRegion(sprite);
         TextureRegionDrawable hitCellTextureRegionDrawable = new TextureRegionDrawable(hitCellTextureRegion);
         ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(hitCellTextureRegionDrawable,hitCellTextureRegionDrawable,hitCellTextureRegionDrawable);
-        this.button2.setStyle(style);
+        this.button.setStyle(style);
 
         return false;
     }
@@ -189,37 +182,19 @@ public class Cell {
         return line;
     }
 
-    public TextButton getButtonRm() {
+    public Button getButtonRm() {
         this.button.removeListener(createListener);
         return button;
     }
 
-    public TextButton getButton() {
+    public Button getButton() {
         return button;
-    }
-
-    public Button getButton2() {
-        this.button.removeListener(createListener);
-        return button2;
-    }
-
-    public void setButton(TextButton button) {
-        this.button = button;
-
-        this.button.addListener(createListener = new ClickListener() {
-            public void clicked(InputEvent event, float x, float y){
-                ShipController ship = board.getChosen();
-                if(ship != null){
-                    ship.update(board.getBoard(), column, line);
-                }
-            }
-        });
     }
 
     public void setButton(Button button) {
-        this.button2 = button;
+        this.button = button;
 
-        this.button2.addListener(createListener = new ClickListener() {
+        this.button.addListener(createListener = new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 ShipController ship = board.getChosen();
                 if(ship != null){

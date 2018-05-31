@@ -65,10 +65,7 @@ class CreatorStage extends Stage {
                 cellButton.setStyle(style2);
 
 
-                TextButton button = new TextButton("c", style);
-                boardTable.add(button).width(VIEWPORT_WIDTH/24).height(VIEWPORT_WIDTH*ratio/12);
                 boardTable.add(cellButton).width(VIEWPORT_WIDTH/24).height(VIEWPORT_WIDTH*ratio/12);
-                board.getBoard().getMatrix()[y][x].setButton(button);
                 board.getBoard().getMatrix()[y][x].setButton(cellButton);
             }
             boardTable.add().width(VIEWPORT_WIDTH/24);
