@@ -99,6 +99,8 @@ public class CreatorScreen extends ScreenAdapter{
         game.getAssetManager().load("blueCarrier5-180.png", Texture.class);
         game.getAssetManager().load("blueCarrier5-270.png", Texture.class);
         game.getAssetManager().load("cannonSound.mp3", Sound.class);
+
+        game.getAssetManager().load("oceanBackground.png", Texture.class);
         game.getAssetManager().finishLoading();
     }
     /**
@@ -112,6 +114,10 @@ public class CreatorScreen extends ScreenAdapter{
         Gdx.gl.glClearColor(255,255,255,1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT);
 
+        game.getBatch().begin();
+        this.drawBackground();
+        game.getBatch().end();
+
         creatorStage.act();
         creatorStage.draw();
     }
@@ -124,5 +130,10 @@ public class CreatorScreen extends ScreenAdapter{
     public void resize(int width, int height) {
         super.resize(width, height);
         creatorStage.getViewport().update(width, height, true);
+    }
+
+    private void drawBackground() {
+        Texture background = game.getAssetManager().get("oceanBackground.png", Texture.class);
+        game.getBatch().draw(background,0,0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
     }
 }

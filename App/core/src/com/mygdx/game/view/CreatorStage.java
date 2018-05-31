@@ -80,8 +80,7 @@ class CreatorStage extends Stage {
         guiTable.setFillParent(true);
         this.addActor(guiTable);
 
-        Label title = new Label("Board Creator", new Label.LabelStyle(new BitmapFont(), null));
-        title.setColor(Color.BLACK);
+        TextButton title = ButtonFactory.createButton("Board Creator",30);
 
         guiTable.add(title).center().height(VIEWPORT_WIDTH*ratio/12).colspan(2);
 
