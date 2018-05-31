@@ -1,10 +1,7 @@
 package com.mygdx.game.controller;
 
 import com.mygdx.game.model.Cell;
-import com.mygdx.game.model.Ship;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * bot behaviours implementing the BotBehaviour interface (Strategy design Pattern)
@@ -30,7 +27,7 @@ public class HardBehaviour extends EasyBehaviour{
     @Override
     public Cell shoot(BoardController board) {
         boatDestroyed = false;
-        Cell chosen = null;
+        Cell chosen;
 
         switch(discoverer.size()){
             case 0:
@@ -40,7 +37,10 @@ public class HardBehaviour extends EasyBehaviour{
                 chosen = tryAround(board, discoverer.get(discoverer.size()-1));
                 break;
             case 4:
-                chosen = tryCarrier(board);
+                if(tailStart)
+                    chosen = tryFollow(board, discoverer.get(discoverer.size()-1), true);
+                else
+                    chosen = tryCarrier(board);
                 break;
             default:
                 chosen = tryFollow(board, discoverer.get(discoverer.size()-1), true);
@@ -51,7 +51,8 @@ public class HardBehaviour extends EasyBehaviour{
             discoverer.add(chosen);
             if(boatDestroyed){
                 way = 0;
-                switchSide = false;
+                switchSide = true;
+                tailStart = false;
                 discoverer.clear();
             }
         }
@@ -73,9 +74,6 @@ public class HardBehaviour extends EasyBehaviour{
                 return shootSpecificAround(board, c.getX(),c.getY()-1, c);
             case 3:
                 return shootSpecificAround(board, c.getX()+1,c.getY(), c);
-            case 4:
-                way = 0;
-                return tryAround(board, discoverer.get(0));
         }
 
         return null;
@@ -140,15 +138,19 @@ public class HardBehaviour extends EasyBehaviour{
     private Cell shootSpecificFollow(BoardController board, int x, int y, Cell cell, boolean notCarrier){
         try {
             if (tracker[x][y]) {
-                if(switchSide) {
-                    way += 2;
-                    way %= 4;
-                    edgeCell = cell;
-                    return tryFollow(board, discoverer.get(0), notCarrier);
+                if(notCarrier) {
+                    if(switchSide) {
+                        way += 2;
+                        way %= 4;
+                        edgeCell = cell;
+                        switchSide = false;
+                        return tryFollow(board, discoverer.get(0), true);
+                    } else {
+                        tailStart = true;
+                        return tryCarrier(board);
+                    }
                 } else {
-                    tailStart = true;
-                    way = 0;
-                    return tryAround(board, discoverer.get(discoverer.size()-1));
+                    return tryCarrier(board);
                 }
             }
             tracker[x][y] = true;
@@ -164,15 +166,15 @@ public class HardBehaviour extends EasyBehaviour{
             return null;
         } catch(ArrayIndexOutOfBoundsException e){
             if(notCarrier) {
-                if (switchSide) {
+                if(switchSide) {
                     way += 2;
                     way %= 4;
                     edgeCell = cell;
+                    switchSide = false;
                     return tryFollow(board, discoverer.get(0), true);
                 } else {
                     tailStart = true;
-                    way = 0;
-                    return tryAround(board, discoverer.get(discoverer.size()-1));
+                    return tryCarrier(board);
                 }
             } else {
                 return tryCarrier(board);
@@ -186,19 +188,20 @@ public class HardBehaviour extends EasyBehaviour{
      * @return  the cell on which it hit or null if it missed a boat
      */
     private Cell tryCarrier(BoardController board){
-        if(tailStart){
-            return tryFollow(board, discoverer.get(discoverer.size()-1), true);
-        } else {
-            if (trySide) {
-                way += 3;
-                way %= 4;
-                trySide = false;
-                return tryFollow(board, discoverer.get(discoverer.size() - 1), false);
-            } else {
+        if (trySide) {
+            way += 1;
+            if(!tailStart)
                 way += 2;
-                way %= 4;
-                return tryFollow(board, edgeCell, false);
-            }
+            way %= 4;
+            trySide = false;
+            if(!tailStart)
+                return tryFollow(board, discoverer.get(discoverer.size() - 1), false);
+            else
+                return tryFollow(board, discoverer.get(0), false);
+        } else {
+            way += 2;
+            way %= 4;
+            return tryFollow(board, edgeCell, false);
         }
     }
 }
