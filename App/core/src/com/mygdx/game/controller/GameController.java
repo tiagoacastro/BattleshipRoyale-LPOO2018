@@ -6,7 +6,6 @@ import com.mygdx.game.model.Cell;
  * Class in charge of the game, contains the user board and the bot board
  */
 public class GameController {
-    private static final int BOARD_SIZE = 10;
     private BoardController userBoard;
     private BoardController botBoard;
     private Cell chosen = null;
@@ -20,7 +19,7 @@ public class GameController {
 
         this.behaviour = behaviour;
 
-        this.botBoard = new BoardController(BOARD_SIZE);
+        this.botBoard = new BoardController();
     }
     /**
      * Getter for the bot's board

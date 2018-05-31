@@ -13,7 +13,7 @@ import java.util.Random;
  */
 public class BoardController {
     private Board board;
-    private int dimension;
+    private static final int dimension = 10;
     private CarrierController carrier = new CarrierController(new Carrier());
     private ShipController dreadnought = new ShipController(new Dreadnought());
     private ShipController submarine = new ShipController(new Submarine());
@@ -26,11 +26,9 @@ public class BoardController {
     public enum Ships{carrier, cruiser, dreadnought, submarine, patrolBoat}
     /**
      * BoardController constructor that receives the board's dimension and creates it
-     * @param dimension     dimension of the board
      */
-    public BoardController(int dimension) {
+    public BoardController() {
         this.board = new Board(dimension, this);
-        this.dimension = dimension;
     }
     /**
      * Setter for the chosen ship to place
@@ -106,7 +104,7 @@ public class BoardController {
      * Getter for the dimension of the board
      * @return  board dimension
      */
-    public int getDimension() {
+    public static int getDimension() {
         return dimension;
     }
     /**

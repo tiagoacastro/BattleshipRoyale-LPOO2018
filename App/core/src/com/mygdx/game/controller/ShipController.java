@@ -177,9 +177,19 @@ public class ShipController {
      * @return if the surrounding cells are free
      */
     private boolean checkSurroundingCells(Board board, int x, int y){
+        return checkCell(board, x+1, y) || checkCell(board, x-1, y) ||
+                checkCell(board, x, y+1) || checkCell(board, x, y-1);
+    }
+    /**
+     * check if a cell is free
+     * @param board board
+     * @param x     cell X
+     * @param y     cell Y
+     * @return if a cell is free
+     */
+    private boolean checkCell(Board board, int x, int y){
         try{
-            return board.getMatrix()[x+1][y].occupied(this) || board.getMatrix()[x-1][y].occupied(this) ||
-                    board.getMatrix()[x][y+1].occupied(this) || board.getMatrix()[x][y-1].occupied(this);
+            return board.getMatrix()[x][y].occupied(this);
         } catch(ArrayIndexOutOfBoundsException e){
             return false;
         }

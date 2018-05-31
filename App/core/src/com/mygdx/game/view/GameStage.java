@@ -15,7 +15,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.BattleShip;
 import com.mygdx.game.controller.BoardController;
-import com.mygdx.game.controller.EasyBehaviour;
+import com.mygdx.game.controller.HardBehaviour;
 import com.mygdx.game.controller.GameController;
 
 class GameStage extends Stage {
@@ -33,7 +33,7 @@ class GameStage extends Stage {
 
     GameStage(BoardController board) {
         game = BattleShip.getInstance();
-        this.controller = new GameController(board, new EasyBehaviour());
+        this.controller = new GameController(board, new HardBehaviour());
 
         ratio = ((float) Gdx.graphics.getHeight() / (float) Gdx.graphics.getWidth());
         this.viewport = new FitViewport(VIEWPORT_WIDTH, VIEWPORT_WIDTH * ratio);
