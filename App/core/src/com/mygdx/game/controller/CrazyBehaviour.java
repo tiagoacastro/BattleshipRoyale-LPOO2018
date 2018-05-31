@@ -10,7 +10,7 @@ public class CrazyBehaviour extends HardBehaviour{
         super();
     }
     /**
-     * Function to shoot the opponent's board based on AI (hard mode)
+     * Function to shoot the opponent's board based on AI (Crazy mode)
      * @param board board
      * @return not used in this implementation, only on the easy mode
      */
