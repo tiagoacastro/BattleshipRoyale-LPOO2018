@@ -34,8 +34,13 @@ class MenuStage extends Stage {
         FreeTypeFontGenerator generator;
         generator = new FreeTypeFontGenerator(Gdx.files.internal("font.ttf"));
         FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
-        parameter.size = 24;
-        parameter.color = Color.RED;
+        parameter.size = 80;
+        parameter.color = Color.LIGHT_GRAY;
+        parameter.borderColor = Color.BLACK;
+        parameter.borderWidth = 1;
+        parameter.shadowOffsetX = 2;
+        parameter.shadowOffsetY = 2;
+        parameter.shadowColor = Color.DARK_GRAY;
         BitmapFont font = generator.generateFont(parameter); // font size 12 pixels
 
 
@@ -50,14 +55,14 @@ class MenuStage extends Stage {
         table.setFillParent(true);
         this.addActor(table);
 
-        table.add().height(VIEWPORT_WIDTH*ratio/9).colspan(2);
+        table.add().height(VIEWPORT_WIDTH*ratio/2).colspan(2);
 
         table.row();
 
         TextButton.TextButtonStyle style = new TextButton.TextButtonStyle();
         style.font = font;
 
-        TextButton playButton = new TextButton("PLAY NEW GAME", style);
+        TextButton playButton = new TextButton("PLAY", style);
         /*Texture playTexture = game.getAssetManager().get("playButton.png");
         TextureRegion playTextureRegion = new TextureRegion(playTexture);
         TextureRegionDrawable playTextureRegionDrawable = new TextureRegionDrawable(playTextureRegion);*/
@@ -68,7 +73,6 @@ class MenuStage extends Stage {
         playButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 game.setScreen(new CreatorScreen());
-                music.stop();
             }
         });
 
@@ -77,9 +81,16 @@ class MenuStage extends Stage {
         music = game.getAssetManager().get("thunder.mp3");
         music.play();
 
-        TextButton toggleButton = new TextButton("Toggle Music", style);
-        table.add(toggleButton).width(VIEWPORT_WIDTH/6).height(VIEWPORT_WIDTH*ratio/6).expand().right().bottom();
-        toggleButton.addListener(new ClickListener() {
+        Texture soundOff = game.getAssetManager().get("soundOff.png");
+        Texture soundOn = game.getAssetManager().get("soundOn.png");
+        TextureRegion mySoundOnRegion = new TextureRegion(soundOff);
+        TextureRegion mySoundOffRegion = new TextureRegion(soundOn);
+        TextureRegionDrawable mySoundOnRegionDrawable = new TextureRegionDrawable(mySoundOnRegion);
+        TextureRegionDrawable mySoundOffRegionDrawable = new TextureRegionDrawable(mySoundOffRegion);
+
+        ImageButton toggleSoundButton = new ImageButton(mySoundOffRegionDrawable,mySoundOnRegionDrawable,mySoundOnRegionDrawable); //Set the button up
+        table.add(toggleSoundButton).width(VIEWPORT_WIDTH/6).height(VIEWPORT_WIDTH*ratio/6).expand().right().bottom();
+        toggleSoundButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 if(music.isPlaying()) {
                     music.stop();

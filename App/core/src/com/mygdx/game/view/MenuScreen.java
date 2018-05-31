@@ -5,6 +5,7 @@ import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.mygdx.game.BattleShip;
 
 /**
@@ -29,6 +30,8 @@ public class MenuScreen extends ScreenAdapter {
     private void loadAssets() {
         game.getAssetManager().load("thunder.mp3", Music.class);
         game.getAssetManager().load("playButton.png", Texture.class);
+        game.getAssetManager().load("soundOff.png", Texture.class);
+        game.getAssetManager().load("soundOn.png", Texture.class);
         game.getAssetManager().load("background.png", Texture.class);
         game.getAssetManager().finishLoading();
     }

@@ -87,10 +87,6 @@ public class Cell {
             ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable, cellTextureRegionDrawable, cellTextureRegionDrawable);
             this.button2.setStyle(style);
 
-            Sound cannon = BattleShip.getInstance().getAssetManager().get("cannonSound.mp3");
-            long i = cannon.play(1.0f);
-            System.out.println(i);
-
         } else if (this.ship.getShipModel() instanceof Dreadnought) {
             this.button.setText("4");
 
