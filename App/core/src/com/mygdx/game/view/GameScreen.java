@@ -96,6 +96,9 @@ public class GameScreen extends ScreenAdapter {
         game.getAssetManager().load("blueCarrier5-270.png", Texture.class);
 
         game.getAssetManager().load("cannonSound.mp3", Sound.class);
+
+        game.getAssetManager().load("redSquare.png", Texture.class);
+        game.getAssetManager().load("greenSquare.png", Texture.class);
         game.getAssetManager().finishLoading();
     }
     /**

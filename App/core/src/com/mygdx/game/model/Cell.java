@@ -93,7 +93,6 @@ public class Cell {
             String file = "blueDreadnought" + Integer.toString(index + 1) + "-" + Integer.toString(rotateAngle) + ".png";
             Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
             Sprite sprite = new Sprite(cellTexture);
-            sprite.setRotation(rotateAngle);
             TextureRegion cellTextureRegion = new TextureRegion(sprite);
             TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
             ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable, cellTextureRegionDrawable, cellTextureRegionDrawable);
@@ -104,7 +103,6 @@ public class Cell {
             String file = "blueSubmarine" + Integer.toString(index + 1) + "-" + Integer.toString(rotateAngle) + ".png";;
             Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
             Sprite sprite = new Sprite(cellTexture);
-            sprite.setRotation(rotateAngle);
             TextureRegion cellTextureRegion = new TextureRegion(sprite);
             TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
             ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable, cellTextureRegionDrawable, cellTextureRegionDrawable);
@@ -115,7 +113,6 @@ public class Cell {
             String file = "blueCruiser" + Integer.toString(index + 1) + "-" + Integer.toString(rotateAngle) + ".png";;
             Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
             Sprite sprite = new Sprite(cellTexture);
-            sprite.setRotation(rotateAngle);
             TextureRegion cellTextureRegion = new TextureRegion(sprite);
             TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
             ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable, cellTextureRegionDrawable, cellTextureRegionDrawable);
@@ -126,7 +123,6 @@ public class Cell {
             String file = "bluePatrolBoat" + Integer.toString(index + 1) + "-" + Integer.toString(rotateAngle) + ".png";
             Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
             Sprite sprite = new Sprite(cellTexture);
-            sprite.setRotation(rotateAngle);
             TextureRegion cellTextureRegion = new TextureRegion(sprite);
             TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
             ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable, cellTextureRegionDrawable, cellTextureRegionDrawable);
@@ -143,12 +139,26 @@ public class Cell {
             playCannonSound();
             this.button.setText("*");
 
+            Texture hitCellTexture = BattleShip.getInstance().getAssetManager().get("redSquare.png");
+            Sprite sprite = new Sprite(hitCellTexture);
+            TextureRegion hitCellTextureRegion = new TextureRegion(sprite);
+            TextureRegionDrawable hitCellTextureRegionDrawable = new TextureRegionDrawable(hitCellTextureRegion);
+            ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(hitCellTextureRegionDrawable,hitCellTextureRegionDrawable,hitCellTextureRegionDrawable);
+            this.button2.setStyle(style);
+
             this.ship.check();
 
             return true;
         }
 
         this.button.setText("X");
+
+        Texture hitCellTexture = BattleShip.getInstance().getAssetManager().get("greenSquare.png");
+        Sprite sprite = new Sprite(hitCellTexture);
+        TextureRegion hitCellTextureRegion = new TextureRegion(sprite);
+        TextureRegionDrawable hitCellTextureRegionDrawable = new TextureRegionDrawable(hitCellTextureRegion);
+        ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(hitCellTextureRegionDrawable,hitCellTextureRegionDrawable,hitCellTextureRegionDrawable);
+        this.button2.setStyle(style);
 
         return false;
     }
