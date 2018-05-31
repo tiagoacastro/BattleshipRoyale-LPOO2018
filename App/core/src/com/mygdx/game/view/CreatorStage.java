@@ -18,6 +18,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.BattleShip;
 import com.mygdx.game.controller.BoardController;
+import com.mygdx.game.utility.ButtonFactory;
 
 class CreatorStage extends Stage {
     private static final float VIEWPORT_WIDTH = 800;
@@ -110,10 +111,7 @@ class CreatorStage extends Stage {
         auxTable.setFillParent(true);
         this.addActor(auxTable);
 
-        TextButton.TextButtonStyle textStyle = new TextButton.TextButtonStyle();
-        textStyle.font = new BitmapFont();
-
-        TextButton rotateButton = new TextButton("Rotate", textStyle);
+        TextButton rotateButton = ButtonFactory.createButton("Rotate", 20);
         rotateButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 if(board.getChosen() != null)
@@ -123,7 +121,7 @@ class CreatorStage extends Stage {
 
         auxTable.add(rotateButton).width(VIEWPORT_WIDTH / 4).height(VIEWPORT_WIDTH*ratio/12).expand().center().bottom();
 
-        TextButton playButton = new TextButton("Play", textStyle);
+        TextButton playButton = ButtonFactory.createButton("Start Playing", 20);
         playButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 if(board.allPlaced())

@@ -46,7 +46,7 @@ class MenuStage extends Stage {
         table.row();
 
         TextButton playButton = ButtonFactory.createButton("PLAY",80);
-        table.add(playButton).width(VIEWPORT_WIDTH/5).height(VIEWPORT_WIDTH*ratio/5).expand().center().bottom().colspan(2);
+        table.add(playButton).width(VIEWPORT_WIDTH/5).height(VIEWPORT_WIDTH*ratio/5).padRight(300);
         playButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 game.setScreen(new CreatorScreen());

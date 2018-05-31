@@ -32,7 +32,7 @@ public class MenuScreen extends ScreenAdapter {
         game.getAssetManager().load("playButton.png", Texture.class);
         game.getAssetManager().load("soundOff.png", Texture.class);
         game.getAssetManager().load("soundOn.png", Texture.class);
-        game.getAssetManager().load("background2.jpg", Texture.class);
+        game.getAssetManager().load("background2.png", Texture.class);
         game.getAssetManager().finishLoading();
     }
     /**
@@ -65,7 +65,7 @@ public class MenuScreen extends ScreenAdapter {
     }
 
     private void drawBackground() {
-        Texture background = game.getAssetManager().get("background2.jpg", Texture.class);
+        Texture background = game.getAssetManager().get("background2.png", Texture.class);
         game.getBatch().draw(background,0,0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
     }
 }

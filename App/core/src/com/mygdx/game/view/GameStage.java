@@ -17,6 +17,7 @@ import com.mygdx.game.BattleShip;
 import com.mygdx.game.controller.BoardController;
 import com.mygdx.game.controller.HardBehaviour;
 import com.mygdx.game.controller.GameController;
+import com.mygdx.game.utility.ButtonFactory;
 
 class GameStage extends Stage {
     private static final float VIEWPORT_WIDTH = 800;
@@ -155,7 +156,7 @@ class GameStage extends Stage {
 
         guiTable.add().width(VIEWPORT_WIDTH/2);
 
-        TextButton button = new TextButton("Toggle my board", style);
+        TextButton button = ButtonFactory.createButton("Toggle my board", 20);
         button.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 if(toggleBoard) {
