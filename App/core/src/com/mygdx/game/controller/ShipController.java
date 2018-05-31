@@ -194,4 +194,24 @@ public class ShipController {
             return false;
         }
     }
+    /**
+     * set the way of the ship using an int from 1 to 4
+     * @param rot   value
+     */
+    public void setWayByInt(int rot){
+        switch(rot){
+            case 0:
+                this.shipModel.setWay(Ship.Way.W);
+                break;
+            case 1:
+                this.shipModel.setWay(Ship.Way.S);
+                break;
+            case 2:
+                this.shipModel.setWay(Ship.Way.E);
+                break;
+            case 3:
+                this.shipModel.setWay(Ship.Way.N);
+                break;
+        }
+    }
 }
