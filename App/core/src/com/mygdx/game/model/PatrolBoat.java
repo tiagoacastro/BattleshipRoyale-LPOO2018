@@ -1,5 +1,7 @@
 package com.mygdx.game.model;
 
+import com.mygdx.game.controller.CellController;
+
 import java.util.Arrays;
 
 /**
@@ -10,7 +12,7 @@ public class PatrolBoat extends Ship {
 
     public PatrolBoat() {
         super();
-        cells = new Cell[size];
+        cells = new CellController[size];
         Arrays.fill(cells, null);
     }
 }

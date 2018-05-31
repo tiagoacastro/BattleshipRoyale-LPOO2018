@@ -1,5 +1,7 @@
 package com.mygdx.game.model;
 
+import com.mygdx.game.controller.CellController;
+
 /**
  * Ship super class (Template)
  */
@@ -8,7 +10,7 @@ public abstract class Ship{
     protected int y = -1;
     Way way = Way.W;
     private boolean destroyed = false;
-    Cell cells[];
+    CellController cells[];
 
     public enum Way{W, S, E, N}
 
@@ -42,7 +44,7 @@ public abstract class Ship{
         this.way = way;
     }
 
-    public Cell[] getCells() {
+    public CellController[] getCells() {
         return cells;
     }
 

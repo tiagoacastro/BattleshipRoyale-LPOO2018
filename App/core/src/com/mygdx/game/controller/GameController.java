@@ -8,7 +8,7 @@ import com.mygdx.game.model.Cell;
 public class GameController {
     private BoardController userBoard;
     private BoardController botBoard;
-    private Cell chosen = null;
+    private CellController chosen = null;
     private BotBehaviour behaviour;
     /**
      * GameController constructor that receives the user board created on the creatorScreen and creates the bot's
@@ -39,7 +39,7 @@ public class GameController {
      * Function that a cell as the chosen one to, if the user desires, shoot
      * @param chosen    chosen cell
      */
-    public void setChosen(Cell chosen) {
+    public void setChosen(CellController chosen) {
         this.chosen = chosen;
     }
     /**

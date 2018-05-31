@@ -23,7 +23,7 @@ public class ShipController {
      */
     private void freeCells(){
         if(this.shipModel.getCells()[0] != null) {
-            for (Cell cell : this.shipModel.getCells()) {
+            for (CellController cell : this.shipModel.getCells()) {
                 cell.free();
             }
             Arrays.fill(this.shipModel.getCells(), null);
@@ -145,8 +145,8 @@ public class ShipController {
      */
     public void check(){
         boolean destroy = true;
-        for (Cell c : this.shipModel.getCells()){
-            if(!c.check()){
+        for (CellController c : this.shipModel.getCells()){
+            if(!c.getCellModel().check()){
                 destroy = false;
                 break;
             }
@@ -192,6 +192,26 @@ public class ShipController {
             return board.getMatrix()[x][y].occupied(this);
         } catch(ArrayIndexOutOfBoundsException e){
             return false;
+        }
+    }
+    /**
+     * set the way of the ship using an int from 1 to 4
+     * @param rot   value
+     */
+    public void setWayByInt(int rot){
+        switch(rot){
+            case 0:
+                this.shipModel.setWay(Ship.Way.W);
+                break;
+            case 1:
+                this.shipModel.setWay(Ship.Way.S);
+                break;
+            case 2:
+                this.shipModel.setWay(Ship.Way.E);
+                break;
+            case 3:
+                this.shipModel.setWay(Ship.Way.N);
+                break;
         }
     }
 }

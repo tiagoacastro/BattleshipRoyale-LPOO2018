@@ -95,6 +95,9 @@ public class BoardController {
         while(notPlaced) {
             int x = rand.nextInt(dimension);
             int y = rand.nextInt(dimension);
+            int rot = rand.nextInt(4);
+
+            ship.setWayByInt(rot);
 
             if(ship.update(this.board, x, y))
                 notPlaced = false;
