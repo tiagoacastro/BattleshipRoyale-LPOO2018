@@ -49,6 +49,24 @@ class GameStage extends Stage {
         this.drawGui();
     }
 
+    private void hideBotShips() {
+
+        for(int y = 0; y < BOARD_SIZE; y++){
+            for(int x = 0; x < BOARD_SIZE; x++){
+
+                Texture cellTexture = game.getAssetManager().get("square.png");
+                TextureRegion cellTextureRegion = new TextureRegion(cellTexture);
+                TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
+                Button.ButtonStyle style2 = new Button.ButtonStyle(cellTextureRegionDrawable,cellTextureRegionDrawable,cellTextureRegionDrawable);
+                Button cellButton = new Button(); //Set the button up
+                cellButton.setStyle(style2);
+
+                this.controller.getBotBoard().getBoard().getMatrix()[y][x].setButton(cellButton);
+            }
+        }
+
+    }
+
     private void drawUserBoard(){
         userBoardTable = new Table();
         userBoardTable.setFillParent(true);
@@ -102,6 +120,8 @@ class GameStage extends Stage {
         }
 
         this.controller.getBotBoard().populate();
+
+        this.hideBotShips();
 
         for(int y = 0; y < BOARD_SIZE; y++){
 
