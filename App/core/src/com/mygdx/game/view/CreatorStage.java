@@ -21,7 +21,6 @@ import com.mygdx.game.controller.BoardController;
 
 class CreatorStage extends Stage {
     private static final float VIEWPORT_WIDTH = 800;
-    private static final int BOARD_SIZE = 10;
     private float ratio;
     private BattleShip game;
     private Viewport viewport;
@@ -47,15 +46,15 @@ class CreatorStage extends Stage {
         boardTable.setFillParent(true);
         this.addActor(boardTable);
 
-        board = new BoardController(BOARD_SIZE);
+        board = new BoardController();
         TextButton.TextButtonStyle style = new TextButton.TextButtonStyle();
         style.font = new BitmapFont();
         boardTable.add().height(VIEWPORT_WIDTH*ratio/12).colspan(12);
         boardTable.row();
 
-        for(int y = 0; y < BOARD_SIZE; y++){
+        for(int y = 0; y < board.getDimension(); y++){
             boardTable.add().width(13*VIEWPORT_WIDTH/24);
-            for(int x = 0; x < BOARD_SIZE; x++){
+            for(int x = 0; x < board.getDimension(); x++){
 
                 Texture cellTexture = game.getAssetManager().get("square.png");
                 TextureRegion cellTextureRegion = new TextureRegion(cellTexture);

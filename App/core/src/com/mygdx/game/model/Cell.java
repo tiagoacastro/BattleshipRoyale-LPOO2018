@@ -221,4 +221,8 @@ public class Cell {
             }
         });
     }
+
+    public ShipController getShip() {
+        return ship;
+    }
 }
