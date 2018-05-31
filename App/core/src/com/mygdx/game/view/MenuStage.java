@@ -19,6 +19,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.BattleShip;
+import com.mygdx.game.utility.ButtonFactory;
 
 class MenuStage extends Stage {
     private static final float VIEWPORT_WIDTH = 800;
@@ -30,19 +31,6 @@ class MenuStage extends Stage {
 
     MenuStage() {
         game = BattleShip.getInstance();
-
-        FreeTypeFontGenerator generator;
-        generator = new FreeTypeFontGenerator(Gdx.files.internal("font.ttf"));
-        FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
-        parameter.size = 80;
-        parameter.color = Color.LIGHT_GRAY;
-        parameter.borderColor = Color.BLACK;
-        parameter.borderWidth = 1;
-        parameter.shadowOffsetX = 2;
-        parameter.shadowOffsetY = 2;
-        parameter.shadowColor = Color.DARK_GRAY;
-        BitmapFont font = generator.generateFont(parameter); // font size 12 pixels
-
 
         ratio = ((float) Gdx.graphics.getHeight() / (float) Gdx.graphics.getWidth());
         this.viewport = new FitViewport(VIEWPORT_WIDTH, VIEWPORT_WIDTH * ratio);
@@ -59,16 +47,7 @@ class MenuStage extends Stage {
 
         table.row();
 
-        TextButton.TextButtonStyle style = new TextButton.TextButtonStyle();
-        style.font = font;
-
-        TextButton playButton = new TextButton("PLAY", style);
-        /*Texture playTexture = game.getAssetManager().get("playButton.png");
-        TextureRegion playTextureRegion = new TextureRegion(playTexture);
-        TextureRegionDrawable playTextureRegionDrawable = new TextureRegionDrawable(playTextureRegion);*/
-
-
-        //ImageButton playButton = new ImageButton(playTextureRegionDrawable); //Set the button up
+        TextButton playButton = ButtonFactory.createButton("PLAY",80);
         table.add(playButton).width(VIEWPORT_WIDTH/5).height(VIEWPORT_WIDTH*ratio/5).expand().center().bottom().colspan(2);
         playButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){

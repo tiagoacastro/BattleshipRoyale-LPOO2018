@@ -114,7 +114,6 @@ class GameStage extends Stage {
                 Button.ButtonStyle style2 = new Button.ButtonStyle(cellTextureRegionDrawable,cellTextureRegionDrawable,cellTextureRegionDrawable);
                 Button cellButton = new Button(); //Set the button up
                 cellButton.setStyle(style2);
-
                 this.controller.getBotBoard().getBoard().getMatrix()[y][x].setButton(cellButton);
             }
         }

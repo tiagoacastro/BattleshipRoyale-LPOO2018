@@ -2,6 +2,7 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.assets.AssetManager;
+import com.mygdx.game.utility.ButtonFactory;
 import com.mygdx.game.view.MenuScreen;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -21,6 +22,7 @@ public class BattleShip extends Game {
 		battleship = this;
 		assetManager = new AssetManager();
         batch = new SpriteBatch();
+		ButtonFactory factory = new ButtonFactory();
 		setScreen(new MenuScreen());
 	}
 	/**
