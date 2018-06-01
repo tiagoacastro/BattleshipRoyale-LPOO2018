@@ -96,8 +96,8 @@ public class HardBehaviour extends EasyBehaviour{
             tracker[x][y] = true;
 
             CellController c = board.getBoard().getMatrix()[x][y];
-
-            if (c.destroy()) {
+            boolean user = false;
+            if (c.destroy(user)) {
                 if (c.getCellModel().getShip().getShipModel().check())
                     boatDestroyed = true;
                 return c;
@@ -160,8 +160,8 @@ public class HardBehaviour extends EasyBehaviour{
             tracker[x][y] = true;
 
             CellController c = board.getBoard().getMatrix()[x][y];
-
-            if (c.destroy()) {
+            boolean user = false;
+            if (c.destroy(user)) {
                 if (c.getCellModel().getShip().getShipModel().check())
                     boatDestroyed = true;
                 return c;

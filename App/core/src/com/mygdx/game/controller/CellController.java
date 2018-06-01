@@ -70,14 +70,17 @@ public class CellController {
         cannon.play();
     }
 
-    public boolean destroy(){
+    public boolean destroy(boolean user){
         if(this.cellModel.getShootListener() != null)
             this.cellModel.getButton().removeListener(this.cellModel.getShootListener());
 
         if(this.cellModel.getShip() != null) {
             this.cellModel.setDestroyed(true);
-            Gdx.input.vibrate(500);
-            playCannonSound();
+
+            if(user) {
+                Gdx.input.vibrate(500);
+                playCannonSound();
+            }
 
             Texture hitCellTexture = BattleShip.getInstance().getAssetManager().get("redSquare.png");
             Sprite sprite = new Sprite(hitCellTexture);

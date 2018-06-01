@@ -38,8 +38,8 @@ public class EasyBehaviour implements BotBehaviour{
                 notChosen = false;
             }
         }
-
-        if(chosen.destroy()) {
+        boolean user = false;
+        if(chosen.destroy(false)) {
             if(chosen.getCellModel().getShip().getShipModel().check())
                 boatDestroyed = true;
             return chosen;

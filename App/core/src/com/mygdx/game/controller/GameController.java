@@ -47,7 +47,8 @@ public class GameController {
      */
     public void shoot() {
         if(this.chosen != null) {
-            this.chosen.destroy();
+            boolean user = true;
+            this.chosen.destroy(user);
             this.behaviour.shoot(this.userBoard);
             this.chosen = null;
             this.checkEnd();
