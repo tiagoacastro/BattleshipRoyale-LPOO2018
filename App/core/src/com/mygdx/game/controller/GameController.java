@@ -1,6 +1,8 @@
 package com.mygdx.game.controller;
 
+import com.mygdx.game.BattleShip;
 import com.mygdx.game.model.Cell;
+import com.mygdx.game.view.CreatorScreen;
 import com.mygdx.game.view.EndGameScreen;
 
 /**
@@ -59,11 +61,9 @@ public class GameController {
      * Checks if the game is over
      */
     private void checkEnd(){
-        EndGameScreen endGame;
         if(userBoard.check())
-            endGame = new EndGameScreen("WIN");
-            //System.exit(0);
+            BattleShip.getInstance().setScreen(new EndGameScreen("WIN"));
         else if (botBoard.check())
-            endGame = new EndGameScreen("WIN");
+            BattleShip.getInstance().setScreen(new EndGameScreen("LOSE"));
     }
 }

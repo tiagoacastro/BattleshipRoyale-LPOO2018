@@ -98,7 +98,7 @@ public class CreatorScreen extends ScreenAdapter{
         game.getAssetManager().load("blueCarrier5-90.png", Texture.class);
         game.getAssetManager().load("blueCarrier5-180.png", Texture.class);
         game.getAssetManager().load("blueCarrier5-270.png", Texture.class);
-        
+
         game.getAssetManager().load("oceanBackground.png", Texture.class);
         game.getAssetManager().finishLoading();
     }

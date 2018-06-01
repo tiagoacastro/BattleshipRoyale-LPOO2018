@@ -24,7 +24,7 @@ public class EndGameScreen extends ScreenAdapter {
         this.loadAssets();
         this.status = status;
 
-        endGameStage = new EndGameStage();
+        endGameStage = new EndGameStage(status);
     }
     /**
      * Loads the assets needed by this screen.

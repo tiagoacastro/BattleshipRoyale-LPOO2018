@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
@@ -16,6 +17,8 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.BattleShip;
 import com.mygdx.game.utility.ButtonFactory;
 
+import javax.xml.soap.Text;
+
 public class EndGameStage extends Stage {
 
     private static final float VIEWPORT_WIDTH = 800;
@@ -25,7 +28,7 @@ public class EndGameStage extends Stage {
     private Table table;
     private Music music;
 
-    EndGameStage() {
+    EndGameStage(String status) {
         game = BattleShip.getInstance();
 
         ratio = ((float) Gdx.graphics.getHeight() / (float) Gdx.graphics.getWidth());
@@ -39,10 +42,21 @@ public class EndGameStage extends Stage {
         table.setFillParent(true);
         this.addActor(table);
 
-        table.add().height(VIEWPORT_WIDTH*ratio/2).colspan(2);
+        table.row();
+
+        TextButton statusField = ButtonFactory.createButton(status,80);
+        table.add(statusField).width(VIEWPORT_WIDTH/5).height(VIEWPORT_WIDTH*ratio/5);
 
         table.row();
 
+        TextButton tapInfo = ButtonFactory.createButton("TAP THE SCREEN TO PLAY AGAIN",30);
+        table.add(tapInfo).width(VIEWPORT_WIDTH/5).height(VIEWPORT_WIDTH*ratio/5);
+
+        this.addListener(new ClickListener() {
+            public void clicked(InputEvent event, float x, float y){
+               //what to do
+            }
+        });
     }
 
     @Override
