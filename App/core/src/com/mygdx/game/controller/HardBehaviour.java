@@ -49,6 +49,7 @@ public class HardBehaviour extends EasyBehaviour{
         if(chosen != null){
             discoverer.add(chosen);
             if(boatDestroyed){
+                setBorderAsVisited();
                 way = 0;
                 switchSide = true;
                 tailStart = false;
@@ -204,6 +205,29 @@ public class HardBehaviour extends EasyBehaviour{
             way += 2;
             way %= 4;
             return tryFollow(board, edgeCell, false);
+        }
+    }
+    /**
+     * Set cells around the boat as visited, because boats can't be placed next to each other
+     */
+    private void setBorderAsVisited(){
+        for (CellController c : discoverer){
+            setCellAsVisited(c.getCellModel().getX()+1, c.getCellModel().getY());
+            setCellAsVisited(c.getCellModel().getX()-1, c.getCellModel().getY());
+            setCellAsVisited(c.getCellModel().getX(), c.getCellModel().getY()+1);
+            setCellAsVisited(c.getCellModel().getX(), c.getCellModel().getY()-1);
+        }
+    }
+    /**
+     * Set a cell as visited
+     * @param x cell x
+     * @param y cell y
+     */
+    private void setCellAsVisited(int x, int y){
+        try {
+            tracker[x][y] = true;
+        } catch(ArrayIndexOutOfBoundsException e) {
+            return;
         }
     }
 }
