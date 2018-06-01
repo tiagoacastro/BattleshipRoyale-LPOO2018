@@ -59,19 +59,19 @@ public class CarrierController extends ShipController {
             else
                 switch(this.shipModel.getWay()){
                     case W:
-                        if(board.getMatrix()[x + 1][y + (index - 1)].occupied(this))
+                        if(board.getMatrix()[x + 1][y + (index - 1)].occupied(this) || checkSurroundingCells(board,x + 1, y + (index - 1)))
                             return true;
                         break;
                     case N:
-                        if(board.getMatrix()[x - (index - 1)][y + 1].occupied(this))
+                        if(board.getMatrix()[x - (index - 1)][y + 1].occupied(this) || checkSurroundingCells(board, x - (index - 1), y + 1))
                             return true;
                         break;
                     case E:
-                        if(board.getMatrix()[x - 1][y - (index - 1)].occupied(this))
+                        if(board.getMatrix()[x - 1][y - (index - 1)].occupied(this) || checkSurroundingCells(board, x - 1, y - (index - 1)))
                             return true;
                         break;
                     case S:
-                        if(board.getMatrix()[x + (index - 1)][y - 1].occupied(this))
+                        if(board.getMatrix()[x + (index - 1)][y - 1].occupied(this) || checkSurroundingCells(board, x + (index - 1), y - 1))
                             return true;
                         break;
                 }

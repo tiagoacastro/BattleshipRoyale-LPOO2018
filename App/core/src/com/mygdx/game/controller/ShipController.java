@@ -176,7 +176,7 @@ public class ShipController {
      * @param y     cell Y
      * @return if the surrounding cells are free
      */
-    private boolean checkSurroundingCells(Board board, int x, int y){
+    boolean checkSurroundingCells(Board board, int x, int y){
         return checkCell(board, x+1, y) || checkCell(board, x-1, y) ||
                 checkCell(board, x, y+1) || checkCell(board, x, y-1);
     }
