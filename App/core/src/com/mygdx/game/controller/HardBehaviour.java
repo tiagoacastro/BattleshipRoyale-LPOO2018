@@ -230,8 +230,6 @@ public class HardBehaviour extends EasyBehaviour{
     private void setCellAsVisited(int x, int y){
         try {
             tracker[x][y] = true;
-        } catch(ArrayIndexOutOfBoundsException e) {
-            return;
-        }
+        } catch(ArrayIndexOutOfBoundsException e){}
     }
 }

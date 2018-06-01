@@ -47,7 +47,7 @@ public class GameController {
      * Function to shoot the chosen cell (if it has been defined)
      */
     public void shoot() {
-        if(this.chosen != null) {
+        if(this.chosen != null && !this.chosen.getCellModel().check()) {
             boolean user = true;
             this.chosen.destroy(user);
             this.behaviour.shoot(this.userBoard);

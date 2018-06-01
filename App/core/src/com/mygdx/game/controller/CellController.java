@@ -74,9 +74,9 @@ public class CellController {
         if(this.cellModel.getShootListener() != null)
             this.cellModel.getButton().removeListener(this.cellModel.getShootListener());
 
-        if(this.cellModel.getShip() != null) {
-            this.cellModel.setDestroyed(true);
+        this.cellModel.setDestroyed(true);
 
+        if(this.cellModel.getShip() != null) {
             if(user) {
                 Gdx.input.vibrate(500);
                 playCannonSound();
