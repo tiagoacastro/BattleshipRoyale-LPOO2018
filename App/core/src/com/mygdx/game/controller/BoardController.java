@@ -116,7 +116,7 @@ public class BoardController {
      */
     public boolean check(){
         return carrier.getShipModel().check() && dreadnought.getShipModel().check() &&
-                submarine.getShipModel().check() && carrier.getShipModel().check() &&
+                submarine.getShipModel().check() && cruiser.getShipModel().check() &&
                 patrolBoat.getShipModel().check();
     }
 }
