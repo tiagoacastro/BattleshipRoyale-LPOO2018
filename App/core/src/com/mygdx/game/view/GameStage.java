@@ -15,6 +15,8 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.BattleShip;
 import com.mygdx.game.controller.BoardController;
+import com.mygdx.game.controller.CrazyBehaviour;
+import com.mygdx.game.controller.EasyBehaviour;
 import com.mygdx.game.controller.HardBehaviour;
 import com.mygdx.game.controller.GameController;
 import com.mygdx.game.utility.ButtonFactory;
@@ -32,9 +34,10 @@ class GameStage extends Stage {
     private boolean toggleBoard = false;
     private int auxX, auxY;
 
-    GameStage(BoardController board) {
+    GameStage(BoardController board, DifficultyStage.Difficulty difficulty) {
         game = BattleShip.getInstance();
-        this.controller = new GameController(board, new HardBehaviour());
+
+        this.setController(board, difficulty);
 
         ratio = ((float) Gdx.graphics.getHeight() / (float) Gdx.graphics.getWidth());
         this.viewport = new FitViewport(VIEWPORT_WIDTH, VIEWPORT_WIDTH * ratio);
@@ -185,5 +188,19 @@ class GameStage extends Stage {
     @Override
     public Viewport getViewport() {
         return viewport;
+    }
+
+    private void setController(BoardController board, DifficultyStage.Difficulty difficulty){
+        switch (difficulty){
+            case EASY:
+                this.controller = new GameController(board, new EasyBehaviour());
+                break;
+            case HARD:
+                this.controller = new GameController(board, new HardBehaviour());
+                break;
+            case CRAZY:
+                this.controller = new GameController(board, new CrazyBehaviour());
+                break;
+        }
     }
 }

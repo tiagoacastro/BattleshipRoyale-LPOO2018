@@ -17,12 +17,12 @@ public class GameScreen extends ScreenAdapter {
     /**
      * GameScreen Default Constructor
      */
-    GameScreen(BoardController board){
+    GameScreen(BoardController board, DifficultyStage.Difficulty difficulty){
         game = BattleShip.getInstance();
 
         this.loadAssets();
 
-        gameStage = new GameStage(board);
+        gameStage = new GameStage(board, difficulty);
     }
     /**
      * Loads the assets needed by this screen.
