@@ -53,6 +53,7 @@ public class HardBehaviour extends EasyBehaviour{
                 way = 0;
                 switchSide = true;
                 tailStart = false;
+                edgeCell = null;
                 discoverer.clear();
             }
         }
@@ -204,7 +205,10 @@ public class HardBehaviour extends EasyBehaviour{
         } else {
             way += 2;
             way %= 4;
-            return tryFollow(board, edgeCell, false);
+            if(edgeCell != null)
+                return tryFollow(board, edgeCell, false);
+            else
+                return tryFollow(board, discoverer.get(0), false);
         }
     }
     /**
