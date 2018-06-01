@@ -1,6 +1,7 @@
 package com.mygdx.game.controller;
 
 import com.mygdx.game.model.Cell;
+import com.mygdx.game.view.EndGameScreen;
 
 /**
  * Class in charge of the game, contains the user board and the bot board
@@ -58,7 +59,11 @@ public class GameController {
      * Checks if the game is over
      */
     private void checkEnd(){
-        if(userBoard.check() || botBoard.check())
-            System.exit(0);
+        EndGameScreen endGame;
+        if(userBoard.check())
+            endGame = new EndGameScreen("WIN");
+            //System.exit(0);
+        else if (botBoard.check())
+            endGame = new EndGameScreen("WIN");
     }
 }

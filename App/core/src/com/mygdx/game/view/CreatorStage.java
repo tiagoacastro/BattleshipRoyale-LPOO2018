@@ -89,7 +89,7 @@ class CreatorStage extends Stage {
             ImageButton shipButton = new ImageButton(style);
             shipButton = createShipButton(i, shipButton);
 
-            guiTable.add(shipButton).width(VIEWPORT_WIDTH / 4).height(10*VIEWPORT_WIDTH * ratio / 70).center().expand();
+            guiTable.add(shipButton).width(VIEWPORT_WIDTH/4).height(10*VIEWPORT_WIDTH * ratio / 80).center().expand();
 
             guiTable.add().width(VIEWPORT_WIDTH / 2).height(10*VIEWPORT_WIDTH * ratio / 108);
 
