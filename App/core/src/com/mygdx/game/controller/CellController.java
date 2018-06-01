@@ -1,5 +1,6 @@
 package com.mygdx.game.controller;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -75,6 +76,7 @@ public class CellController {
 
         if(this.cellModel.getShip() != null) {
             this.cellModel.setDestroyed(true);
+            Gdx.input.vibrate(500);
             playCannonSound();
 
             Texture hitCellTexture = BattleShip.getInstance().getAssetManager().get("redSquare.png");

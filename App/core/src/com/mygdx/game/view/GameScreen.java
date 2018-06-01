@@ -99,6 +99,7 @@ public class GameScreen extends ScreenAdapter {
 
         game.getAssetManager().load("redSquare.png", Texture.class);
         game.getAssetManager().load("greenSquare.png", Texture.class);
+
         game.getAssetManager().finishLoading();
     }
     /**
@@ -112,6 +113,10 @@ public class GameScreen extends ScreenAdapter {
         Gdx.gl.glClearColor(255,255,255,1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT);
 
+        game.getBatch().begin();
+        this.drawBackground();
+        game.getBatch().end();
+
         gameStage.act();
         gameStage.draw();
     }
@@ -124,6 +129,11 @@ public class GameScreen extends ScreenAdapter {
     public void resize(int width, int height) {
         super.resize(width, height);
         gameStage.getViewport().update(width, height, true);
+    }
+
+    private void drawBackground() {
+        Texture background = game.getAssetManager().get("oceanBackground.png", Texture.class);
+        game.getBatch().draw(background,0,0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
     }
 }
 

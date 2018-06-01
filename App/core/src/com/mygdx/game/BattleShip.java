@@ -6,6 +6,12 @@ import com.mygdx.game.utility.ButtonFactory;
 import com.mygdx.game.view.MenuScreen;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
+
 /**
  * BattleShip game class (singleton)
  */
@@ -23,7 +29,7 @@ public class BattleShip extends Game {
 		assetManager = new AssetManager();
         batch = new SpriteBatch();
 		ButtonFactory factory = new ButtonFactory();
-		setScreen(new MenuScreen());
+        setScreen(new MenuScreen());
 	}
 	/**
 	 * Dispose Override

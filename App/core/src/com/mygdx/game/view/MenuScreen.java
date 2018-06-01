@@ -33,6 +33,7 @@ public class MenuScreen extends ScreenAdapter {
         game.getAssetManager().load("soundOff.png", Texture.class);
         game.getAssetManager().load("soundOn.png", Texture.class);
         game.getAssetManager().load("background2.png", Texture.class);
+        game.getAssetManager().load("oceanBackground.png", Texture.class);
         game.getAssetManager().finishLoading();
     }
     /**
