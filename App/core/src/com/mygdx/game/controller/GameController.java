@@ -62,8 +62,8 @@ public class GameController {
      */
     private void checkEnd(){
         if(userBoard.check())
-            BattleShip.getInstance().setScreen(new EndGameScreen("WIN"));
-        else if (botBoard.check())
             BattleShip.getInstance().setScreen(new EndGameScreen("LOSE"));
+        else if (botBoard.check())
+            BattleShip.getInstance().setScreen(new EndGameScreen("WIN"));
     }
 }
