@@ -1,8 +1,6 @@
 package com.mygdx.game.controller;
 
 import com.mygdx.game.BattleShip;
-import com.mygdx.game.model.Cell;
-import com.mygdx.game.view.CreatorScreen;
 import com.mygdx.game.view.EndGameScreen;
 
 /**
@@ -13,6 +11,10 @@ public class GameController {
     private BoardController botBoard;
     private CellController chosen = null;
     private BotBehaviour behaviour;
+    /**
+     * State of the game in the end, if the user won or lost
+     */
+    public enum State{WIN, LOSE}
     /**
      * GameController constructor that receives the user board created on the creatorScreen and creates the bot's
      * @param board     user's board
@@ -62,8 +64,8 @@ public class GameController {
      */
     private void checkEnd(){
         if(userBoard.check())
-            BattleShip.getInstance().setScreen(new EndGameScreen("LOSE"));
+            BattleShip.getInstance().setScreen(new EndGameScreen(State.LOSE));
         else if (botBoard.check())
-            BattleShip.getInstance().setScreen(new EndGameScreen("WIN"));
+            BattleShip.getInstance().setScreen(new EndGameScreen(State.WIN));
     }
 }

@@ -21,6 +21,9 @@ import com.mygdx.game.controller.HardBehaviour;
 import com.mygdx.game.controller.GameController;
 import com.mygdx.game.utility.ButtonFactory;
 
+/**
+ * Stage for the game screen
+ */
 class GameStage extends Stage {
     private static final float VIEWPORT_WIDTH = 800;
     private static final int BOARD_SIZE = 10;
@@ -29,11 +32,12 @@ class GameStage extends Stage {
     private Viewport viewport;
     private GameController controller;
     private Table userBoardTable;
-    private Table botBoardTable;
-    private Table guiTable;
     private boolean toggleBoard = false;
-    private int auxX, auxY;
-
+    /**
+     * Game stage constructor where the basic stage setup is done and the table creators are called
+     * @param board         user's board
+     * @param difficulty    game difficulty
+     */
     GameStage(BoardController board, DifficultyStage.Difficulty difficulty) {
         game = BattleShip.getInstance();
 
@@ -50,9 +54,11 @@ class GameStage extends Stage {
 
         this.drawBotBoard();
 
-        this.drawGui();
+        this.drawHUD();
     }
-
+    /**
+     * Hides the bot's ships
+     */
     private void hideBotShips() {
 
         for(int y = 0; y < BOARD_SIZE; y++){
@@ -70,7 +76,9 @@ class GameStage extends Stage {
         }
 
     }
-
+    /**
+     * Draws user's board
+     */
     private void drawUserBoard(){
         userBoardTable = new Table();
         userBoardTable.setFillParent(true);
@@ -96,9 +104,11 @@ class GameStage extends Stage {
 
         userBoardTable.add().height(VIEWPORT_WIDTH*ratio/12).colspan(12);
     }
-
+    /**
+     * Draws the bot's board
+     */
     private void drawBotBoard(){
-        botBoardTable = new Table();
+        Table botBoardTable = new Table();
         botBoardTable.setFillParent(true);
         this.addActor(botBoardTable);
 
@@ -132,8 +142,6 @@ class GameStage extends Stage {
 
             for(int x = 0; x < BOARD_SIZE; x++){
                 botBoardTable.add(this.controller.getBotBoard().getBoard().getMatrix()[y][x].getButtonRm()).width(VIEWPORT_WIDTH/24).height(VIEWPORT_WIDTH*ratio/12);
-                auxX = x;
-                auxY = y;
                 this.controller.getBotBoard().getBoard().getMatrix()[y][x].setShoot(controller);
             }
 
@@ -144,9 +152,11 @@ class GameStage extends Stage {
 
         botBoardTable.add().height(VIEWPORT_WIDTH*ratio/12).colspan(12);
     }
-
-    private void drawGui(){
-        guiTable = new Table();
+    /**
+     * Draw's the game HUD
+     */
+    private void drawHUD(){
+        Table guiTable = new Table();
         guiTable.setFillParent(true);
         this.addActor(guiTable);
 
@@ -174,7 +184,9 @@ class GameStage extends Stage {
 
         guiTable.add(button).width(VIEWPORT_WIDTH/4).expand().center();
     }
-
+    /**
+     * act Override with gyroscope input
+     */
     @Override
     public void act() {
         super.act();
@@ -184,12 +196,19 @@ class GameStage extends Stage {
             controller.shoot();
         }
     }
-
+    /**
+     * Getter for the viewport
+     * @return  viewport
+     */
     @Override
     public Viewport getViewport() {
         return viewport;
     }
-
+    /**
+     * Setter for the game controller which receives a difficulty and applys it to it
+     * @param board         board
+     * @param difficulty    difficulty
+     */
     private void setController(BoardController board, DifficultyStage.Difficulty difficulty){
         switch (difficulty){
             case EASY:

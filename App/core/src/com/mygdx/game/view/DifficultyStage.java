@@ -10,32 +10,37 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.BattleShip;
 import com.mygdx.game.controller.BoardController;
-import com.mygdx.game.controller.CrazyBehaviour;
 import com.mygdx.game.utility.ButtonFactory;
 
+/**
+ * Stage for the Difficulty screen
+ */
 public class DifficultyStage extends Stage {
     private static final float VIEWPORT_WIDTH = 800;
-    private float ratio;
     private BattleShip game;
     private Viewport viewport;
-    private Table table;
     private BoardController userBoard;
-
+    /**
+     * The various difficulty options
+     */
     public enum Difficulty{EASY, HARD, CRAZY};
-
+    /**
+     * DifficultyStage constructor where the layout is created
+     * @param board board
+     */
     DifficultyStage(BoardController board) {
         game = BattleShip.getInstance();
 
         this.userBoard = board;
 
-        ratio = ((float) Gdx.graphics.getHeight() / (float) Gdx.graphics.getWidth());
+        float ratio = ((float) Gdx.graphics.getHeight() / (float) Gdx.graphics.getWidth());
         this.viewport = new FitViewport(VIEWPORT_WIDTH, VIEWPORT_WIDTH * ratio);
         viewport.apply();
         this.setViewport(this.viewport);
 
         Gdx.input.setInputProcessor(this);
 
-        table = new Table();
+        Table table = new Table();
         table.setFillParent(true);
         this.addActor(table);
 
@@ -83,7 +88,10 @@ public class DifficultyStage extends Stage {
 
         table.add().height(VIEWPORT_WIDTH*ratio/7);
     }
-
+    /**
+     * Getter for the viewport
+     * @return  viewport
+     */
     @Override
     public Viewport getViewport() {
         return viewport;

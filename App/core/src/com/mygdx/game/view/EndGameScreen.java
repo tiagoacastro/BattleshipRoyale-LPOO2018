@@ -3,26 +3,24 @@ package com.mygdx.game.view;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
-import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.mygdx.game.BattleShip;
+import com.mygdx.game.controller.GameController;
 
 /**
- * Screen when it's your turn
+ * Ending of the game screen
  */
 public class EndGameScreen extends ScreenAdapter {
     private BattleShip game;
     private EndGameStage endGameStage;
-    private String status;
     /**
-     * GameScreen Default Constructor
+     * EndGameScreen Constructor
      */
-    public EndGameScreen(String status){
+    public EndGameScreen(GameController.State status){
         game = BattleShip.getInstance();
 
         this.loadAssets();
-        this.status = status;
 
         endGameStage = new EndGameStage(status);
     }
@@ -30,7 +28,6 @@ public class EndGameScreen extends ScreenAdapter {
      * Loads the assets needed by this screen.
      */
     private void loadAssets() {
-
         game.getAssetManager().load("oceanBackground.png", Texture.class);
         game.getAssetManager().finishLoading();
     }
@@ -62,7 +59,9 @@ public class EndGameScreen extends ScreenAdapter {
         super.resize(width, height);
         endGameStage.getViewport().update(width, height, true);
     }
-
+    /**
+     * DrawsBackground
+     */
     private void drawBackground() {
         Texture background = game.getAssetManager().get("oceanBackground.png", Texture.class);
         game.getBatch().draw(background,0,0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());

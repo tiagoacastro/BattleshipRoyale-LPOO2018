@@ -9,13 +9,13 @@ import com.mygdx.game.BattleShip;
 import com.mygdx.game.controller.BoardController;
 
 /**
- * Menu Screen
+ * Game Screen
  */
 public class GameScreen extends ScreenAdapter {
     private BattleShip game;
     private GameStage gameStage;
     /**
-     * GameScreen Default Constructor
+     * GameScreen Constructor
      */
     GameScreen(BoardController board, DifficultyStage.Difficulty difficulty){
         game = BattleShip.getInstance();
@@ -130,7 +130,9 @@ public class GameScreen extends ScreenAdapter {
         super.resize(width, height);
         gameStage.getViewport().update(width, height, true);
     }
-
+    /**
+     * Draws background
+     */
     private void drawBackground() {
         Texture background = game.getAssetManager().get("oceanBackground.png", Texture.class);
         game.getBatch().draw(background,0,0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());

@@ -9,7 +9,9 @@ import java.util.Arrays;
  */
 public class Carrier extends Ship {
     private static final int size = 5;
-
+    /**
+     * Carrier constructor
+     */
     public Carrier() {
         super();
         cells = new CellController[size];

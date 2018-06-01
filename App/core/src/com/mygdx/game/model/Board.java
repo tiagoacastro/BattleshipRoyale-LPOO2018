@@ -8,7 +8,11 @@ import com.mygdx.game.controller.CellController;
  */
 public class Board {
     private CellController matrix[][];
-
+    /**
+     * Board constructor
+     * @param dimension board dimension (square)
+     * @param board board controller
+     */
     public Board(int dimension, BoardController board) {
         matrix = new CellController[dimension][dimension];
         for (int i = 0; i < dimension; i++)
@@ -16,7 +20,10 @@ public class Board {
                 matrix[i][j] = new CellController(new Cell(i, j, board));
             }
     }
-
+    /**
+     * Getter for the cell matrix
+     * @return  matrix
+     */
     public CellController[][] getMatrix() {
         return matrix;
     }

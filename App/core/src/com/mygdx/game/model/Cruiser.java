@@ -9,7 +9,9 @@ import java.util.Arrays;
  */
 public class Cruiser extends Ship {
     private static final int size = 2;
-
+    /**
+     * Cruiser constructor
+     */
     public Cruiser() {
         super();
         cells = new CellController[size];

@@ -18,13 +18,18 @@ import com.mygdx.game.BattleShip;
 import com.mygdx.game.controller.BoardController;
 import com.mygdx.game.utility.ButtonFactory;
 
+/**
+ * Stage for the creator screen
+ */
 class CreatorStage extends Stage {
     private static final float VIEWPORT_WIDTH = 800;
     private float ratio;
     private BattleShip game;
     private Viewport viewport;
     private BoardController board;
-
+    /**
+     * CreatorStage constructor where the layout is set up and the table functions are called
+     */
     CreatorStage() {
         game = BattleShip.getInstance();
 
@@ -39,7 +44,9 @@ class CreatorStage extends Stage {
 
         this.drawGui();
     }
-
+    /**
+     * Draws the user's board
+     */
     private void drawBoard(){
         Table boardTable = new Table();
         boardTable.setFillParent(true);
@@ -72,7 +79,9 @@ class CreatorStage extends Stage {
 
         boardTable.add().height(VIEWPORT_WIDTH*ratio/12).colspan(12);
     }
-
+    /**
+     * Draws the GUI (buttons and ship options)
+     */
     private void drawGui(){
         Table guiTable = new Table();
         guiTable.setFillParent(true);
@@ -128,7 +137,12 @@ class CreatorStage extends Stage {
 
         auxTable.add(playButton).width(VIEWPORT_WIDTH / 4).height(VIEWPORT_WIDTH*ratio/12).expand().center().bottom();
     }
-
+    /**
+     * Sets up the ship button
+     * @param i             index of the ship
+     * @param shipButton    ship button
+     * @return ship button modified
+     */
     private ImageButton createShipButton(int i,ImageButton shipButton) {
         switch(i){
             case 0:
@@ -192,7 +206,10 @@ class CreatorStage extends Stage {
         }
         return shipButton;
     }
-
+    /**
+     * Getter for the viewport
+     * @return viewport
+     */
     @Override
     public Viewport getViewport() {
         return viewport;

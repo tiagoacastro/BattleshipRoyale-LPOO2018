@@ -2,7 +2,6 @@ package com.mygdx.game.controller;
 
 import com.mygdx.game.model.Board;
 import com.mygdx.game.model.Ship;
-import com.mygdx.game.model.Cell;
 import java.util.Arrays;
 
 /**
@@ -157,7 +156,6 @@ public class ShipController {
     /**
      * Function to check if the boat was placed or not
      * @return  if it is placed
-
      */
     public boolean isPlaced(){
         return placed;

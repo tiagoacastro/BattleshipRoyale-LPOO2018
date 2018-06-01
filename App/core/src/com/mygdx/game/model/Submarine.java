@@ -9,7 +9,9 @@ import java.util.Arrays;
  */
 public class Submarine extends Ship {
     private static final int size = 3;
-
+    /**
+     * Submarine constructor
+     */
     public Submarine() {
         super();
         cells = new CellController[size];

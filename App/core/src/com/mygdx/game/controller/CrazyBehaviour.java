@@ -1,7 +1,8 @@
 package com.mygdx.game.controller;
 
-import com.mygdx.game.model.Cell;
-
+/**
+ * bot behaviours implementing the BotBehaviour interface (Strategy design Pattern)
+ */
 public class CrazyBehaviour extends HardBehaviour{
     /**
      * Behaviour constuctor, used to inicialize the tracker via super class

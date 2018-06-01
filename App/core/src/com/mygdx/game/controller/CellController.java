@@ -18,18 +18,30 @@ import com.mygdx.game.model.Dreadnought;
 import com.mygdx.game.model.PatrolBoat;
 import com.mygdx.game.model.Submarine;
 
+/**
+ * Cell Controller class in charge of all the logic around the cell
+ */
 public class CellController {
     private Cell cellModel;
     private CellController me;
-
+    /**
+     * Constructor for the cell controller
+     * @param cellModel cell model
+     */
     public CellController(Cell cellModel) {
         this.cellModel = cellModel;
     }
-
+    /**
+     * Getter for the cell model
+     * @return  cell model
+     */
     public Cell getCellModel() {
         return cellModel;
     }
-
+    /**
+     * Sets the button, adding its listener
+     * @param button    button
+     */
     public void setButton(Button button) {
         this.cellModel.setButton(button);
 
@@ -39,14 +51,17 @@ public class CellController {
             public void clicked(InputEvent event, float x, float y){
                 ShipController ship = cellModel.getBoard().getChosen();
                 if(ship != null){
-                    ship.update(cellModel.getBoard().getBoard(), cellModel.getColumn(), cellModel.getLine());
+                    ship.update(cellModel.getBoard().getBoard(), cellModel.getX(), cellModel.getY());
                 }
             }
         });
 
         this.cellModel.setCreateListener(listener);
     }
-
+    /**
+     * Sets the shooting listener
+     * @param gController   game controller
+     */
     public void setShoot(GameController gController){
         this.cellModel.setController(gController);
         me = this;
@@ -58,18 +73,29 @@ public class CellController {
                 cellModel.getController().setChosen(me);
             }
         });
-    }
 
+        cellModel.setShootListener(listener);
+    }
+    /**
+     * Getter for the button but removing its creation listener
+     * @return  button
+     */
     public Button getButtonRm() {
         this.cellModel.getButton().removeListener(this.cellModel.getCreateListener());
         return this.cellModel.getButton();
     }
-
+    /**
+     * Play the sound that is played when a shot is executed
+     */
     private void playCannonSound() {
         Sound cannon = BattleShip.getInstance().getAssetManager().get("cannonSound.mp3");
         cannon.play();
     }
-
+    /**
+     * Destroy the cell, playing the shooting sound, vibrating the phone and changing its representation
+     * @param user  if the user was the one who shot or if it was the bot
+     * @return  if the cell had a ship or not
+     */
     public boolean destroy(boolean user){
         if(this.cellModel.getShootListener() != null)
             this.cellModel.getButton().removeListener(this.cellModel.getShootListener());
@@ -103,7 +129,11 @@ public class CellController {
 
         return false;
     }
-
+    /**
+     * Occupy cell by a ship, changing its representation depending on the ship and on it's direction
+     * @param ship      ship
+     * @param index     index of the cell on the ship
+     */
     public void occupy(ShipController ship, int index) {
         this.cellModel.setShip(ship);
 
@@ -175,11 +205,17 @@ public class CellController {
             this.cellModel.getButton().setStyle(style);
         }
     }
-
+    /**
+     * Check if the cell is occupied by a ship different than the one passed by parameter
+     * @param s ship
+     * @return  if it's occupied or not
+     */
     public boolean occupied(ShipController s){
         return s != this.cellModel.getShip() && this.cellModel.getShip() != null;
     }
-
+    /**
+     * Free the Cell, changing its representation
+     */
     public void free(){
         this.cellModel.setShip(null);
 

@@ -9,7 +9,9 @@ import java.util.Arrays;
  */
 public class Dreadnought extends Ship {
     private static final int size = 4;
-
+    /**
+     * Dreadnough constructor
+     */
     public Dreadnought() {
         super();
         cells = new CellController[size];

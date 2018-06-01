@@ -7,11 +7,14 @@ import com.badlogic.gdx.graphics.Texture;
 import com.mygdx.game.BattleShip;
 import com.mygdx.game.controller.BoardController;
 
+/**
+ * Screen to choose the difficulty
+ */
 public class DifficultyScreen extends ScreenAdapter {
     private BattleShip game;
     private DifficultyStage difficultyStage;
     /**
-     * GameScreen Default Constructor
+     * DifficultyScreen Constructor
      */
     DifficultyScreen(BoardController board){
         game = BattleShip.getInstance();
@@ -55,7 +58,9 @@ public class DifficultyScreen extends ScreenAdapter {
         super.resize(width, height);
         difficultyStage.getViewport().update(width, height, true);
     }
-
+    /**
+     * Draws the background
+     */
     private void drawBackground() {
         Texture background = game.getAssetManager().get("oceanBackground.png", Texture.class);
         game.getBatch().draw(background,0,0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());

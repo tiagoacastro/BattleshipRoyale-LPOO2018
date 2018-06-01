@@ -2,19 +2,18 @@ package com.mygdx.game.view;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
-import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.mygdx.game.BattleShip;
 
 /**
- * Screen when it's your turn
+ * Screen in charge of creating the user's board
  */
 public class CreatorScreen extends ScreenAdapter{
     private BattleShip game;
     private CreatorStage creatorStage;
     /**
-     * GameScreen Default Constructor
+     * CreatorScreen Constructor
      */
     CreatorScreen(){
         game = BattleShip.getInstance();
@@ -130,7 +129,9 @@ public class CreatorScreen extends ScreenAdapter{
         super.resize(width, height);
         creatorStage.getViewport().update(width, height, true);
     }
-
+    /**
+     * Draws the background
+     */
     private void drawBackground() {
         Texture background = game.getAssetManager().get("oceanBackground.png", Texture.class);
         game.getBatch().draw(background,0,0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
