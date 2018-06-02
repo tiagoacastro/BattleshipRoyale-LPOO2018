@@ -81,7 +81,7 @@ project(":android") {
         compile "com.badlogicgames.gdx:gdx-ai:$aiVersion"
         compile "com.badlogicgames.box2dlights:box2dlights:$box2DLightsVersion"
         compile "de.tomgrill.gdxfacebook:gdx-facebook-android:1.4.1"
-        
+        compile fileTree(dir: '../libs', include: '*.jar')
     }
 }
 
@@ -96,7 +96,7 @@ project(":core") {
         compile "com.badlogicgames.gdx:gdx-ai:$aiVersion"
         compile "com.badlogicgames.box2dlights:box2dlights:$box2DLightsVersion"
         compile "de.tomgrill.gdxfacebook:gdx-facebook-core:1.4.1"
-        
+        compile fileTree(dir: '../libs', include: '*.jar')
     }
 }
 

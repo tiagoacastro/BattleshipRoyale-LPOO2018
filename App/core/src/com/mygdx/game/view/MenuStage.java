@@ -15,6 +15,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.BattleShip;
 import com.mygdx.game.utility.ButtonFactory;
+import com.mygdx.game.utility.Facebook;
 
 /**
  * Stage for the Menu screen
@@ -60,12 +61,24 @@ class MenuStage extends Stage {
 
         Texture soundOff = game.getAssetManager().get("soundOff.png");
         Texture soundOn = game.getAssetManager().get("soundOn.png");
+        Texture facebook = game.getAssetManager().get("facebook.png");
         TextureRegion mySoundOnRegion = new TextureRegion(soundOff);
         TextureRegion mySoundOffRegion = new TextureRegion(soundOn);
+        TextureRegion facebookRegion = new TextureRegion(facebook);
         TextureRegionDrawable mySoundOnRegionDrawable = new TextureRegionDrawable(mySoundOnRegion);
         TextureRegionDrawable mySoundOffRegionDrawable = new TextureRegionDrawable(mySoundOffRegion);
+        TextureRegionDrawable facebookRegionDrawable = new TextureRegionDrawable(facebookRegion);
 
-        ImageButton toggleSoundButton = new ImageButton(mySoundOffRegionDrawable,mySoundOnRegionDrawable,mySoundOnRegionDrawable); //Set the button up
+        ImageButton facebookButton = new ImageButton(facebookRegionDrawable);
+        table.add(facebookButton).width(VIEWPORT_WIDTH/6).height(VIEWPORT_WIDTH*ratio/6).expand().right().bottom();
+        facebookButton.addListener(new ClickListener() {
+            public void clicked(InputEvent event, float x, float y){
+                Facebook facebook = new Facebook();
+                facebook.login();
+            }
+        });
+
+        ImageButton toggleSoundButton = new ImageButton(mySoundOffRegionDrawable,mySoundOnRegionDrawable,mySoundOnRegionDrawable);
         table.add(toggleSoundButton).width(VIEWPORT_WIDTH/6).height(VIEWPORT_WIDTH*ratio/6).expand().right().bottom();
         toggleSoundButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
