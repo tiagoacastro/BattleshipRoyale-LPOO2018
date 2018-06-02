@@ -11,7 +11,7 @@ import com.restfb.scope.ScopeBuilder;
  */
 public class Facebook {
     private FacebookClient facebookClient;
-    private ScopeBuilder scopeBuilder;
+    private ScopeBuilder scopeBuilder; 
     /**
      * Facebook class constructor initializing scopeBuilder and the facebook client
      */
