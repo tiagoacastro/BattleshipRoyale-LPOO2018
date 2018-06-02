@@ -63,9 +63,15 @@ public class GameController {
      * Checks if the game is over
      */
     private void checkEnd(){
-        if(userBoard.check())
+        if(userBoard.check()) {
+            BattleShip.getInstance().getAssetManager().dispose();
+            BattleShip.getInstance().getScreen().dispose();
             BattleShip.getInstance().setScreen(new EndGameScreen(State.LOSE));
-        else if (botBoard.check())
+        }
+        else if (botBoard.check()) {
+            BattleShip.getInstance().getAssetManager().dispose();
+            BattleShip.getInstance().getScreen().dispose();
             BattleShip.getInstance().setScreen(new EndGameScreen(State.WIN));
+        }
     }
 }

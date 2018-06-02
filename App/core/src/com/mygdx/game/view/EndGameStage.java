@@ -8,6 +8,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.mygdx.game.BattleShip;
 import com.mygdx.game.controller.GameController;
 import com.mygdx.game.utility.ButtonFactory;
 
@@ -53,7 +54,8 @@ public class EndGameStage extends Stage {
 
         this.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
-               //what to do
+
+                BattleShip.getInstance().setScreen(new MenuScreen());
             }
         });
     }
