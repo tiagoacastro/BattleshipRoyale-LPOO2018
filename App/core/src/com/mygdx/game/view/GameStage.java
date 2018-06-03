@@ -1,6 +1,7 @@
 package com.mygdx.game.view;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -42,6 +43,7 @@ public class GameStage extends Stage {
     private Button patrolBoat;
     private Button submarine;
     private Button dreadnought;
+    private Music music;
     /**
      * Game stage constructor where the basic stage setup is done and the table creators are called
      * @param board         user's board
@@ -247,10 +249,14 @@ public class GameStage extends Stage {
         guiTable.setFillParent(true);
         this.addActor(guiTable);
 
+        music = game.getAssetManager().get("pirates.mp3");
+        music.play();
+        music.setVolume(0.3f);
+
         TextButton.TextButtonStyle style = new TextButton.TextButtonStyle();
         style.font = new BitmapFont();
 
-        guiTable.add().height(11*VIEWPORT_WIDTH*ratio/12).colspan(2);
+        guiTable.add().height(6*VIEWPORT_WIDTH*ratio/12).colspan(2);
 
         guiTable.row();
 
@@ -270,7 +276,25 @@ public class GameStage extends Stage {
                 }
             }
         });
-        guiTable.add(button).width(VIEWPORT_WIDTH/4).expand().center();
+        guiTable.add(button).width(VIEWPORT_WIDTH/4).expand().center().bottom();
+
+        Texture soundOff = game.getAssetManager().get("soundOff.png");
+        Texture soundOn = game.getAssetManager().get("soundOn.png");
+        TextureRegion mySoundOnRegion = new TextureRegion(soundOff);
+        TextureRegion mySoundOffRegion = new TextureRegion(soundOn);
+        TextureRegionDrawable mySoundOnRegionDrawable = new TextureRegionDrawable(mySoundOnRegion);
+        TextureRegionDrawable mySoundOffRegionDrawable = new TextureRegionDrawable(mySoundOffRegion);
+        ImageButton toggleSoundButton = new ImageButton(mySoundOffRegionDrawable,mySoundOnRegionDrawable,mySoundOnRegionDrawable);
+        guiTable.add(toggleSoundButton).width(VIEWPORT_WIDTH/8).height(VIEWPORT_WIDTH*ratio/14).expand().center().bottom();
+        toggleSoundButton.addListener(new ClickListener() {
+            public void clicked(InputEvent event, float x, float y){
+                if(music.isPlaying()) {
+                    music.pause();
+                }else{
+                    music.play();
+                }
+            }
+        });
 
         Table auxTable = new Table();
         auxTable.setFillParent(true);
@@ -283,6 +307,7 @@ public class GameStage extends Stage {
         TextButton botsBoard = ButtonFactory.createButton("Bot's Board", 20);
 
         auxTable.add(botsBoard).width(VIEWPORT_WIDTH / 4).height(VIEWPORT_WIDTH*ratio/12).expand().center().top();
+
     }
     /**
      * act Override with gyroscope input

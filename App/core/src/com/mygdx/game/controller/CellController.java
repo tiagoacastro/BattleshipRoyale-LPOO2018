@@ -89,7 +89,15 @@ public class CellController {
      */
     private void playCannonSound() {
         Sound cannon = BattleShip.getInstance().getAssetManager().get("cannonSound.mp3");
-        cannon.play();
+        cannon.play(0.5f);
+    }
+
+    /**
+     * Play the sound that is played when a shot is missed
+     */
+    private void playSplashSound() {
+        Sound cannon = BattleShip.getInstance().getAssetManager().get("waterSplash.mp3");
+        cannon.play(0.5f);
     }
     /**
      * Destroy the cell, playing the shooting sound, vibrating the phone and changing its representation
@@ -104,7 +112,7 @@ public class CellController {
 
         if(this.cellModel.getShip() != null) {
             if(user) {
-                Gdx.input.vibrate(500);
+                Gdx.input.vibrate(300);
                 playCannonSound();
             }
 
@@ -126,6 +134,9 @@ public class CellController {
         TextureRegionDrawable hitCellTextureRegionDrawable = new TextureRegionDrawable(hitCellTextureRegion);
         ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(hitCellTextureRegionDrawable,hitCellTextureRegionDrawable,hitCellTextureRegionDrawable);
         this.cellModel.getButton().setStyle(style);
+
+        if(user)
+        playSplashSound();
 
         return false;
     }

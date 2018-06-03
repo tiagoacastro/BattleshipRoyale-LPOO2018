@@ -50,6 +50,7 @@ class MenuStage extends Stage {
         table.add(playButton).width(VIEWPORT_WIDTH/5).height(VIEWPORT_WIDTH*ratio/5).padRight(300);
         playButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
+                music.stop();
                 game.setScreen(new CreatorScreen());
             }
         });

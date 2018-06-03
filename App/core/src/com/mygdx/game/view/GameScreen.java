@@ -2,6 +2,7 @@ package com.mygdx.game.view;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
@@ -30,6 +31,8 @@ public class GameScreen extends ScreenAdapter {
     private void loadAssets() {
 
         game.getAssetManager().load("cannonSound.mp3", Sound.class);
+        game.getAssetManager().load("waterSplash.mp3", Sound.class);
+        game.getAssetManager().load("pirates.mp3",Music.class);
 
         game.getAssetManager().load("destroyedCarrier.png", Texture.class);
         game.getAssetManager().load("destroyedCruiser.png", Texture.class);
