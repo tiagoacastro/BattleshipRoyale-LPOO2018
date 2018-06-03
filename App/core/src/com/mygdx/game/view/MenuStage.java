@@ -70,7 +70,7 @@ class MenuStage extends Stage {
         TextureRegionDrawable facebookRegionDrawable = new TextureRegionDrawable(facebookRegion);
 
         ImageButton facebookButton = new ImageButton(facebookRegionDrawable);
-        table.add(facebookButton).width(VIEWPORT_WIDTH/6).height(VIEWPORT_WIDTH*ratio/6).expand().right().bottom();
+        table.add(facebookButton).width(VIEWPORT_WIDTH/10).height(VIEWPORT_WIDTH*ratio/6).expand().right().bottom();
         facebookButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 Facebook facebook = new Facebook();
@@ -83,7 +83,7 @@ class MenuStage extends Stage {
         toggleSoundButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 if(music.isPlaying()) {
-                    music.stop();
+                    music.pause();
                 }else{
                     music.play();
                 }

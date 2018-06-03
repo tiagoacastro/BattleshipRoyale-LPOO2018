@@ -2,6 +2,7 @@ package com.mygdx.game.controller;
 
 import com.mygdx.game.BattleShip;
 import com.mygdx.game.view.EndGameScreen;
+import com.mygdx.game.view.GameStage;
 
 /**
  * Class in charge of the game, contains the user board and the bot board
@@ -19,12 +20,17 @@ public class GameController {
      * GameController constructor that receives the user board created on the creatorScreen and creates the bot's
      * @param board     user's board
      */
-    public GameController(BoardController board, BotBehaviour behaviour) {
+    public GameController(BoardController board, BotBehaviour behaviour, GameStage stage) {
         this.userBoard = board;
 
         this.behaviour = behaviour;
 
         this.botBoard = new BoardController();
+        this.botBoard.getCruiser().setStage(stage);
+        this.botBoard.getCarrier().setStage(stage);
+        this.botBoard.getPatrolBoat().setStage(stage);
+        this.botBoard.getDreadnought().setStage(stage);
+        this.botBoard.getSubmarine().setStage(stage);
     }
     /**
      * Getter for the bot's board

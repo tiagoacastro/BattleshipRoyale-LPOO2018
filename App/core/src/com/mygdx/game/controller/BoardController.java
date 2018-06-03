@@ -6,6 +6,8 @@ import com.mygdx.game.model.Cruiser;
 import com.mygdx.game.model.Dreadnought;
 import com.mygdx.game.model.PatrolBoat;
 import com.mygdx.game.model.Submarine;
+import com.mygdx.game.view.GameStage;
+
 import java.util.Random;
 
 /**
@@ -30,10 +32,49 @@ public class BoardController {
     public BoardController() {
         this.board = new Board(dimension, this);
     }
+
+    /**
+     * getter for the cruiser
+     * @return ShipController
+     */
+    public ShipController getCruiser() {
+        return cruiser;
+    }
+    /**
+     * getter for the carrier
+     * @return ShipController
+     */
+    public CarrierController getCarrier() {
+        return carrier;
+    }
+    /**
+     * getter for the dreadnought
+     * @return ShipController
+     */
+    public ShipController getDreadnought() {
+        return dreadnought;
+    }
+    /**
+     * getter for the patrolboat
+     * @return ShipController
+     */
+    public ShipController getPatrolBoat() {
+        return patrolBoat;
+    }
+    /**
+     * getter for the submarine
+     * @return ShipController
+     */
+    public ShipController getSubmarine() {
+        return submarine;
+    }
+
     /**
      * Setter for the chosen ship to place
      * @param choice        ship name
      */
+
+
     public void setChosen(Ships choice) {
         switch(choice){
             case carrier:

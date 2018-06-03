@@ -3,10 +3,13 @@ package com.mygdx.game.view;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
@@ -24,7 +27,7 @@ import com.mygdx.game.utility.ButtonFactory;
 /**
  * Stage for the game screen
  */
-class GameStage extends Stage {
+public class GameStage extends Stage {
     private static final float VIEWPORT_WIDTH = 800;
     private static final int BOARD_SIZE = 10;
     private float ratio;
@@ -32,7 +35,13 @@ class GameStage extends Stage {
     private Viewport viewport;
     private GameController controller;
     private Table userBoardTable;
+    private Table botStatus;
     private boolean toggleBoard = false;
+    private Button carrier;
+    private Button cruiser;
+    private Button patrolBoat;
+    private Button submarine;
+    private Button dreadnought;
     /**
      * Game stage constructor where the basic stage setup is done and the table creators are called
      * @param board         user's board
@@ -55,7 +64,10 @@ class GameStage extends Stage {
         this.drawBotBoard();
 
         this.drawHUD();
+
+        this.drawBotStatusHUD();
     }
+
     /**
      * Hides the bot's ships
      */
@@ -76,6 +88,81 @@ class GameStage extends Stage {
         }
 
     }
+    private void createShipButton(int i) {
+        switch (i) {
+            case 0:
+                Texture myCarrier = game.getAssetManager().get("carrier.png");
+                TextureRegion myCarrierRegion = new TextureRegion(myCarrier);
+                TextureRegionDrawable myCarrierRegionDrawable = new TextureRegionDrawable(myCarrierRegion);
+                Button.ButtonStyle style = new Button.ButtonStyle(myCarrierRegionDrawable,myCarrierRegionDrawable,myCarrierRegionDrawable);
+                carrier = new Button(); //Set the button up
+                carrier.setStyle(style);
+                botStatus.add(carrier).width(VIEWPORT_WIDTH/5).height(12*VIEWPORT_WIDTH * ratio / 80).center();
+                break;
+            case 1:
+                Texture myDreadnought = game.getAssetManager().get("dreadnought.png");
+                TextureRegion myDreadnoughtRegion = new TextureRegion(myDreadnought);
+                TextureRegionDrawable myDreadnoughtRegionDrawable = new TextureRegionDrawable(myDreadnoughtRegion);
+                Button.ButtonStyle style2 = new Button.ButtonStyle(myDreadnoughtRegionDrawable,myDreadnoughtRegionDrawable,myDreadnoughtRegionDrawable);
+                dreadnought = new Button(); //Set the button up
+                dreadnought.setStyle(style2);
+                botStatus.add(dreadnought).width(VIEWPORT_WIDTH/5).height(5*VIEWPORT_WIDTH * ratio / 80).center();
+                break;
+            case 2:
+                Texture mySubmarine = game.getAssetManager().get("submarine.png");
+                TextureRegion mySubmarineRegion = new TextureRegion(mySubmarine);
+                TextureRegionDrawable mySubmarineRegionDrawable = new TextureRegionDrawable(mySubmarineRegion);
+                Button.ButtonStyle style3 = new Button.ButtonStyle(mySubmarineRegionDrawable,mySubmarineRegionDrawable,mySubmarineRegionDrawable);
+                submarine = new Button(); //Set the button up
+                submarine.setStyle(style3);
+                botStatus.add(submarine).width(VIEWPORT_WIDTH/5).height(8*VIEWPORT_WIDTH * ratio / 80).center();
+                break;
+            case 3:
+                Texture myCruiser = game.getAssetManager().get("cruiser.png");
+                TextureRegion myCruiserRegion = new TextureRegion(myCruiser);
+                TextureRegionDrawable myCruiserRegionDrawable = new TextureRegionDrawable(myCruiserRegion);
+                Button.ButtonStyle style4 = new Button.ButtonStyle(myCruiserRegionDrawable,myCruiserRegionDrawable,myCruiserRegionDrawable);
+                cruiser = new Button(); //Set the button up
+                cruiser.setStyle(style4);
+                botStatus.add(cruiser).width(VIEWPORT_WIDTH/5).height(6*VIEWPORT_WIDTH * ratio / 80).center();
+                break;
+            case 4:
+                Texture myPatrolBoat = game.getAssetManager().get("patrolBoat.png");
+                TextureRegion myPatrolBoatRegion = new TextureRegion(myPatrolBoat);
+                TextureRegionDrawable myPatrolBoatRegionDrawable = new TextureRegionDrawable(myPatrolBoatRegion);
+                Button.ButtonStyle style5 = new Button.ButtonStyle(myPatrolBoatRegionDrawable,myPatrolBoatRegionDrawable,myPatrolBoatRegionDrawable);
+                patrolBoat = new Button(); //Set the button up
+                patrolBoat.setStyle(style5);
+                botStatus.add(patrolBoat).width(VIEWPORT_WIDTH/5).height(6*VIEWPORT_WIDTH * ratio / 80).center();
+                break;
+        }
+    }
+
+    private void drawBotStatusHUD(){
+        botStatus = new Table();
+        botStatus.setFillParent(true);
+        this.addActor(botStatus);
+        botStatus.setVisible(true);
+
+        botStatus.add().height(VIEWPORT_WIDTH*ratio/20).colspan(12);
+
+        botStatus.row();
+
+        for (int i = 0; i < 5; i++) {
+            createShipButton(i);
+
+            botStatus.add().width(VIEWPORT_WIDTH / 2).height(10*VIEWPORT_WIDTH * ratio / 108);
+
+            botStatus.row();
+
+            if(i != 4) {
+                botStatus.add().width(VIEWPORT_WIDTH).height(5 * VIEWPORT_WIDTH * ratio / 108).colspan(2);
+
+                botStatus.row();
+            }
+        }
+    }
+
     /**
      * Draws user's board
      */
@@ -104,6 +191,7 @@ class GameStage extends Stage {
 
         userBoardTable.add().height(VIEWPORT_WIDTH*ratio/12).colspan(12);
     }
+
     /**
      * Draws the bot's board
      */
@@ -144,7 +232,6 @@ class GameStage extends Stage {
                 botBoardTable.add(this.controller.getBotBoard().getBoard().getMatrix()[y][x].getButtonRm()).width(VIEWPORT_WIDTH/24).height(VIEWPORT_WIDTH*ratio/12);
                 this.controller.getBotBoard().getBoard().getMatrix()[y][x].setShoot(controller);
             }
-
             botBoardTable.add().width(VIEWPORT_WIDTH/24);
 
             botBoardTable.row();
@@ -174,15 +261,28 @@ class GameStage extends Stage {
             public void clicked(InputEvent event, float x, float y){
                 if(toggleBoard) {
                     userBoardTable.setVisible(false);
+                    botStatus.setVisible(true);
                     toggleBoard = false;
                 }else {
                     userBoardTable.setVisible(true);
+                    botStatus.setVisible(false);
                     toggleBoard = true;
                 }
             }
         });
-
         guiTable.add(button).width(VIEWPORT_WIDTH/4).expand().center();
+
+        Table auxTable = new Table();
+        auxTable.setFillParent(true);
+        this.addActor(auxTable);
+
+        TextButton myBoard = ButtonFactory.createButton("My Board", 20);
+
+        auxTable.add(myBoard).width(VIEWPORT_WIDTH / 4).height(VIEWPORT_WIDTH*ratio/12).expand().center().top();
+
+        TextButton botsBoard = ButtonFactory.createButton("Bot's Board", 20);
+
+        auxTable.add(botsBoard).width(VIEWPORT_WIDTH / 4).height(VIEWPORT_WIDTH*ratio/12).expand().center().top();
     }
     /**
      * act Override with gyroscope input
@@ -191,10 +291,10 @@ class GameStage extends Stage {
     public void act() {
         super.act();
 
-        float gyroY = Gdx.input.getGyroscopeY();
-        if(gyroY >= 5){
+        //float gyroY = Gdx.input.getGyroscopeY();
+        //if(gyroY >= 5){
             controller.shoot();
-        }
+        //}
     }
     /**
      * Getter for the viewport
@@ -212,14 +312,70 @@ class GameStage extends Stage {
     private void setController(BoardController board, DifficultyStage.Difficulty difficulty){
         switch (difficulty){
             case EASY:
-                this.controller = new GameController(board, new EasyBehaviour());
+                this.controller = new GameController(board, new EasyBehaviour(),this);
                 break;
             case HARD:
-                this.controller = new GameController(board, new HardBehaviour());
+                this.controller = new GameController(board, new HardBehaviour(),this);
                 break;
             case CRAZY:
-                this.controller = new GameController(board, new CrazyBehaviour());
+                this.controller = new GameController(board, new CrazyBehaviour(),this);
                 break;
         }
+    }
+
+    /**
+     * Sets the carrier sprite to the destroyed one upon user destruction
+     */
+    public void setCarrierDestroyed() {
+        Texture hitCellTexture = BattleShip.getInstance().getAssetManager().get("destroyedCarrier.png");
+        Sprite sprite = new Sprite(hitCellTexture);
+        TextureRegion hitCellTextureRegion = new TextureRegion(sprite);
+        TextureRegionDrawable hitCellTextureRegionDrawable = new TextureRegionDrawable(hitCellTextureRegion);
+        ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(hitCellTextureRegionDrawable,hitCellTextureRegionDrawable,hitCellTextureRegionDrawable);
+        this.carrier.setStyle(style);
+    }
+    /**
+     * Sets the cruiser sprite to the destroyed one upon user destruction
+     */
+    public void setCruiserDestroyed() {
+        Texture hitCellTexture = BattleShip.getInstance().getAssetManager().get("destroyedCruiser.png");
+        Sprite sprite = new Sprite(hitCellTexture);
+        TextureRegion hitCellTextureRegion = new TextureRegion(sprite);
+        TextureRegionDrawable hitCellTextureRegionDrawable = new TextureRegionDrawable(hitCellTextureRegion);
+        ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(hitCellTextureRegionDrawable,hitCellTextureRegionDrawable,hitCellTextureRegionDrawable);
+        this.cruiser.setStyle(style);
+    }
+    /**
+     * Sets the patrolBoat sprite to the destroyed one upon user destruction
+     */
+    public void setPatrolBoatDestroyed() {
+        Texture hitCellTexture = BattleShip.getInstance().getAssetManager().get("destroyedPatrolBoat.png");
+        Sprite sprite = new Sprite(hitCellTexture);
+        TextureRegion hitCellTextureRegion = new TextureRegion(sprite);
+        TextureRegionDrawable hitCellTextureRegionDrawable = new TextureRegionDrawable(hitCellTextureRegion);
+        ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(hitCellTextureRegionDrawable,hitCellTextureRegionDrawable,hitCellTextureRegionDrawable);
+        this.patrolBoat.setStyle(style);
+    }
+    /**
+     * Sets the submarine sprite to the destroyed one upon user destruction
+     */
+    public void setSubmarineDestroyed() {
+        Texture hitCellTexture = BattleShip.getInstance().getAssetManager().get("destroyedSubmarine.png");
+        Sprite sprite = new Sprite(hitCellTexture);
+        TextureRegion hitCellTextureRegion = new TextureRegion(sprite);
+        TextureRegionDrawable hitCellTextureRegionDrawable = new TextureRegionDrawable(hitCellTextureRegion);
+        ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(hitCellTextureRegionDrawable,hitCellTextureRegionDrawable,hitCellTextureRegionDrawable);
+        this.submarine.setStyle(style);
+    }
+    /**
+     * Sets the dreadnought sprite to the destroyed one upon user destruction
+     */
+    public void setDreadnoughtDestroyed() {
+        Texture hitCellTexture = BattleShip.getInstance().getAssetManager().get("destroyedDreadnought.png");
+        Sprite sprite = new Sprite(hitCellTexture);
+        TextureRegion hitCellTextureRegion = new TextureRegion(sprite);
+        TextureRegionDrawable hitCellTextureRegionDrawable = new TextureRegionDrawable(hitCellTextureRegion);
+        ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(hitCellTextureRegionDrawable,hitCellTextureRegionDrawable,hitCellTextureRegionDrawable);
+        this.dreadnought.setStyle(style);
     }
 }

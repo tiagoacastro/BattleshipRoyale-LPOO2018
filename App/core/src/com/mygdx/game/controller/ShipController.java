@@ -1,7 +1,14 @@
 package com.mygdx.game.controller;
 
 import com.mygdx.game.model.Board;
+import com.mygdx.game.model.Carrier;
+import com.mygdx.game.model.Cruiser;
+import com.mygdx.game.model.Dreadnought;
+import com.mygdx.game.model.PatrolBoat;
 import com.mygdx.game.model.Ship;
+import com.mygdx.game.model.Submarine;
+import com.mygdx.game.view.GameStage;
+
 import java.util.Arrays;
 
 /**
@@ -10,6 +17,7 @@ import java.util.Arrays;
 public class ShipController {
     Ship shipModel;
     private boolean placed = false;
+    private GameStage stage;
     /**
      * ShipController constructor that receives the ship model
      * @param ship  ship model
@@ -150,8 +158,22 @@ public class ShipController {
                 break;
             }
         }
-        if(destroy)
+        if(destroy) {
+            if(this.stage != null) {
+                if(this.shipModel instanceof Carrier) {
+                    this.stage.setCarrierDestroyed();
+                } else if(this.shipModel instanceof Cruiser) {
+                    this.stage.setCruiserDestroyed();
+                } else if (this.shipModel instanceof PatrolBoat) {
+                    this.stage.setPatrolBoatDestroyed();
+                } else if (this.shipModel instanceof Submarine) {
+                    this.stage.setSubmarineDestroyed();
+                } else if(this.shipModel instanceof Dreadnought)
+                    this.stage.setDreadnoughtDestroyed();
+            }
+
             this.shipModel.destroy();
+        }
     }
     /**
      * Function to check if the boat was placed or not
@@ -212,4 +234,10 @@ public class ShipController {
                 break;
         }
     }
+
+    /**
+     * setter for the attribute stage
+     * @param stage
+     */
+    public void setStage(GameStage stage) { this.stage = stage;}
 }

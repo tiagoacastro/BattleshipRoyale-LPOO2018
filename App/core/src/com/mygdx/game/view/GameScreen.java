@@ -31,6 +31,11 @@ public class GameScreen extends ScreenAdapter {
 
         game.getAssetManager().load("cannonSound.mp3", Sound.class);
 
+        game.getAssetManager().load("destroyedCarrier.png", Texture.class);
+        game.getAssetManager().load("destroyedCruiser.png", Texture.class);
+        game.getAssetManager().load("destroyedPatrolBoat.png", Texture.class);
+        game.getAssetManager().load("destroyedSubmarine.png", Texture.class);
+        game.getAssetManager().load("destroyedDreadnought.png", Texture.class);
         game.getAssetManager().load("redSquare.png", Texture.class);
         game.getAssetManager().load("greenSquare.png", Texture.class);
 
