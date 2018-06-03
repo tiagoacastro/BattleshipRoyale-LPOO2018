@@ -2,6 +2,7 @@ package com.mygdx.game.view;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
@@ -54,6 +55,8 @@ public class DifficultyStage extends Stage {
         crazyButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 MenuStage.stopMusic();
+                Sound sound = game.getAssetManager().get("buttonSound.mp3");
+                sound.play();
                 game.setScreen(new GameScreen(userBoard, Difficulty.CRAZY));
             }
         });
@@ -69,6 +72,8 @@ public class DifficultyStage extends Stage {
         hardButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 MenuStage.stopMusic();
+                Sound sound = game.getAssetManager().get("buttonSound.mp3");
+                sound.play();
                 game.setScreen(new GameScreen(userBoard, Difficulty.HARD));
             }
         });
@@ -84,6 +89,8 @@ public class DifficultyStage extends Stage {
         easyButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 MenuStage.stopMusic();
+                Sound sound = game.getAssetManager().get("buttonSound.mp3");
+                sound.play();
                 game.setScreen(new GameScreen(userBoard, Difficulty.EASY));
             }
         });

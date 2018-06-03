@@ -2,6 +2,7 @@ package com.mygdx.game.view;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -50,6 +51,8 @@ class MenuStage extends Stage {
         table.add(playButton).width(VIEWPORT_WIDTH/5).height(VIEWPORT_WIDTH*ratio/5).padRight(300);
         playButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
+                Sound sound = game.getAssetManager().get("buttonSound.mp3");
+                sound.play();
                 game.setScreen(new CreatorScreen());
             }
         });
@@ -73,6 +76,8 @@ class MenuStage extends Stage {
         table.add(facebookButton).width(VIEWPORT_WIDTH/10).height(VIEWPORT_WIDTH*ratio/6).expand().right().bottom();
         facebookButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
+                Sound sound = game.getAssetManager().get("buttonSound.mp3");
+                sound.play();
                 Facebook facebook = new Facebook();
                 facebook.login();
             }
@@ -82,6 +87,8 @@ class MenuStage extends Stage {
         table.add(toggleSoundButton).width(VIEWPORT_WIDTH/6).height(VIEWPORT_WIDTH*ratio/6).expand().right().bottom();
         toggleSoundButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
+                Sound sound = game.getAssetManager().get("buttonSound.mp3");
+                sound.play();
                 if(music.isPlaying()) {
                     music.pause();
                 }else{

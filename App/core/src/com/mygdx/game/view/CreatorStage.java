@@ -1,6 +1,7 @@
 package com.mygdx.game.view;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -120,6 +121,8 @@ class CreatorStage extends Stage {
         TextButton rotateButton = ButtonFactory.createButton("Rotate", 20);
         rotateButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
+                Sound sound = game.getAssetManager().get("buttonSound.mp3");
+                sound.play();
                 if(board.getChosen() != null)
                     board.getChosen().rotate();
             }
@@ -130,6 +133,8 @@ class CreatorStage extends Stage {
         TextButton playButton = ButtonFactory.createButton("Start Playing", 20);
         playButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
+                Sound sound = game.getAssetManager().get("buttonSound.mp3");
+                sound.play();
                 if(board.allPlaced())
                     game.setScreen(new DifficultyScreen(board));
             }

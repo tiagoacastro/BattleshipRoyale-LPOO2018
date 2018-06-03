@@ -2,6 +2,7 @@ package com.mygdx.game.view;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
@@ -56,6 +57,8 @@ public class EndGameStage extends Stage {
         this.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 GameStage.stopMusic();
+                Sound sound = BattleShip.getInstance().getAssetManager().get("buttonSound.mp3");
+                sound.play();
                 BattleShip.getInstance().setScreen(new MenuScreen());
             }
         });

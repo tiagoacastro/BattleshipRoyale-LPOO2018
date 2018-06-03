@@ -3,6 +3,7 @@ package com.mygdx.game.view;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -266,6 +267,8 @@ public class GameStage extends Stage {
         TextButton button = ButtonFactory.createButton("Toggle my board", 20);
         button.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
+                Sound sound = game.getAssetManager().get("buttonSound.mp3");
+                sound.play();
                 if(toggleBoard) {
                     userBoardTable.setVisible(false);
                     botStatus.setVisible(true);
@@ -289,6 +292,8 @@ public class GameStage extends Stage {
         guiTable.add(toggleSoundButton).width(VIEWPORT_WIDTH/8).height(VIEWPORT_WIDTH*ratio/14).expand().center().bottom();
         toggleSoundButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
+                Sound sound = game.getAssetManager().get("buttonSound.mp3");
+                sound.play();
                 if(music.isPlaying()) {
                     music.pause();
                 }else{
