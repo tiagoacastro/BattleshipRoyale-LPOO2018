@@ -68,11 +68,11 @@ public class AITest {
         HardBehaviour hBehaviour = new HardBehaviour();
         EasyBehaviour eBehaviour = new EasyBehaviour();
 
-        BoardController eBoard= new BoardController();
         BoardController hBoard= new BoardController();
+        BoardController eBoard= new BoardController();
 
-        eBoard.populate();
         hBoard.populate();
+        eBoard.populate();
 
         int cells = BoardController.getDimension() * BoardController.getDimension();
         for (int i = 0; i < cells; i++){
@@ -85,5 +85,53 @@ public class AITest {
 
         assertTrue(eBoard.check());
         assertFalse(hBoard.check());
+    }
+
+    @Test(timeout=5000)
+    public void CrazyVSEasy() {
+        CrazyBehaviour cBehaviour = new CrazyBehaviour();
+        EasyBehaviour eBehaviour = new EasyBehaviour();
+
+        BoardController cBoard= new BoardController();
+        BoardController eBoard= new BoardController();
+
+        cBoard.populate();
+        eBoard.populate();
+
+        int cells = BoardController.getDimension() * BoardController.getDimension();
+        for (int i = 0; i < cells; i++){
+            cBehaviour.shoot(eBoard);
+            eBehaviour.shoot(cBoard);
+
+            if(eBoard.check() || cBoard.check())
+                break;
+        }
+
+        assertTrue(eBoard.check());
+        assertFalse(cBoard.check());
+    }
+
+    @Test(timeout=5000)
+    public void CrazyVSHard() {
+        CrazyBehaviour cBehaviour = new CrazyBehaviour();
+        HardBehaviour hBehaviour = new HardBehaviour();
+
+        BoardController cBoard= new BoardController();
+        BoardController hBoard= new BoardController();
+
+        cBoard.populate();
+        hBoard.populate();
+
+        int cells = BoardController.getDimension() * BoardController.getDimension();
+        for (int i = 0; i < cells; i++){
+            cBehaviour.shoot(hBoard);
+            hBehaviour.shoot(cBoard);
+
+            if(hBoard.check() || cBoard.check())
+                break;
+        }
+
+        assertTrue(hBoard.check());
+        assertFalse(cBoard.check());
     }
 }
