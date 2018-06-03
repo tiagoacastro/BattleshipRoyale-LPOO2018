@@ -5,8 +5,9 @@
 
 
 ### Package and Class diagram
-
-![Screenshot](https://i.imgur.com/ttIhpAw.jpg)
+    (Compacted)
+    
+![Screenshot](https://i.imgur.com/RWPzqRf.jpg)
 
 
 ### Behavioural Diagram
@@ -24,28 +25,33 @@
 
   **MVC (Model View Controller)** - usado para facilitar a modularidade e as dependências do jogo.
 
+  **Strategy** -  design pattern utilizado para facilitar a criação das várias dificuldades do jogo e alterar o comportamento do bot com os behaviours criados.
+  
+### Manual do Utilizador
 
-### GUI Design
+Este é o menu inicial do jogo. Nele é possível retirar a música que está a ser tocada, iniciar sessão no facebook e continuar na aplicação carregando em “Play”.
 
-Este é o menu principal do jogo. A partir deste menu, é possível tanto ir para o submenu com as definições como carregar em “Play” com vista a iniciar o jogo.
+![Screenshot](https://i.imgur.com/KeMjLJc.png)
 
-![Screenshot](https://i.imgur.com/577hvNc.png)
+De seguida, passamos para o CreatorScreen. Nele, o utilizador tem a tarefa de escolher o posicionamento dos seus navios no tabuleiro. É de acrescentar que o jogo só procede para o próximo ecrã quando todos os navios estiveram colocados. Também é possível rodar os navios para os colocar no tabuleiro carregando, após carregar no navio pretendido, no botão rotate e de seguida tocando na célula pretendida.
 
-Aqui está representado o menu de definições de jogo. Nele vai ser possível ligar/desligar o som na aplicação tal como controlar o seu volume e voltar para o menu principal do jogo.
+![Screenshot](https://i.imgur.com/ewSyR8l.png)
+![Screenshot](https://i.imgur.com/MkNETyv.png)
 
-![Screenshot](https://i.imgur.com/HcgLIUl.png)
+CREATOR
 
-Este mock-up vai conter um text field em que o utilizador introduzirá os dados para se conectar e prosseguirá para o “map editor”
+![Screenshot](https://i.imgur.com/IJcULM1.png)
 
-![Screenshot](https://i.imgur.com/JazlU7I.png)
+Aqui pode-se ver o ecrã de jogo. Nele é possível ver os dois tabuleiros de jogo (utilizador e bot) ou então alternar o tabuleiro com os navios do user com imagens que representam os navios que ainda faltam destruir. Para jogar, se o aparelho do utilizador tiver giroscópio, ele tem de carregar na célula e rodar o telemóvel para a frente (ecrã para cima). Se não o tiver, ele deverá apenas tocar na célula a disparar. O jogo sairá deste menu assim que o user ou o bot destruam os navios todos do adversário. É de notar também a possibilidade de parar a música de jogo no botão com icone de som.
 
-Neste mock-up é possível observar um editor do tabuleiro do utilizador, nele é possível arrastar navios para as posições da matriz desejadas, guardar o tabuleiro esquematizado ou ir buscar um esquema que esteja guardado previamente. 
+![Screenshot](https://i.imgur.com/fqsa4tY.png)
+![Screenshot](https://i.imgur.com/LWE9GEW.png)
+![Screenshot](https://i.imgur.com/8i9M5HI.png)
+![Screenshot](https://i.imgur.com/ns7PLgg.png)
 
-![Screenshot](https://i.imgur.com/BWRe9dY.png)
+Por fim, este é o menu final do jogo que indica se o utilizador perdeu ou ganhou (outcome do jogo) e permite ao mesmo voltar ao menu inicial se ele desejar jogar outra vez pressionando em qualquer parte do ecrã.
 
-Finalmente, é mostrado neste mockup o jogo em si onde o jogador pode jogar, pausar ou sair do jogo. É também aqui mostrado o que o utilizador já destruiu dos navios inimigos e um ícone de definições caso queira alterar definições de som da aplicação.
-
-![Screenshot](https://i.imgur.com/zBIA56i.png)
+![Screenshot](https://i.imgur.com/lh7vYeH.png)
 
 ### Test Design
 
