@@ -24,7 +24,7 @@ class MenuStage extends Stage {
     private static final float VIEWPORT_WIDTH = 800;
     private BattleShip game;
     private Viewport viewport;
-    private Music music;
+    static private Music music;
     /**
      * Menu Stage constructor where the layout is all created
      */
@@ -50,7 +50,6 @@ class MenuStage extends Stage {
         table.add(playButton).width(VIEWPORT_WIDTH/5).height(VIEWPORT_WIDTH*ratio/5).padRight(300);
         playButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
-                music.stop();
                 game.setScreen(new CreatorScreen());
             }
         });
@@ -104,4 +103,9 @@ class MenuStage extends Stage {
     public Viewport getViewport() {
         return viewport;
     }
+
+    /**
+     * stops the music
+     */
+    static public void stopMusic() {music.stop();}
 }

@@ -44,7 +44,7 @@ public class GameStage extends Stage {
     private Button patrolBoat;
     private Button submarine;
     private Button dreadnought;
-    private Music music;
+    private static Music music;
     /**
      * Game stage constructor where the basic stage setup is done and the table creators are called
      * @param board         user's board
@@ -409,4 +409,9 @@ public class GameStage extends Stage {
         ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(hitCellTextureRegionDrawable,hitCellTextureRegionDrawable,hitCellTextureRegionDrawable);
         this.dreadnought.setStyle(style);
     }
+
+    /**
+     * stops the music
+     */
+    static public void stopMusic() {music.stop();}
 }

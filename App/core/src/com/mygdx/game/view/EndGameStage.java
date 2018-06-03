@@ -1,5 +1,6 @@
 package com.mygdx.game.view;
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -39,10 +40,10 @@ public class EndGameStage extends Stage {
         TextButton statusField = null;
         switch(status) {
             case WIN:
-                statusField = ButtonFactory.createButton("WIN",80);
+                statusField = ButtonFactory.createButton("YOU WON",80);
                 break;
             case LOSE:
-                statusField = ButtonFactory.createButton("LOSE",80);
+                statusField = ButtonFactory.createButton("YOU LOST",80);
                 break;
         }
         table.add(statusField).width(VIEWPORT_WIDTH/5).height(VIEWPORT_WIDTH*ratio/5);
@@ -54,7 +55,7 @@ public class EndGameStage extends Stage {
 
         this.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
-
+                GameStage.stopMusic();
                 BattleShip.getInstance().setScreen(new MenuScreen());
             }
         });
