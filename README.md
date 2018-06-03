@@ -5,8 +5,9 @@
 
 
 ### Package and Class diagram
-
-![Screenshot](https://i.imgur.com/ttIhpAw.jpg)
+    (Compacted)
+    
+![Screenshot](https://i.imgur.com/RWPzqRf.jpg)
 
 
 ### Behavioural Diagram
@@ -25,6 +26,7 @@
   **MVC (Model View Controller)** - usado para facilitar a modularidade e as dependências do jogo.
 
   **Strategy** -  design pattern utilizado para facilitar a criação das várias dificuldades do jogo e alterar o comportamento do bot com os behaviours criados.
+  
 ### Manual do Utilizador
 
 Este é o menu inicial do jogo. Nele é possível retirar a música que está a ser tocada, iniciar sessão no facebook e continuar na aplicação carregando em “Play”.
