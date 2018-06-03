@@ -10,7 +10,7 @@ up201606186 - Tiago Araújo Castro (up201606186@fe.up.pt)
 [JavaDoc](https://joaomalheiro.github.io/)
 
 ### Package and Class diagram
-    (Compacted)
+    (Compacted, Complete on UML folder)
     
 ![Screenshot](https://i.imgur.com/RWPzqRf.jpg)
 
@@ -26,6 +26,10 @@ up201606186 - Tiago Araújo Castro (up201606186@fe.up.pt)
   **Strategy** -  design pattern utilizado para facilitar a criação das várias dificuldades do jogo e alterar o comportamento do bot com os behaviours criados.
 
   **MVC (Model View Controller)** - usado para facilitar a modularidade e as dependências do jogo.
+  
+### Instalação
+
+Instalar a APK que se encontra na pasta Executables ou correr o JAR ((java -jar Battleship_Royale.jar) na pasta Executables)
   
 ### Manual do Utilizador
 
