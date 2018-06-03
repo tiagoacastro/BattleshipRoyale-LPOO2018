@@ -116,24 +116,28 @@ public class CellController {
                 playCannonSound();
             }
 
-            Texture hitCellTexture = BattleShip.getInstance().getAssetManager().get("redSquare.png");
-            Sprite sprite = new Sprite(hitCellTexture);
-            TextureRegion hitCellTextureRegion = new TextureRegion(sprite);
-            TextureRegionDrawable hitCellTextureRegionDrawable = new TextureRegionDrawable(hitCellTextureRegion);
-            ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(hitCellTextureRegionDrawable,hitCellTextureRegionDrawable,hitCellTextureRegionDrawable);
-            this.cellModel.getButton().setStyle(style);
+            if(cellModel.getButton() != null) {
+                Texture hitCellTexture = BattleShip.getInstance().getAssetManager().get("redSquare.png");
+                Sprite sprite = new Sprite(hitCellTexture);
+                TextureRegion hitCellTextureRegion = new TextureRegion(sprite);
+                TextureRegionDrawable hitCellTextureRegionDrawable = new TextureRegionDrawable(hitCellTextureRegion);
+                ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(hitCellTextureRegionDrawable,hitCellTextureRegionDrawable,hitCellTextureRegionDrawable);
+                this.cellModel.getButton().setStyle(style);
+            }
 
             this.cellModel.getShip().check();
 
             return true;
         }
 
-        Texture hitCellTexture = BattleShip.getInstance().getAssetManager().get("greenSquare.png");
-        Sprite sprite = new Sprite(hitCellTexture);
-        TextureRegion hitCellTextureRegion = new TextureRegion(sprite);
-        TextureRegionDrawable hitCellTextureRegionDrawable = new TextureRegionDrawable(hitCellTextureRegion);
-        ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(hitCellTextureRegionDrawable,hitCellTextureRegionDrawable,hitCellTextureRegionDrawable);
-        this.cellModel.getButton().setStyle(style);
+        if(cellModel.getButton() != null) {
+            Texture hitCellTexture = BattleShip.getInstance().getAssetManager().get("greenSquare.png");
+            Sprite sprite = new Sprite(hitCellTexture);
+            TextureRegion hitCellTextureRegion = new TextureRegion(sprite);
+            TextureRegionDrawable hitCellTextureRegionDrawable = new TextureRegionDrawable(hitCellTextureRegion);
+            ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(hitCellTextureRegionDrawable, hitCellTextureRegionDrawable, hitCellTextureRegionDrawable);
+            this.cellModel.getButton().setStyle(style);
+        }
 
         if(user)
         playSplashSound();
@@ -165,55 +169,57 @@ public class CellController {
                 break;
         }
 
-        if (this.cellModel.getShip().getShipModel() instanceof Carrier) {
+        if(this.cellModel.getButton() != null) {
+            if (this.cellModel.getShip().getShipModel() instanceof Carrier) {
 
-            String file = "blueCarrier" + Integer.toString(index + 1) + "-" + Integer.toString(rotateAngle) + ".png";
-            Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
-            Sprite sprite = new Sprite(cellTexture);
-            TextureRegion cellTextureRegion = new TextureRegion(sprite);
-            TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
-            ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable, cellTextureRegionDrawable, cellTextureRegionDrawable);
-            this.cellModel.getButton().setStyle(style);
+                String file = "blueCarrier" + Integer.toString(index + 1) + "-" + Integer.toString(rotateAngle) + ".png";
+                Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
+                Sprite sprite = new Sprite(cellTexture);
+                TextureRegion cellTextureRegion = new TextureRegion(sprite);
+                TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
+                ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable, cellTextureRegionDrawable, cellTextureRegionDrawable);
+                this.cellModel.getButton().setStyle(style);
 
-        } else if (this.cellModel.getShip().getShipModel() instanceof Dreadnought) {
+            } else if (this.cellModel.getShip().getShipModel() instanceof Dreadnought) {
 
-            String file = "blueDreadnought" + Integer.toString(index + 1) + "-" + Integer.toString(rotateAngle) + ".png";
-            Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
-            Sprite sprite = new Sprite(cellTexture);
-            TextureRegion cellTextureRegion = new TextureRegion(sprite);
-            TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
-            ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable, cellTextureRegionDrawable, cellTextureRegionDrawable);
-            this.cellModel.getButton().setStyle(style);
+                String file = "blueDreadnought" + Integer.toString(index + 1) + "-" + Integer.toString(rotateAngle) + ".png";
+                Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
+                Sprite sprite = new Sprite(cellTexture);
+                TextureRegion cellTextureRegion = new TextureRegion(sprite);
+                TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
+                ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable, cellTextureRegionDrawable, cellTextureRegionDrawable);
+                this.cellModel.getButton().setStyle(style);
 
-        } else if (this.cellModel.getShip().getShipModel() instanceof Submarine) {
+            } else if (this.cellModel.getShip().getShipModel() instanceof Submarine) {
 
-            String file = "blueSubmarine" + Integer.toString(index + 1) + "-" + Integer.toString(rotateAngle) + ".png";
-            Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
-            Sprite sprite = new Sprite(cellTexture);
-            TextureRegion cellTextureRegion = new TextureRegion(sprite);
-            TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
-            ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable, cellTextureRegionDrawable, cellTextureRegionDrawable);
-            this.cellModel.getButton().setStyle(style);
+                String file = "blueSubmarine" + Integer.toString(index + 1) + "-" + Integer.toString(rotateAngle) + ".png";
+                Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
+                Sprite sprite = new Sprite(cellTexture);
+                TextureRegion cellTextureRegion = new TextureRegion(sprite);
+                TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
+                ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable, cellTextureRegionDrawable, cellTextureRegionDrawable);
+                this.cellModel.getButton().setStyle(style);
 
-        } else if (this.cellModel.getShip().getShipModel() instanceof Cruiser) {
+            } else if (this.cellModel.getShip().getShipModel() instanceof Cruiser) {
 
-            String file = "blueCruiser" + Integer.toString(index + 1) + "-" + Integer.toString(rotateAngle) + ".png";
-            Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
-            Sprite sprite = new Sprite(cellTexture);
-            TextureRegion cellTextureRegion = new TextureRegion(sprite);
-            TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
-            ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable, cellTextureRegionDrawable, cellTextureRegionDrawable);
-            this.cellModel.getButton().setStyle(style);
+                String file = "blueCruiser" + Integer.toString(index + 1) + "-" + Integer.toString(rotateAngle) + ".png";
+                Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
+                Sprite sprite = new Sprite(cellTexture);
+                TextureRegion cellTextureRegion = new TextureRegion(sprite);
+                TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
+                ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable, cellTextureRegionDrawable, cellTextureRegionDrawable);
+                this.cellModel.getButton().setStyle(style);
 
-        } else if (this.cellModel.getShip().getShipModel() instanceof PatrolBoat) {
+            } else if (this.cellModel.getShip().getShipModel() instanceof PatrolBoat) {
 
-            String file = "bluePatrolBoat" + Integer.toString(index + 1) + "-" + Integer.toString(rotateAngle) + ".png";
-            Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
-            Sprite sprite = new Sprite(cellTexture);
-            TextureRegion cellTextureRegion = new TextureRegion(sprite);
-            TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
-            ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable, cellTextureRegionDrawable, cellTextureRegionDrawable);
-            this.cellModel.getButton().setStyle(style);
+                String file = "bluePatrolBoat" + Integer.toString(index + 1) + "-" + Integer.toString(rotateAngle) + ".png";
+                Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
+                Sprite sprite = new Sprite(cellTexture);
+                TextureRegion cellTextureRegion = new TextureRegion(sprite);
+                TextureRegionDrawable cellTextureRegionDrawable = new TextureRegionDrawable(cellTextureRegion);
+                ImageButton.ButtonStyle style = new ImageButton.ButtonStyle(cellTextureRegionDrawable, cellTextureRegionDrawable, cellTextureRegionDrawable);
+                this.cellModel.getButton().setStyle(style);
+            }
         }
     }
     /**

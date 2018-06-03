@@ -17,10 +17,14 @@ public class AITest {
 
         BoardController board= new BoardController();
 
+        board.populate();
+
         int cells = BoardController.getDimension() * BoardController.getDimension();
         for (int i = 0; i < cells; i++){
             behaviour.shoot(board);
         }
+
+        assertTrue(board.check());
     }
 
     @Test
@@ -29,10 +33,14 @@ public class AITest {
 
         BoardController board= new BoardController();
 
+        board.populate();
+
         int cells = BoardController.getDimension() * BoardController.getDimension();
         for (int i = 0; i < cells; i++){
             behaviour.shoot(board);
         }
+
+        assertTrue(board.check());
     }
 
     @Test
@@ -41,9 +49,13 @@ public class AITest {
 
         BoardController board= new BoardController();
 
+        board.populate();
+
         int cells = BoardController.getDimension() * BoardController.getDimension();
         for (int i = 0; i < cells; i++){
             behaviour.shoot(board);
         }
+
+        assertTrue(board.check());
     }
 }
