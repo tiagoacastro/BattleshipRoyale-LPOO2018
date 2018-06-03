@@ -1,17 +1,12 @@
 package com.mygdx.game.controller;
 
-import com.badlogic.gdx.graphics.Texture;
-import com.mygdx.game.BattleShip;
-import com.mygdx.game.view.DifficultyStage;
-import com.mygdx.game.view.GameScreen;
-
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class AITest {
 
-    @Test
+    @Test(timeout=5000)
     public void EasyModeWin() {
         EasyBehaviour behaviour = new EasyBehaviour();
 
@@ -27,7 +22,7 @@ public class AITest {
         assertTrue(board.check());
     }
 
-    @Test
+    @Test(timeout=5000)
     public void HardModeWin() {
         HardBehaviour behaviour = new HardBehaviour();
 
@@ -35,7 +30,7 @@ public class AITest {
 
         board.populate();
 
-        int cells = BoardController.getDimension() * BoardController.getDimension();
+        int cells = 75;
         for (int i = 0; i < cells; i++){
             behaviour.shoot(board);
         }
@@ -43,7 +38,7 @@ public class AITest {
         assertTrue(board.check());
     }
 
-    @Test
+    @Test(timeout=5000)
     public void CrazyModeWin() {
         HardBehaviour behaviour = new HardBehaviour();
 
@@ -51,7 +46,7 @@ public class AITest {
 
         board.populate();
 
-        int cells = BoardController.getDimension() * BoardController.getDimension();
+        int cells = 75;
         for (int i = 0; i < cells; i++){
             behaviour.shoot(board);
         }
