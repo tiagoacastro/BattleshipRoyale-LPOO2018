@@ -1,6 +1,7 @@
 package com.mygdx.game.view;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -316,10 +317,15 @@ public class GameStage extends Stage {
     public void act() {
         super.act();
 
-        //float gyroY = Gdx.input.getGyroscopeY();
-        //if(gyroY >= 5){
+        boolean gyroscopeAvail = Gdx.input.isPeripheralAvailable(Input.Peripheral.Gyroscope);
+
+        if(gyroscopeAvail) {
+            float gyroY = Gdx.input.getGyroscopeY();
+            if (gyroY >= 5) {
+                controller.shoot();
+            }
+        }else
             controller.shoot();
-        //}
     }
     /**
      * Getter for the viewport

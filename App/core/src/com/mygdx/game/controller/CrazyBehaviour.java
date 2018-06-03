@@ -18,7 +18,8 @@ public class CrazyBehaviour extends HardBehaviour{
     @Override
     public CellController shoot(BoardController board) {
         super.shoot(board);
-        super.shoot(board);
+        if(!board.check())
+            super.shoot(board);
         return null;
     }
 }

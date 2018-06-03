@@ -73,8 +73,6 @@ public class BoardController {
      * Setter for the chosen ship to place
      * @param choice        ship name
      */
-
-
     public void setChosen(Ships choice) {
         switch(choice){
             case carrier:
