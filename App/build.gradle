@@ -97,6 +97,10 @@ project(":core") {
         compile "com.badlogicgames.box2dlights:box2dlights:$box2DLightsVersion"
         compile "de.tomgrill.gdxfacebook:gdx-facebook-core:1.4.1"
         compile fileTree(dir: '../libs', include: '*.jar')
+
+        compile 'junit:junit:4.12'
+
+        testCompile "junit:junit:4.12"
     }
 }
 
