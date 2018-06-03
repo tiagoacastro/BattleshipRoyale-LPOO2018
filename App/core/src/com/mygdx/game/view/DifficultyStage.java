@@ -56,7 +56,7 @@ public class DifficultyStage extends Stage {
             public void clicked(InputEvent event, float x, float y){
                 MenuStage.stopMusic();
                 Sound sound = game.getAssetManager().get("buttonSound.mp3");
-                sound.play();
+                sound.play(0.2f);
                 game.setScreen(new GameScreen(userBoard, Difficulty.CRAZY));
             }
         });
@@ -73,7 +73,7 @@ public class DifficultyStage extends Stage {
             public void clicked(InputEvent event, float x, float y){
                 MenuStage.stopMusic();
                 Sound sound = game.getAssetManager().get("buttonSound.mp3");
-                sound.play();
+                sound.play(0.2f);
                 game.setScreen(new GameScreen(userBoard, Difficulty.HARD));
             }
         });
@@ -90,7 +90,7 @@ public class DifficultyStage extends Stage {
             public void clicked(InputEvent event, float x, float y){
                 MenuStage.stopMusic();
                 Sound sound = game.getAssetManager().get("buttonSound.mp3");
-                sound.play();
+                sound.play(0.2f);
                 game.setScreen(new GameScreen(userBoard, Difficulty.EASY));
             }
         });

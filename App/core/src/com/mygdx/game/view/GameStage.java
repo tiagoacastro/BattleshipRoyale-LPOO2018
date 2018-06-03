@@ -92,6 +92,11 @@ public class GameStage extends Stage {
         }
 
     }
+
+    /**
+     * creates ship buttons with no listener just to show which ships the user still needs to destroy
+     * @param i
+     */
     private void createShipButton(int i) {
         switch (i) {
             case 0:
@@ -142,6 +147,9 @@ public class GameStage extends Stage {
         }
     }
 
+    /**
+     * Draws bot's to be destroyed
+     */
     private void drawBotStatusHUD(){
         botStatus = new Table();
         botStatus.setFillParent(true);
@@ -268,7 +276,7 @@ public class GameStage extends Stage {
         button.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 Sound sound = game.getAssetManager().get("buttonSound.mp3");
-                sound.play();
+                sound.play(0.2f);
                 if(toggleBoard) {
                     userBoardTable.setVisible(false);
                     botStatus.setVisible(true);
@@ -293,7 +301,7 @@ public class GameStage extends Stage {
         toggleSoundButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 Sound sound = game.getAssetManager().get("buttonSound.mp3");
-                sound.play();
+                sound.play(0.2f);
                 if(music.isPlaying()) {
                     music.pause();
                 }else{

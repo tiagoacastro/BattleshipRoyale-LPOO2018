@@ -122,7 +122,7 @@ class CreatorStage extends Stage {
         rotateButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 Sound sound = game.getAssetManager().get("buttonSound.mp3");
-                sound.play();
+                sound.play(0.2f);
                 if(board.getChosen() != null)
                     board.getChosen().rotate();
             }
@@ -134,7 +134,7 @@ class CreatorStage extends Stage {
         playButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 Sound sound = game.getAssetManager().get("buttonSound.mp3");
-                sound.play();
+                sound.play(0.2f);
                 if(board.allPlaced())
                     game.setScreen(new DifficultyScreen(board));
             }

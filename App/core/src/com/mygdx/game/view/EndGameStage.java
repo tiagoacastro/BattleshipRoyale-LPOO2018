@@ -58,7 +58,7 @@ public class EndGameStage extends Stage {
             public void clicked(InputEvent event, float x, float y){
                 GameStage.stopMusic();
                 Sound sound = BattleShip.getInstance().getAssetManager().get("buttonSound.mp3");
-                sound.play();
+                sound.play(0.2f);
                 BattleShip.getInstance().setScreen(new MenuScreen());
             }
         });

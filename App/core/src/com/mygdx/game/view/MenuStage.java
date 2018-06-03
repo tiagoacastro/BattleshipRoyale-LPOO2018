@@ -52,7 +52,7 @@ class MenuStage extends Stage {
         playButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 Sound sound = game.getAssetManager().get("buttonSound.mp3");
-                sound.play();
+                sound.play(0.2f);
                 game.setScreen(new CreatorScreen());
             }
         });
@@ -77,7 +77,7 @@ class MenuStage extends Stage {
         facebookButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 Sound sound = game.getAssetManager().get("buttonSound.mp3");
-                sound.play();
+                sound.play(0.2f);
                 Facebook facebook = new Facebook();
                 facebook.login();
             }
@@ -88,7 +88,7 @@ class MenuStage extends Stage {
         toggleSoundButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y){
                 Sound sound = game.getAssetManager().get("buttonSound.mp3");
-                sound.play();
+                sound.play(0.2f);
                 if(music.isPlaying()) {
                     music.pause();
                 }else{
