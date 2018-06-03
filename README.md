@@ -49,7 +49,7 @@ Aqui pode-se ver o ecrã de jogo. Nele é possível ver os dois tabuleiros de jo
 
 Por fim, este é o menu final do jogo que indica se o utilizador perdeu ou ganhou (outcome do jogo) e permite ao mesmo voltar ao menu inicial se ele desejar jogar outra vez pressionando em qualquer parte do ecrã.
 
-![Screenshot](blob:https://imgur.com/cc8763df-105b-45ae-8d57-a8c8c4c61ee0)
+![Screenshot](https://i.imgur.com/lh7vYeH.png)
 
 ### Test Design
 
