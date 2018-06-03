@@ -260,6 +260,7 @@ public class GameStage extends Stage {
         this.addActor(guiTable);
 
         music = game.getAssetManager().get("pirates.mp3");
+        music.setLooping(true);
         music.play();
         music.setVolume(0.3f);
 

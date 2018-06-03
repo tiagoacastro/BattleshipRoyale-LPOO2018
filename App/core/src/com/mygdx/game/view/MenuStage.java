@@ -60,6 +60,7 @@ class MenuStage extends Stage {
         table.row();
 
         music = game.getAssetManager().get("thunder.mp3");
+        music.setLooping(true);
         music.play();
 
         Texture soundOff = game.getAssetManager().get("soundOff.png");
