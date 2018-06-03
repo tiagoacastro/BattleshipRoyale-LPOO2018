@@ -184,7 +184,9 @@ public class GameStage extends Stage {
         this.addActor(userBoardTable);
         userBoardTable.setVisible(false);
 
-        userBoardTable.add().height(VIEWPORT_WIDTH*ratio/12).colspan(12);
+        TextButton myBoard = ButtonFactory.createButton("My Board", 20);
+
+        userBoardTable.add(myBoard).width(VIEWPORT_WIDTH / 4).height(VIEWPORT_WIDTH*ratio/12).expand().center().top().colspan(11);
 
         userBoardTable.row();
 
@@ -315,9 +317,7 @@ public class GameStage extends Stage {
         auxTable.setFillParent(true);
         this.addActor(auxTable);
 
-        TextButton myBoard = ButtonFactory.createButton("My Board", 20);
-
-        auxTable.add(myBoard).width(VIEWPORT_WIDTH / 4).height(VIEWPORT_WIDTH*ratio/12).expand().center().top();
+        auxTable.add().width(VIEWPORT_WIDTH / 4).height(VIEWPORT_WIDTH*ratio/12).expand().center().top();
 
         TextButton botsBoard = ButtonFactory.createButton("Bot's Board", 20);
 
