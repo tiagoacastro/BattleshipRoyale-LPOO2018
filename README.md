@@ -71,6 +71,8 @@ Por fim, este é o menu final do jogo que indica se o utilizador perdeu ou ganho
 ![Screenshot](https://i.imgur.com/lh7vYeH.png)
 
 
+Testes: App/core/src/test/java/com/mygdx/game/controller
+
 ### Apreciação do trabalho desenvolvido e reflexão
 
 As dificuldades no trabalho começaram no inicio, devido ao pouco conhecimento de programação em android e libgdx, a própria criação do projeto no inicio foi um desafio. No desenvolvimento do trabalho, houve certa dificuldade em perceber como fazer a user interface, mas após alguma pesquisa este problema foi ultrapassado. Tivemos também muita indecisão quanto aos temas que iamos abordar para o nosso trabalho, tendo de inicio a ideia de fazer networking (multiplayer) e android, mas no inicio/meio do trabalho decidimos mudar o nosso objetivo, trocando para uma abordagem mais individual acabando por nos decidir por intelegencia artificial (single player), android e social. A razão pela qual mudamos o nosso foco foi porque a forma como o trabalho estava a ser estruturado não iria propor uma boa aplicação do networking, logo, decidimos ir pela AI com a qual ficamos bastante contentes (esta contem três dificuldades,  sendo a facil tiros random, a hard tiros random a inicio, apos acertar num barco procura a sua volta para acertar noutra parte do barco e obter a sua orientação mandando o barco abaixo conseguentemente e a crazy que consiste no hard mode mas com 2 tiros por turno). Outra grande dificuldade encontrou-se na especificação das funções para o caso do carrier ship (em L) necessitando algoritmos mais complexos (no caso do hard mode, para mandar o barco abaixo teve-se que desenvolver bastante o algoritmo para o adaptar).
