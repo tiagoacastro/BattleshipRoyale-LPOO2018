@@ -24,7 +24,7 @@
 
   **MVC (Model View Controller)** - usado para facilitar a modularidade e as dependências do jogo.
 
-
+  **Strategy** -  design pattern utilizado para facilitar a criação das várias dificuldades do jogo e alterar o comportamento do bot com os behaviours criados.
 ### GUI Design
 
 Este é o menu principal do jogo. A partir deste menu, é possível tanto ir para o submenu com as definições como carregar em “Play” com vista a iniciar o jogo.
