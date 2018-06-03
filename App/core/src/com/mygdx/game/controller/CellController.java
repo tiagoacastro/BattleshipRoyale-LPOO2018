@@ -187,7 +187,7 @@ public class CellController {
 
         } else if (this.cellModel.getShip().getShipModel() instanceof Submarine) {
 
-            String file = "blueSubmarine" + Integer.toString(index + 1) + "-" + Integer.toString(rotateAngle) + ".png";;
+            String file = "blueSubmarine" + Integer.toString(index + 1) + "-" + Integer.toString(rotateAngle) + ".png";
             Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
             Sprite sprite = new Sprite(cellTexture);
             TextureRegion cellTextureRegion = new TextureRegion(sprite);
@@ -197,7 +197,7 @@ public class CellController {
 
         } else if (this.cellModel.getShip().getShipModel() instanceof Cruiser) {
 
-            String file = "blueCruiser" + Integer.toString(index + 1) + "-" + Integer.toString(rotateAngle) + ".png";;
+            String file = "blueCruiser" + Integer.toString(index + 1) + "-" + Integer.toString(rotateAngle) + ".png";
             Texture cellTexture = BattleShip.getInstance().getAssetManager().get(file);
             Sprite sprite = new Sprite(cellTexture);
             TextureRegion cellTextureRegion = new TextureRegion(sprite);

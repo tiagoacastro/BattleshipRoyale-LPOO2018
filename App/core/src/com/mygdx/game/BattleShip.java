@@ -19,7 +19,6 @@ public class BattleShip extends Game {
 	private static BattleShip battleship;
 	private AssetManager assetManager;
 	private SpriteBatch batch;
-	private BattleShip game;
 	/**
 	 * Creates a new game and set the current screen
 	 */
@@ -28,7 +27,6 @@ public class BattleShip extends Game {
 		battleship = this;
 		assetManager = new AssetManager();
         batch = new SpriteBatch();
-		ButtonFactory factory = new ButtonFactory();
         setScreen(new MenuScreen());
 	}
 	/**

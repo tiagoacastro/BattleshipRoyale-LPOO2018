@@ -25,7 +25,8 @@ public class DifficultyStage extends Stage {
     /**
      * The various difficulty options
      */
-    public enum Difficulty{EASY, HARD, CRAZY};
+    public enum Difficulty{EASY, HARD, CRAZY}
+
     /**
      * DifficultyStage constructor where the layout is created
      * @param board board
